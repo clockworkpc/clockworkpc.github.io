@@ -1,0 +1,970 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns='http://www.w3.org/2005/Atom' xmlns:blogger='http://schemas.google.com/blogger/2018'>
+  <id>tag:blogger.com,1999:blog-83871756728038292</id>
+  <title>Tips and Tricks for Provision-ISR Installers</title>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-5374063789936686</id>
+    <blogger:type>PAGE</blogger:type>
+    <blogger:status>IMPORTED</blogger:status>
+    <author>
+      <name>Alexander Garber</name>
+      <uri>https://plus.google.com/+AlexanderGarber1984</uri>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>About</title>
+    <content type='html'>&lt;h2&gt;Welcome!&lt;/h2&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://1.bp.blogspot.com/-iGpqx_fTplI/Ut567FKSXZI/AAAAAAAACxw/R1F8wYTIVqo/s1600/books_magic.jpeg" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://1.bp.blogspot.com/-iGpqx_fTplI/Ut567FKSXZI/AAAAAAAACxw/R1F8wYTIVqo/s1600/books_magic.jpeg" height="180" width="320" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;b&gt;The Odessia&lt;/b&gt; is an online fantasy adventure about a girl called Odessa and her  companion, a cat called Praetorius Pathfinder XII, or Trousers for  short.&amp;nbsp; Their journey begins when Odessa decides to cross Bridge #90 to  see The Man in the Mountain &lt;br /&gt;&lt;br /&gt;Please also have a look at the information about &lt;a href="http://theodessia.blogspot.com.au/2014/01/creative-commons-free-culture-and-dream.html" target="_blank"&gt;&lt;b&gt;copyright&lt;/b&gt; and &lt;b&gt;collaboration&lt;/b&gt;&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;&lt;a href="http://creativecommons.org/licenses/by/4.0/deed.en_US" rel="license"&gt;&lt;img alt="Creative Commons License" src="http://i.creativecommons.org/l/by/4.0/88x31.png" style="border-width: 0;" /&gt;&lt;/a&gt;&lt;br /&gt;&lt;span property="dct:title" xmlns:dct="http://purl.org/dc/terms/"&gt;The Odessia&lt;/span&gt; by &lt;a href="http://www.theodessia.com/" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#"&gt;Alexander J Garber&lt;/a&gt; is licensed under a &lt;a href="http://creativecommons.org/licenses/by/4.0/deed.en_US" rel="license"&gt;Creative Commons Attribution 4.0 International License&lt;/a&gt;.&lt;br /&gt;Permissions beyond the scope of this license may be available at &lt;a href="http://www.theodessia.com/" rel="cc:morePermissions" xmlns:cc="http://creativecommons.org/ns#"&gt;http://www.theodessia.com&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;You are welcome to share and use these stories in your works as long as you link back to &lt;a href="http://www.theodessia.com/"&gt;http://www.theodessia.com&lt;/a&gt;. &lt;br /&gt;&lt;br /&gt;Feel free to get in touch via email, &lt;a href="https://www.facebook.com/groups/theodessia/" target="_blank"&gt;Facebook&lt;/a&gt;, &lt;a href="https://plus.google.com/b/118166525971865034506/118166525971865034506" target="_blank"&gt;Google+&lt;/a&gt;, or &lt;a href="https://twitter.com/theodessia" target="_blank"&gt;Twitter&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;If you'd like to donate to this project:&lt;br /&gt;&lt;form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"&gt;&lt;input alt="PayPal — The safer, easier way to pay online." border="0" name="submit" src="https://www.paypalobjects.com/en_AU/i/btn/btn_donateCC_LG.gif" type="image" /&gt;&lt;img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" /&gt;&lt;/form&gt;&lt;h2&gt;&lt;/h2&gt;&lt;br /&gt;</content>
+    <blogger:created>2016-05-09T04:16:04.602Z</blogger:created>
+    <published>2016-05-09T04:16:00.002Z</published>
+    <updated>2016-05-09T04:16:04.604Z</updated>
+    <blogger:filename>/p/about.html</blogger:filename>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-159830680037723468</id>
+    <blogger:type>POST</blogger:type>
+    <blogger:status>DRAFT</blogger:status>
+    <author>
+      <name>Centrevision</name>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title></title>
+    <content type='html'>&lt;h2 style="-webkit-text-stroke-width: 0px; background: none rgb(255, 255, 255); border-bottom: 1px solid rgb(170, 170, 170); color: black; font-family: &amp;quot;Linux Libertine&amp;quot;, Georgia, Times, serif; font-size: 1.5em; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: normal; letter-spacing: normal; line-height: 1.3; margin: 1em 0px 0.25em; orphans: 2; overflow: hidden; padding: 0px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"&gt;
+&lt;span class="mw-headline" id="TeamViewer"&gt;TeamViewer&lt;/span&gt;&lt;span class="mw-editsection" style="display: inline-block; font-family: sans-serif; font-size: x-small; font-weight: normal; line-height: 1em; margin-left: 1em; vertical-align: baseline;"&gt;&lt;span class="mw-editsection-bracket"&gt;[&lt;/span&gt;&lt;a href="http://data1/MediaWiki/index.php?title=Networking&amp;amp;action=edit&amp;amp;section=1" style="background: none; color: #0b0080; text-decoration: none;" title="Edit section: TeamViewer"&gt;edit&lt;/a&gt;&lt;span class="mw-editsection-bracket"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
+&lt;div style="-webkit-text-stroke-width: 0px; background-color: white; color: #252525; font-family: sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: normal; letter-spacing: normal; line-height: inherit; margin: 0.5em 0px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"&gt;
+We use a licensed version of TeamViewer 10.&lt;/div&gt;
+&lt;div style="-webkit-text-stroke-width: 0px; background-color: white; color: #252525; font-family: sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: normal; letter-spacing: normal; line-height: inherit; margin: 0.5em 0px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"&gt;
+If your client (or his customer) does not have TeamViewer installed when you start a support call, he will probably need to install it.&lt;/div&gt;
+&lt;h3 style="-webkit-text-stroke-width: 0px; background: none rgb(255, 255, 255); border-bottom: none; color: black; font-family: sans-serif; font-size: 1.2em; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: bold; letter-spacing: normal; line-height: 1.6; margin: 0.3em 0px 0px; orphans: 2; overflow: hidden; padding-bottom: 0px; padding-top: 0.5em; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"&gt;
+&lt;span class="mw-headline" id="Exit_TeamViewer"&gt;Exit TeamViewer&lt;/span&gt;&lt;span class="mw-editsection" style="display: inline-block; font-family: sans-serif; font-size: x-small; font-weight: normal; line-height: 1em; margin-left: 1em; vertical-align: baseline;"&gt;&lt;span class="mw-editsection-bracket"&gt;[&lt;/span&gt;&lt;a href="http://data1/MediaWiki/index.php?title=Networking&amp;amp;action=edit&amp;amp;section=2" style="background: none; color: #0b0080; text-decoration: none;" title="Edit section: Exit TeamViewer"&gt;edit&lt;/a&gt;&lt;span class="mw-editsection-bracket"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;div style="-webkit-text-stroke-width: 0px; background-color: white; color: #252525; font-family: sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: normal; letter-spacing: normal; line-height: inherit; margin: 0.5em 0px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"&gt;
+Check the&lt;span class="Apple-converted-space"&gt;&amp;nbsp;&lt;/span&gt;&lt;b&gt;Taskbar&lt;/b&gt;&lt;span class="Apple-converted-space"&gt;&amp;nbsp;&lt;/span&gt;in the bottom-right corner of the desktop to see if a version of TeamViewer other than 10 is running.&lt;br /&gt;
+&lt;a class="image" href="http://data1/MediaWiki/index.php?title=File:2016-09-22_.PNG" style="background: none; color: #0b0080; text-decoration: none;"&gt;&lt;img alt="2016-09-22 .PNG" height="229" src="https://data1/MediaWiki/images/thumb/5/5d/2016-09-22_.PNG/400px-2016-09-22_.PNG" style="border: none; margin: 0px; vertical-align: middle;" width="400" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div style="-webkit-text-stroke-width: 0px; background-color: white; color: #252525; font-family: sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: normal; letter-spacing: normal; line-height: inherit; margin: 0.5em 0px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"&gt;
+If it is running, right-click the TeamViewer mini-icon and select&lt;span class="Apple-converted-space"&gt;&amp;nbsp;&lt;/span&gt;&lt;b&gt;Exit&lt;/b&gt;.&lt;/div&gt;
+&lt;div style="-webkit-text-stroke-width: 0px; background-color: white; color: #252525; font-family: sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: normal; letter-spacing: normal; line-height: inherit; margin: 0.5em 0px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"&gt;
+&lt;a class="image" href="http://data1/MediaWiki/index.php?title=File:2016-09-22_teamviewer_01.PNG" style="background: none; color: #0b0080; text-decoration: none;"&gt;&lt;img alt="2016-09-22 teamviewer 01.PNG" height="387" src="https://data1/MediaWiki/images/thumb/5/55/2016-09-22_teamviewer_01.PNG/400px-2016-09-22_teamviewer_01.PNG" style="border: none; margin: 0px; vertical-align: middle;" width="400" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;h3 style="-webkit-text-stroke-width: 0px; background: none rgb(255, 255, 255); border-bottom: none; color: black; font-family: sans-serif; font-size: 1.2em; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: bold; letter-spacing: normal; line-height: 1.6; margin: 0.3em 0px 0px; orphans: 2; overflow: hidden; padding-bottom: 0px; padding-top: 0.5em; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"&gt;
+&lt;span class="mw-headline" id="Install_the_Centrevision_TeamViewer_QuickSupport_Client"&gt;Install the Centrevision TeamViewer QuickSupport Client&lt;/span&gt;&lt;span class="mw-editsection" style="display: inline-block; font-family: sans-serif; font-size: x-small; font-weight: normal; line-height: 1em; margin-left: 1em; vertical-align: baseline;"&gt;&lt;span class="mw-editsection-bracket"&gt;[&lt;/span&gt;&lt;a href="http://data1/MediaWiki/index.php?title=Networking&amp;amp;action=edit&amp;amp;section=3" style="background: none; color: #0b0080; text-decoration: none;" title="Edit section: Install the Centrevision TeamViewer QuickSupport Client"&gt;edit&lt;/a&gt;&lt;span class="mw-editsection-bracket"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;ol style="-webkit-text-stroke-width: 0px; background-color: white; color: #252525; font-family: sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: normal; letter-spacing: normal; list-style-image: none; margin: 0.3em 0px 0px 3.2em; orphans: 2; padding: 0px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"&gt;
+&lt;li style="margin-bottom: 0.1em;"&gt;Go to&lt;span class="Apple-converted-space"&gt;&amp;nbsp;&lt;/span&gt;&lt;a class="external free" href="http://www.centrevision.com.au/" rel="nofollow" style="background: linear-gradient(transparent, transparent) right center no-repeat, url(&amp;quot;data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%3E%3Cg%20transform%3D%22translate%28-826.429%20-698.791%29%22%3E%3Crect%20width%3D%225.982%22%20height%3D%225.982%22%20x%3D%22826.929%22%20y%3D%22702.309%22%20fill%3D%22%23fff%22%20stroke%3D%22%2306c%22%2F%3E%3Cg%3E%3Cpath%20d%3D%22M831.194%20698.791h5.234v5.391l-1.571%201.545-1.31-1.31-2.725%202.725-2.689-2.689%202.808-2.808-1.311-1.311z%22%20fill%3D%22%2306f%22%2F%3E%3Cpath%20d%3D%22M835.424%20699.795l.022%204.885-1.817-1.817-2.881%202.881-1.228-1.228%202.881-2.881-1.851-1.851z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E&amp;quot;); color: #663366; padding-right: 13px; text-decoration: none; word-wrap: break-word;"&gt;http://www.centrevision.com.au&lt;/a&gt;.&lt;/li&gt;
+&lt;li style="margin-bottom: 0.1em;"&gt;Go to&lt;span class="Apple-converted-space"&gt;&amp;nbsp;&lt;/span&gt;&lt;b&gt;Support&lt;/b&gt;.&lt;/li&gt;
+&lt;li style="margin-bottom: 0.1em;"&gt;Click the large blue text that reads, "For Support please click here".&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div style="-webkit-text-stroke-width: 0px; background-color: white; color: #252525; font-family: sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: normal; letter-spacing: normal; line-height: inherit; margin: 0.5em 0px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"&gt;
+If all goes well, the QuickSupport client will be downloaded and will run. It will generate a session code and the client's computer will become available.&lt;/div&gt;
+&lt;h4 style="-webkit-text-stroke-width: 0px; background: none rgb(255, 255, 255); border-bottom: none; color: black; font-family: sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: bold; letter-spacing: normal; line-height: 1.6; margin: 0.3em 0px 0px; orphans: 2; overflow: hidden; padding-bottom: 0px; padding-top: 0.5em; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"&gt;
+&lt;span class="mw-headline" id="Watch_out_for_Security_Software"&gt;Watch out for Security Software&lt;/span&gt;&lt;span class="mw-editsection" style="display: inline-block; font-family: sans-serif; font-size: x-small; font-weight: normal; line-height: 1em; margin-left: 1em; vertical-align: baseline;"&gt;&lt;span class="mw-editsection-bracket"&gt;[&lt;/span&gt;&lt;a href="http://data1/MediaWiki/index.php?title=Networking&amp;amp;action=edit&amp;amp;section=4" style="background: none; color: #0b0080; text-decoration: none;" title="Edit section: Watch out for Security Software"&gt;edit&lt;/a&gt;&lt;span class="mw-editsection-bracket"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/h4&gt;
+&lt;div style="-webkit-text-stroke-width: 0px; background-color: white; color: #252525; font-family: sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: normal; letter-spacing: normal; line-height: inherit; margin: 0.5em 0px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"&gt;
+On some computers, the local anti-virus or anti-malware program will block the download or interfere with the running of the Teamviewer client.&lt;/div&gt;
+&lt;div style="-webkit-text-stroke-width: 0px; background-color: white; color: #252525; font-family: sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: normal; letter-spacing: normal; line-height: inherit; margin: 0.5em 0px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"&gt;
+If the client can't get it started, advise him to temporarily switch off the malware scanner.&lt;/div&gt;
+&lt;h3 style="-webkit-text-stroke-width: 0px; background: none rgb(255, 255, 255); border-bottom: none; color: black; font-family: sans-serif; font-size: 1.2em; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: bold; letter-spacing: normal; line-height: 1.6; margin: 0.3em 0px 0px; orphans: 2; overflow: hidden; padding-bottom: 0px; padding-top: 0.5em; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"&gt;
+&lt;span class="mw-headline" id="Start_a_Teamviewer_Session"&gt;Start a Teamviewer Session&lt;/span&gt;&lt;span class="mw-editsection" style="display: inline-block; font-family: sans-serif; font-size: x-small; font-weight: normal; line-height: 1em; margin-left: 1em; vertical-align: baseline;"&gt;&lt;span class="mw-editsection-bracket"&gt;[&lt;/span&gt;&lt;a href="http://data1/MediaWiki/index.php?title=Networking&amp;amp;action=edit&amp;amp;section=5" style="background: none; color: #0b0080; text-decoration: none;" title="Edit section: Start a Teamviewer Session"&gt;edit&lt;/a&gt;&lt;span class="mw-editsection-bracket"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;h2 style="-webkit-text-stroke-width: 0px; background: none rgb(255, 255, 255); border-bottom: 1px solid rgb(170, 170, 170); color: black; font-family: &amp;quot;Linux Libertine&amp;quot;, Georgia, Times, serif; font-size: 1.5em; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: normal; letter-spacing: normal; line-height: 1.3; margin: 1em 0px 0.25em; orphans: 2; overflow: hidden; padding: 0px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"&gt;
+&lt;span class="mw-headline" id="Gather_Key_Information"&gt;Gather Key Information&lt;/span&gt;&lt;span class="mw-editsection" style="display: inline-block; font-family: sans-serif; font-size: x-small; font-weight: normal; line-height: 1em; margin-left: 1em; vertical-align: baseline;"&gt;&lt;span class="mw-editsection-bracket"&gt;[&lt;/span&gt;&lt;a href="http://data1/MediaWiki/index.php?title=Networking&amp;amp;action=edit&amp;amp;section=6" style="background: none; color: #0b0080; text-decoration: none;" title="Edit section: Gather Key Information"&gt;edit&lt;/a&gt;&lt;span class="mw-editsection-bracket"&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/h2&gt;
+&lt;div style="-webkit-text-stroke-width: 0px; background-color: white; color: #252525; font-family: sans-serif; font-size: 14px; font-style: normal; font-variant-caps: normal; font-variant-ligatures: normal; font-weight: normal; letter-spacing: normal; line-height: inherit; margin: 0.5em 0px; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"&gt;
+Refer to&lt;span class="Apple-converted-space"&gt;&amp;nbsp;&lt;/span&gt;&lt;a class="external text" href="http://tipsandtricksforprovisionisr.blogspot.com.au/2016/07/how-to-get-essential-information-about.html" rel="nofollow" style="background: linear-gradient(transparent, transparent) right center no-repeat, url(&amp;quot;data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%3E%3Cg%20transform%3D%22translate%28-826.429%20-698.791%29%22%3E%3Crect%20width%3D%225.982%22%20height%3D%225.982%22%20x%3D%22826.929%22%20y%3D%22702.309%22%20fill%3D%22%23fff%22%20stroke%3D%22%2306c%22%2F%3E%3Cg%3E%3Cpath%20d%3D%22M831.194%20698.791h5.234v5.391l-1.571%201.545-1.31-1.31-2.725%202.725-2.689-2.689%202.808-2.808-1.311-1.311z%22%20fill%3D%22%2306f%22%2F%3E%3Cpath%20d%3D%22M835.424%20699.795l.022%204.885-1.817-1.817-2.881%202.881-1.228-1.228%202.881-2.881-1.851-1.851z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E&amp;quot;); color: #663366; padding-right: 13px; text-decoration: none;"&gt;this blog post&lt;/a&gt;&lt;span class="Apple-converted-space"&gt;&amp;nbsp;&lt;/span&gt;to get yourself oriented on a client's network.&lt;/div&gt;
+</content>
+    <blogger:created>2016-09-22T06:50:30.929Z</blogger:created>
+    <published>2016-09-22T06:50:00.003Z</published>
+    <updated>2016-09-22T06:50:57.734Z</updated>
+    <blogger:filename>/2016/09/teamviewer-edit-we-use-licensed-version.html</blogger:filename>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-263650825539505782</id>
+    <blogger:type>POST</blogger:type>
+    <blogger:status>DRAFT</blogger:status>
+    <author>
+      <name>Centrevision</name>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>The Tale of the DVR That Suddenly Stopped Recording One Day</title>
+    <content type='html'>&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;
+&lt;div dir="ltr" id="docs-internal-guid-fe3f2a96-e3ce-a509-8bba-13264d083a30" style="line-height: 1.38; margin-bottom: 3pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;;"&gt;by Alexander Garber&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Once upon a time there was a DVR that mysteriously stopped recording one day.&lt;/span&gt;&lt;/div&gt;
+&lt;h1 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 20pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 26.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Initial Investigation&lt;/span&gt;&lt;/h1&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;When Technical Support looked up the recorded footage, he found that indeed it had recorded nothing for the past couple of weeks.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="image.png" height="240" src="https://lh5.googleusercontent.com/wX9xkOQTnUTkOdca7ZgoN0HfbpNuNuzY4LZYSHXvPO81bx23Sev9xL0_-LY05SkiWJ_lUJQ0tbb49yhbMloA2F0L6JaN8vmH3vKY1sUycy_ceiBk7lPTt5BE3PEGAW0DuVxvlVc7" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Technical Support inspected the hard drive, but it seemed to be running just fine:&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="image.png" height="237" src="https://lh6.googleusercontent.com/3Kn8WiMr1thLr80Ja2pABZk2Yde6Q_Dm2vqd6_hy6_r6-x2eYlER7o3fOHzVJqvh5hPKcuBwArJaxKeBaGVT2JRY1yD8Zc3qPY3kpEe5TeRjj0O-bNn4GVFJ3WZEELUCV0yOLLrI" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;In the Schedule Settings, both Motion and Sensor were running 24/7 on all channels:&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="image.png" height="203" src="https://lh5.googleusercontent.com/vrxWovQaPTNEMMOShtsyf-t-PYkIt3IpjuQarMpd2QdLnlfixi8f7Xx_C7uTj4-bNBK_vSLvxlQjsx4flReIaMLfF2QU16AXSOut2SlxMkv-sOnBRFyMmsrt-P2N8ZJZRNlnOrzb" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="image.png" height="327" src="https://lh3.googleusercontent.com/0EUZMsOIt6PHV_N7s8BeO-GLZk3d24K-sNugvIWakYZbtrXUJcw5Dt9kRXFwz5tGUSAfQS5PJsWb3ZItzdisPwElDVrl6bkJAltAkYXZNhGzFjTa49HOOGn7erRz19Jhv7Wvc4bK" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;h1 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 20pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 26.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Initial Diagnosis&lt;/span&gt;&lt;/h1&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Technical Support and the client thought that the HDD might be at fault, and made preliminary arrangements to replace it. &amp;nbsp;However, Technical Support could not account for the following observations:&lt;/span&gt;&lt;/div&gt;
+&lt;ol style="margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; list-style-type: decimal; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;The HDD was shown as “Formatted”, a generally strong indicator of HDD health.&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="239" src="https://docs.google.com/drawings/u/0/d/s2rlBXhCwLPFJ0I6VmGGEGw/image?w=624&amp;amp;h=239&amp;amp;rev=17&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;ol start="2" style="margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; list-style-type: decimal; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;The DVR could be induced to record manually, with the extra space taken up by the test recording reflected in the free-to-used space ratio in the Disk Management page.&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="249" src="https://docs.google.com/drawings/u/0/d/sON9oylchj7YOC5kLp9Y-jQ/image?w=624&amp;amp;h=249&amp;amp;rev=35&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;All this raised doubts in the mind of Technical Support, who emailed Boss Man for a second opinion.&lt;/span&gt;&lt;/div&gt;
+&lt;h1 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 20pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 26.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Revised Diagnosis and Solution&lt;/span&gt;&lt;/h1&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;One fresh pair of eyes later, the problem was spotted. &amp;nbsp;For some reason, although the DVR was set to record in response to any motion detected, Motion Detection itself had been turned off on all the channels!&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="image002.png" height="381" src="https://lh4.googleusercontent.com/D3CrnJbLyYrnInYdN3pfGDuONVxp0u-0MxotnoQAOJPP1s_EUW9VrFeU_DYD01365-fWy55FthwANE44zX3wbEqDpHCvTPMCojx4YIfskAHa0Nhspw0yetUJsAuvOQo42xdFbDTV" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;And the Log showed that as soon as this setting was changed, recording stopped:&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="image005.png" height="532" src="https://lh5.googleusercontent.com/-_ovPZVDUVYv00JQ92vznf03o_1fA6sijSVorz6vXNirkH5PdoM7myOJxyrQMjZsY-i2vm1jsgHr-BrszhyjecNMqiwhw4s44zt79u5qzJ4yaIcRBIcbIgGYKcgnMtPef6v6DznT" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;From there, it was a simple matter of enabling Motion Detection...&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="image003.png" height="431" src="https://lh5.googleusercontent.com/QwM71MYFbbTszfw3663wP_icdiQWgq0vM1Uu7zDBfB7U3UReejYF875zEASHMMWDgpOTzsLRPxnwuswq1Zr98uSW2_5gjr9MTxleeyACzfEd-Vky0nQB-tAlkyvR2RALuxK-292v" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Et voila! Motion recording returned to normal:&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="image001.png" height="431" src="https://lh3.googleusercontent.com/woiT0FMbJDUcANidJ6FYD39_8xw8qZU0ZTrNeIPzl_JWYcHpJv8Tf7f6M9GDNQQ2jpN9ZSq3IX2XxIb5UHcis-7uSRWhDT8dTYshCduY5d0fzczgISU-zTMxqj6FJWs4O0umx_rP" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+    <blogger:created>2016-05-09T04:21:01.977Z</blogger:created>
+    <published>2016-05-09T04:21:00.001Z</published>
+    <updated>2016-07-08T04:07:50.631Z</updated>
+    <blogger:filename>/2016/05/the-tale-of-dvr-that-suddenly-stopped.html</blogger:filename>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-476181257959721782</id>
+    <blogger:type>POST</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Centrevision</name>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>How To Remotely View Provision-ISR CCTV in Your Browser</title>
+    <content type='html'>&lt;div dir="ltr" id="docs-internal-guid-f162c40c-22e5-ab01-1656-dbbed3d91cc8" style="line-height: 1.38; margin-bottom: 3pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 34.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;How to remotely view Provision-ISR CCTV in your browser&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;You can log into a Provision-ISR DVR or NVR or even a stand-alone IP camera via Internet Explorer or Firefox on Windows, or Safari on MacOSX.&lt;/span&gt;&lt;/div&gt;
+&lt;h1 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 20pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 26.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Windows 7/8/10&lt;/span&gt;&lt;/h1&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: red; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline;"&gt;NOTE ON WINDOWS 10: Use the old &lt;/span&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline;"&gt;Internet Explorer&lt;/span&gt;&lt;span style="background-color: transparent; color: red; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline;"&gt;, not &lt;/span&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline;"&gt;Microsoft Edge&lt;/span&gt;&lt;span style="background-color: transparent; color: red; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline;"&gt;.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="margin-left: 0pt;"&gt;
+&lt;table style="border-collapse: collapse; border: none; width: 624px;"&gt;&lt;colgroup&gt;&lt;col width="*"&gt;&lt;/col&gt;&lt;col width="*"&gt;&lt;/col&gt;&lt;/colgroup&gt;&lt;tbody&gt;
+&lt;tr style="height: 0px;"&gt;&lt;td style="border-bottom: solid #000000 0px; border-left: solid #000000 0px; border-right: solid #000000 0px; border-top: solid #000000 0px; padding: 7px 7px 7px 7px; vertical-align: middle;"&gt;&lt;div dir="ltr" style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="IE6.png" height="160" src="https://lh5.googleusercontent.com/rLoK_DgkY4coc6BWdZ3GoNtBePIqXxUJtgp8uGleyqt3UwgPPpQ2SbakBwSTR3CEUc3ZmUMQoUAl__QXXRQGtb-t6_tDAb4IgurrESJ-QRzmAXQtVKB_oXLtrTWtJ6m4oHMuGAXv" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="160" /&gt;&lt;/span&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="121" src="https://docs.google.com/a/centrevision.com.au/drawings/d/svvB0VJs6n4bWdeoAZcGPDA/image?w=121&amp;amp;h=121&amp;amp;rev=6&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="121" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;td style="border-bottom: solid #000000 0px; border-left: solid #000000 0px; border-right: solid #000000 0px; border-top: solid #000000 0px; padding: 7px 7px 7px 7px; vertical-align: middle;"&gt;&lt;div dir="ltr" style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="Microsoft_Edge_logo.svg.png" height="130" src="https://lh6.googleusercontent.com/5X5K5ZaLL_VIABCEFUae2H7i5xyNkyI7VYU2-awhNVqFn6tbcdHJ7LrYoEIBQZDN_YjImHu62tfBMbSfQW1_-PE6hwJLMST5mgbTwrjJ_HYWEGrAPqDGMDMZFhCorYJMrUE2Pk9h" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="119" /&gt;&lt;/span&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="108" src="https://docs.google.com/a/centrevision.com.au/drawings/d/s7aeRlqwXNd8Y2ZsPSmAS8A/image?w=108&amp;amp;h=108&amp;amp;rev=5&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="108" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;br /&gt;&lt;h2 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 18pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 21.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Internet Explorer&lt;/span&gt;&lt;/h2&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Make sure that your Security Settings allow the ActiveX plug-in.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="img5.jpg" height="484" src="https://lh5.googleusercontent.com/rXZ81lDrf1zqb6__k9VMqDJSLW6k__93sk-XZYE-MEH50pX2Kz5besh7iSvUbJsDEaANTE0kDh2L60KUJowjdOGNEGK7QOsCqjxUhkpBoQROtOLfv8DqjJm8CazcRn_HGE9pUfnL" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="427" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Next, go to the external IP or DDNS address provided by your installer.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;You will see a screen with a light blue background. &amp;nbsp;Your browser should prompt you to run an ActiveX control. &amp;nbsp;Authorise your browser to do so, and when this screen appears, enter your username and password.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="2016-04-07_internet_explorer_04.PNG" height="423" src="https://lh3.googleusercontent.com/oc34sUvm6yCLz91MCvyteBlEJPsB4zzzewCQKFC93VNts9ehgGrldqtAaIYOfqUZvsZ-YXCIuSr51998G7LP_gTj5KlizY3OKlwfS6KHU3Ebe-2_bht84AyJY9KRIUfn4Lfebrbn" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="586" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;h2 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 18pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 21.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt; &lt;/span&gt;&lt;/h2&gt;
+&lt;h2 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 18pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 21.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Firefox&lt;/span&gt;&lt;/h2&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt; &lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Your CCTV system’s web address will take you to a light-blue page with a large download button and a refresh button. &amp;nbsp;Click the download button to download the file Webclient.exe.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="325" src="https://docs.google.com/a/centrevision.com.au/drawings/d/scMeo3EmezAPA1jjEi24GmA/image?w=624&amp;amp;h=325&amp;amp;rev=7&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="2016-04-07_Firefox_ActiveX_3.PNG" height="256" src="https://lh4.googleusercontent.com/DUCWnAgqMfm4hbxDy_qqmwMnia_KDPFFrRA0SYSb4op2dI0HVrHPN0BCQAlDdw5L_sRSWgSBAoYPtxiGZGAApQoW4FLzlU5BmqcvYbY8lE_eVBZNbddAoveKz5danDz8pnDxvKCb" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="554" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Close Firefox.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Open Windows Explorer, locate the downloaded Webclient.exe and run it.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="2016-04-07_Firefox_ActiveX_4.PNG" height="292" src="https://lh6.googleusercontent.com/GDVQZB172QlwuIm55_CfkzeSToBSh8UPBTe7DG6LrRFU9R1uVgnqSsBMnsLgiXp_FYuSnqt4a8Enud7mQVhugCmGo2tsd-OzMr2WXDbAQxsh0S6Vr-oqCJXKCNRQy6OHr5o24fWU" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="298" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;A terminal window will open briefly and then close again.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Re-open Firefox and return to your CCTV system’s web address. &amp;nbsp;Now you should receive a pop-up notification asking for permission to run an ActiveX control.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="325" src="https://docs.google.com/a/centrevision.com.au/drawings/d/s0fMV9ulCVjLqcw_t8PurRw/image?w=624&amp;amp;h=325&amp;amp;rev=11&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="Firefox Active X 2.PNG" height="238" src="https://lh4.googleusercontent.com/mgtDYIhJfZ4yFdKrkxbyejsqy3oeklIwcAQgV727Op6ksxbC3ASzJspGdoODirQXAFgQLvZgb71mn3mOU8_T3Ww3fGcI5ZM1hZZwgH5vkxBOIzKl8DPhv3nXiJ6tIbsh5yoX1jDq" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="558" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Finally, refresh the page.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;You will see a screen with a light blue background. &amp;nbsp;Your browser should prompt you to run an ActiveX control. &amp;nbsp;Authorise your browser to do so, and when this screen appears, enter your username and password.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="2016-04-07_internet_explorer_04.PNG" height="423" src="https://lh3.googleusercontent.com/oc34sUvm6yCLz91MCvyteBlEJPsB4zzzewCQKFC93VNts9ehgGrldqtAaIYOfqUZvsZ-YXCIuSr51998G7LP_gTj5KlizY3OKlwfS6KHU3Ebe-2_bht84AyJY9KRIUfn4Lfebrbn" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="586" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;h1 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 20pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 26.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Mac OSX&lt;/span&gt;&lt;/h1&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Safari is the only browser on Mac OSX that consistently allows the necessary ActiveX controls for logging into a Provision-ISR system, although it is theoretically possible on Firefox too.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Instructions for Mac OSX will be made available soon.&lt;/span&gt;&lt;/div&gt;
+&lt;h1 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 20pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 26.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Linux&lt;/span&gt;&lt;/h1&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;There is currently no way to log into a Provision-ISR system via a browser on Linux, as the ActiveX controls necessary are not available for Linux. &amp;nbsp;Your best bet is to run Internet Explorer or Firefox in a Windows Virtualbox. &amp;nbsp;A theoretical possibility is to run Internet Explorer in Wine, but this has not been done to date with any success.&lt;/span&gt;&lt;/div&gt;
+</content>
+    <blogger:created>2016-06-05T23:08:52.239Z</blogger:created>
+    <published>2016-06-05T23:29:00.002Z</published>
+    <updated>2016-07-08T05:00:55.664Z</updated>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='remote view'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='safari'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='internet explorer'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='firefox'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='provision-isr'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='tutorial'/>
+    <blogger:filename>/2016/06/how-to-remotely-view-provision-isr-cctv.html</blogger:filename>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-567744353787989416</id>
+    <blogger:type>POST</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Alexander Garber</name>
+      <uri>https://plus.google.com/+AlexanderGarber1984</uri>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>How To Take a Screenshot of Recorded Footage on a Provision-ISR DVR/NVR</title>
+    <content type='html'>&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 3pt; margin-top: 0pt;"&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; line-height: 1.38; white-space: pre-wrap;"&gt;by Alexander Garber&lt;/span&gt;&lt;br /&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; line-height: 1.38; white-space: pre-wrap;"&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; line-height: 1.38; white-space: pre-wrap;"&gt;The following guide uses the free open source video player VLC to conveniently extract a still image from footage recorded on a Provision-ISR video recorder, and also meets the Victorian legal standard for video evidence admissible in court.&lt;/span&gt;&lt;/div&gt;&lt;b id="docs-internal-guid-443fab17-93b0-17cf-dd41-bc0b8bd75b19" style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-left: 18pt; margin-top: 0pt;"&gt;&lt;a href="https://docs.google.com/document/d/1e3UV-Av_Aafs7yroCwhLbxZYsgkpszzOEPpJBHvfbjw/edit#heading=h.6yh0ucz5mgut" style="text-decoration: none;"&gt;&lt;span style="background-color: transparent; color: #1155cc; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;"&gt;Backup as “DVR”&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-left: 18pt; margin-top: 0pt;"&gt;&lt;a href="https://docs.google.com/document/d/1e3UV-Av_Aafs7yroCwhLbxZYsgkpszzOEPpJBHvfbjw/edit#heading=h.u0faxdb7omue" style="text-decoration: none;"&gt;&lt;span style="background-color: transparent; color: #1155cc; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;"&gt;Convert&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-left: 18pt; margin-top: 0pt;"&gt;&lt;a href="https://docs.google.com/document/d/1e3UV-Av_Aafs7yroCwhLbxZYsgkpszzOEPpJBHvfbjw/edit#heading=h.p7zvp4uhm9gs" style="text-decoration: none;"&gt;&lt;span style="background-color: transparent; color: #1155cc; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;"&gt;Extract Still Image in VLC&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;h1 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 20pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 26.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Backup as “DVR”&lt;/span&gt;&lt;/h1&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Insert a USB drive into one of the USB ports on the DVR/NVR.&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Select “Backup” from the main menu.&lt;/span&gt;&lt;/div&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="407" src="https://lh6.googleusercontent.com/hj_UGHv2DiLiDuoiI6sRiabT7ztIQPF-rAUAVTQQl4GMsXVtfCTn7Wr3XuJzQmWh-Z0XDB60n_PjDa7emq5-gXkm2EkCQQn6FDWblvw_Kj4zMsGUsa6_NKUHIM-LJ8GbP-uqBE8r" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Select the Event and click &lt;/span&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Backup&lt;/span&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;.&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="385" src="https://lh5.googleusercontent.com/_BCONSRH1Y7XepWoSd6IC504cD9HA9FVrTUBHLqAtxjul4gVTU9jQReph3uiLHkf8p2OVGgOWy0eTQhVtDroXF62_kfMoYjivIuwNdZsHf64DOLmMxm2N08gSCkybD0Tccq0zwwO" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;In “Save File Type” you can select either &lt;/span&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;DVR&lt;/span&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt; or &lt;/span&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;AVI&lt;/span&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;.&lt;/span&gt;&lt;/div&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;DVR is encoded with a proprietary codec that can be played only with the Backup Player. &amp;nbsp;This open complies with Victorian legal requirements for admissibility of video evidence.&lt;/span&gt;&lt;/div&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;AVI is an open format and does not comply with Victorian legal requirements for admissibility of video evidence, but for the purposes of reviewing footage and extracting stills it is very convenient.&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="389" src="https://lh3.googleusercontent.com/QF_KsAGXDtd68InYjnbW_V7dBOGPOkpwy3Il6mSXB9d4GVKxN4FMd1AaUY8aJWNaGVCVqO4GuL09NL0x_W4dUUGPxj_xVdtXMM07qu5UODm8_uXeOSldNnGlBYfoq9gy39kS5ml6" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;&lt;h1 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 20pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 26.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Convert&lt;/span&gt;&lt;/h1&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Super Player, which can be bundled with the DVR export option, has an option to convert footage to AVI.&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="501" src="https://lh4.googleusercontent.com/z1m1vz5RWEevJiDcTBUxyZzxPL8socyZ-rBQhLcLFKhyVFWI8AaL89GK-TdbFkgxwoD35UsvVuYRflzjqtxSy19FA_HXtmv5d3jebnLFTsvhKe-8J_Tr_ktiC8gJd-QTMmDrWE4H" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;&lt;h1 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 20pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 26.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Extract Still Image in VLC&lt;/span&gt;&lt;/h1&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;When you play the footage, you can extract a still image at the desired point.&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="539" src="https://lh4.googleusercontent.com/4GoUMNCn9shRg8nTxOczR4pn5QIy0P0C3qYJ-cxGkapYgRzVoOCvSRVOH2O5IeipE1hrm7NQArGIS1pzxfeC3IhLZHB9nHrUvWrcIT34eluaU6uigCFU6a6hk1qDejZR-NDmcrfM" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="591" /&gt;&lt;/span&gt;&lt;/div&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;You will find the snapshot in the &lt;/span&gt;&lt;a href="https://wiki.videolan.org/Take_a_snapshot/" style="text-decoration: none;"&gt;&lt;span style="background-color: transparent; color: #1155cc; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap;"&gt;Pictures folder&lt;/span&gt;&lt;/a&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</content>
+    <blogger:created>2016-05-09T04:16:02.876Z</blogger:created>
+    <published>2016-05-09T04:06:00Z</published>
+    <updated>2016-07-08T05:00:55.669Z</updated>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='backup'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='footage'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='provision-isr'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='screenshot'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='tutorial'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='vlc'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='export'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='snapshot'/>
+    <blogger:filename>/2016/05/how-to-take-screenshot-of-recorded.html</blogger:filename>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-1446155920890682923</id>
+    <blogger:parent>tag:blogger.com,1999:blog-83871756728038292.post-476181257959721782</blogger:parent>
+    <blogger:type>COMMENT</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>alex amarxon</name>
+      <uri>https://plus.google.com/111158341633411834526</uri>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title></title>
+    <content type='html'>I reached for the sun block. For a spring morning, it was freakishly hot and it would rise to 32 by the afternoon, the highest ever temperature for a Grand Final, I was later told.
+ &lt;a href="https://www.serioussecurity.com.au/residential/cctv-security-for-melbourne-homes/" rel="nofollow"&gt;Melbourne CCTV&lt;/a&gt;
+</content>
+    <blogger:created>2019-02-07T09:14:38.863Z</blogger:created>
+    <published>2019-02-07T09:14:38.863Z</published>
+    <updated>2019-02-07T09:14:38.863Z</updated>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-2106969561135074585</id>
+    <blogger:type>POST</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Alexander Garber</name>
+      <uri>https://plus.google.com/+AlexanderGarber1984</uri>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>How To Attach the Bracket to a Provision-ISR TFT Digital Monitor</title>
+    <content type='html'>&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 3pt; margin-top: 0pt;"&gt;by Alexander Garber&lt;/div&gt;&lt;b id="docs-internal-guid-8413f97e-93ae-f7c7-c3f9-50ee9180dbe4" style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;To attach the bracket to a Provision-ISR TFT digital monitor, locate the headrest cover on the back of the monitor and prise it open with a flathead screwdriver.&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="293" src="https://lh6.googleusercontent.com/jENKZsmIDeNVfq9wt86nMxeEV353xBV7JcrOqFCNfQfy-Eyqgf1IHJGOtv9hFSEusb2lpju9eQbQg1wbLFXVyF5WG8kLQ8cMEffF-bl55gWths0GhXR2DjUQwa51J1mycbGH1qBY" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="521" /&gt;&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Once the headrest backcover has been removed, locate the groove in the back of your TFT monitor.&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="295" src="https://docs.google.com/drawings/d/syweweh57-XVbE3J8PtxVnQ/image?w=524&amp;amp;h=295&amp;amp;rev=11&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="524" /&gt;&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Loosen the square nut on the bracket and then slide it up the groove in the back of the monitor.&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="321" src="https://lh3.googleusercontent.com/IbxdvZq51HU1337zyRExaxzPPwYDvmkNXt-ivWQFfDA5XDkHXy5SFCsGexPZuZ74ZVY894sLkXkImOilY8ajl2qzNXjk6LBAD5l87n0K4qxDUf8h0wwgGBS0DcAGmNPL7Edn8aeM" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="569" /&gt;&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Rotate the knob clockwise to tighten the nut and fix the bracket to the monitor.&lt;/span&gt;&lt;/div&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="323" src="https://lh5.googleusercontent.com/7hN_MoE4xA3ERiYwOdJngXa_DQXUvRFV9kEwAZ5fxgTkwO56XtQaikiSaFhuXQO9BXDI-PHRBlEjXAU3M5biOJ5Zrk6HSn22y-LWr4_ZEKDd9UYBrvXT1O6qsH3FBLwNJvmCrxos" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="573" /&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</content>
+    <blogger:created>2016-05-09T04:16:02.938Z</blogger:created>
+    <published>2016-05-09T04:04:00Z</published>
+    <updated>2016-07-08T05:00:55.653Z</updated>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='bracket'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='digital monitor'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='tutorial'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='provision-isr'/>
+    <blogger:filename>/2016/05/how-to-attach-bracket-to-provision-isr.html</blogger:filename>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-2412063774630851250</id>
+    <blogger:type>POST</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Alexander Garber</name>
+      <uri>https://plus.google.com/+AlexanderGarber1984</uri>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>How To Back Up Recorded Footage from a Provision-ISR Video Recorder</title>
+    <content type='html'>&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;
+&lt;div dir="ltr" id="docs-internal-guid-3d3821b8-c8df-a949-43e7-305f0b383824" style="line-height: 1.38; margin-bottom: 3pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 34.6667px; vertical-align: baseline;"&gt;How To Back Up Recorded Footage on a Provision-ISR DVR/NVR&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: arial; font-size: 14.6667px; line-height: 1.38;"&gt;Insert a USB drive into one of the USB ports on the DVR/NVR.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;Select “Backup” from the main menu.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;&lt;img height="407" src="https://lh5.googleusercontent.com/ap8dvQalJS4XTOs933sD06OM4XZsfHOxNGWi7BhPAmBiliHc4Kt9LNfk_vkWM_NtejGQc8A1Fki7nRXz_HM43lCh2cvbMoB0HjWZ64odkqX7SC3aW8txfYV9H2QBPi8x-trgQbM6" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;Locate footage by searching between a &lt;/span&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; font-weight: 700; vertical-align: baseline;"&gt;Start Time&lt;/span&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt; and an &lt;/span&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; font-weight: 700; vertical-align: baseline;"&gt;End Time&lt;/span&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;For example, if an incident occurred in the early morning, a safe bet is a Start Time of 00:00:00 (midnight) and an &lt;/span&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; font-weight: 700; vertical-align: baseline;"&gt;End Time&lt;/span&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt; of 09:00:00 (9am) of the given date.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;You can also &lt;/span&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; font-weight: 700; vertical-align: baseline;"&gt;Search&lt;/span&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;&lt;img height="394" src="https://docs.google.com/a/centrevision.com.au/drawings/d/sObIBcByHXUfvxt2dAG0v7w/image?w=624&amp;amp;h=394&amp;amp;rev=245&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;Select the Event and click &lt;/span&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; font-weight: 700; vertical-align: baseline;"&gt;Backup&lt;/span&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;&lt;img height="385" src="https://lh3.googleusercontent.com/PaMg2-RFRVMyUGaDpk7gkv-eBHfTubv0TQxQmRkdqyS0pW3y4t8Jx_IlLPiWiTbUfnUXfLAfXdpHWEx83yGKqaX0YztGd5H8xLJ4Hm2-6JbsvmXXsgjr6IXllEvxCVUHo5_1_GNE" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;In “Save File Type” you can select either &lt;/span&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; font-weight: 700; vertical-align: baseline;"&gt;DVR&lt;/span&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt; or &lt;/span&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; font-weight: 700; vertical-align: baseline;"&gt;AVI&lt;/span&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;DVR is encoded with a proprietary codec that can be played only with the Backup Player. &amp;nbsp;This open complies with Victorian legal requirements for admissibility of video evidence.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;AVI is an open format and does not comply with Victorian legal requirements for admissibility of video evidence, but for the purposes of reviewing footage and extracting stills it is very convenient.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;&lt;img height="389" src="https://lh3.googleusercontent.com/TWTTVSfVCLwdPynYQmdB6qzQdYB8ho_ZFJ9eBAnt9P8gp42FPJaxIovJdEpcBvDp3WxN6rwsRWCx8Eh2He7CA2EceOyXNQDkO3HIG7015qrkbauPYLJhoOhIGqMACzWPpKII12ii" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;h1 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 20pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 26.6667px; font-weight: 400; vertical-align: baseline;"&gt;Convert&lt;/span&gt;&lt;/h1&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;Super Player, which can be bundled with the DVR export option, has an option to convert footage to AVI.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; vertical-align: baseline;"&gt;&lt;img height="501" src="https://lh3.googleusercontent.com/5TCVbagkALBznQkDQZgZfE7lfDGjiPPPZNU5u3oh0jR4IEA_Wh6CCPp8PkbqkLM87xEjt3sBHok0wQylyR6wDV3iXOWVuWeCX2ejJNTSOuLu20dxr6XrK6Y-Go8foLYl1xBSVfLC" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+    <blogger:created>2016-07-08T05:00:00.814Z</blogger:created>
+    <published>2016-07-08T05:00:00.002Z</published>
+    <updated>2016-07-08T05:02:34.823Z</updated>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='dvr'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='backup'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='search'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='avi'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='usb'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='provision-isr'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='channel'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='nvr'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='tutorial'/>
+    <blogger:filename>/2016/07/how-to-back-up-recorded-footage-from.html</blogger:filename>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-2691387483037391521</id>
+    <blogger:parent>tag:blogger.com,1999:blog-83871756728038292.post-476181257959721782</blogger:parent>
+    <blogger:type>COMMENT</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Unknown</name>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title></title>
+    <content type='html'>;;;;;;LLL</content>
+    <blogger:created>2019-05-08T19:29:19.539Z</blogger:created>
+    <published>2019-05-08T19:29:19.539Z</published>
+    <updated>2019-05-08T19:29:19.539Z</updated>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-3817183889533700868</id>
+    <blogger:parent>tag:blogger.com,1999:blog-83871756728038292.post-476181257959721782</blogger:parent>
+    <blogger:type>COMMENT</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Rebecca A. Maynard</name>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title></title>
+    <content type='html'>, the shiny door knobs, plants and wind chimes making soothing music by slow breeze and of course the open door to welcome chi! the ideal feng shui home or office. &lt;a href="https://www.securityinstallers.com.au/" rel="nofollow"&gt;Security Installers Melbourne&lt;/a&gt;
+</content>
+    <blogger:created>2018-05-01T10:06:29.471Z</blogger:created>
+    <published>2018-05-01T10:06:29.471Z</published>
+    <updated>2018-05-01T10:06:29.471Z</updated>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-4142127811225687359</id>
+    <blogger:parent>tag:blogger.com,1999:blog-83871756728038292.post-5328589983213598138</blogger:parent>
+    <blogger:type>COMMENT</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Rebecca A. Maynard</name>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title></title>
+    <content type='html'>Britisha modern history ebook professional closed circuit television (cctv) installation cctv training manual -  &lt;a href="https://www.smartersecurity.com.au" rel="nofollow"&gt;Home Alarms&lt;/a&gt;
+</content>
+    <blogger:created>2018-05-01T10:05:05.566Z</blogger:created>
+    <published>2018-05-01T10:05:05.566Z</published>
+    <updated>2018-05-01T10:05:05.566Z</updated>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-4166221566125002321</id>
+    <blogger:parent>tag:blogger.com,1999:blog-83871756728038292.post-476181257959721782</blogger:parent>
+    <blogger:type>COMMENT</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>jas N</name>
+      <uri>https://plus.google.com/113076827463597935325</uri>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title></title>
+    <content type='html'>hi i have followed these steps logging in with a user that i have set up and tested on the provision isr itself.  i get connect failed when i try to log on from safari web page.  please help!
+</content>
+    <blogger:created>2016-11-27T01:30:25.125Z</blogger:created>
+    <published>2016-11-27T01:30:25.125Z</published>
+    <updated>2016-11-27T01:30:25.125Z</updated>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-4716504629570097215</id>
+    <blogger:type>POST</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Alexander Garber</name>
+      <uri>https://plus.google.com/+AlexanderGarber1984</uri>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>How To Use a Television as a Spot Monitor with a Provision-ISR Video Recorder</title>
+    <content type='html'>&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;div dir="ltr" style="margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="font-family: Arial;"&gt;&lt;span style="font-size: 14.6667px; line-height: 20.24px; white-space: pre-wrap;"&gt;by Alexander Garber&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;b id="docs-internal-guid-f49e1e2b-93b4-ac2a-8787-63e9f57b462f" style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Connect a BNC cable to the CVBS (“Spot”) port on the back of your Provision-ISR video recorder:&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="326" src="https://docs.google.com/drawings/d/sTAoySHjgRQIhdemu1ZQ2jA/image?w=502&amp;amp;h=326&amp;amp;rev=95&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="502" /&gt;&lt;/span&gt;&lt;/div&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Attach a BNC-to-RCA &lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Connect a BNC cable to the CVBS Port:&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Spot Monitor Port == BNC == BNC-RCA Adaptor == RCA Port&lt;/span&gt;&lt;/div&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Spot Monitor Port == BNC == BNC-HDMI Adaptor == HDMI Port&lt;/span&gt;&lt;/div&gt;&lt;br /&gt;&lt;/div&gt;</content>
+    <blogger:created>2016-05-09T04:16:02.697Z</blogger:created>
+    <published>2016-05-09T04:10:00Z</published>
+    <updated>2016-07-08T05:00:55.661Z</updated>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='spot monitor'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='rca'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='television'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='bnc'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='provision-isr'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='hdmi'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='cvbs'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='tutorial'/>
+    <blogger:filename>/2016/05/how-to-use-television-as-spot-monitor.html</blogger:filename>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-5228621832738005944</id>
+    <blogger:type>POST</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Centrevision</name>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>Provision-ISR NVR without PoE</title>
+    <content type='html'>A non-PoE NVR needs to be connected to a &lt;b&gt;router &lt;/b&gt;(or some other device that functions as a &lt;b&gt;DHCP server&lt;/b&gt;) in order to find IP cameras.&amp;nbsp;&lt;br /&gt;
+Connected to monitor, either by HDMI or VGA, this works perfectly as a closed-circuit system if internet access is not required.&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;a href="http://4.bp.blogspot.com/-KBA1fao0wJY/V4Mf3r7MUiI/AAAAAAAAASY/3e2Y_K_uZZoinoCpMB5mowALoP8XBiOFwCK4B/s1600/NVR-Mon-R.png" imageanchor="1"&gt;&lt;img border="0" height="640" src="https://4.bp.blogspot.com/-KBA1fao0wJY/V4Mf3r7MUiI/AAAAAAAAASY/3e2Y_K_uZZoinoCpMB5mowALoP8XBiOFwCK4B/s640/NVR-Mon-R.png" width="454" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;
+&lt;/div&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+If the router serves also as your site's internet gateway,
+ you can set up remote access through &lt;b&gt;port forwarding&lt;/b&gt; or Provision-ISR's
+ secure and robust &lt;b&gt;P2P&lt;/b&gt; server.&lt;br /&gt;
+&lt;br /&gt;
+&lt;div class="separator" style="clear: both; text-align: center;"&gt;
+&lt;a href="https://2.bp.blogspot.com/-fGkCMa44ZHc/V4MNnFzah9I/AAAAAAAAAQs/sbG28Lf33Dwq_QsZLvCNcyEVyZIFOOeCQCKgB/s1600/NVR-Mon-R-PF.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" height="640" src="https://2.bp.blogspot.com/-fGkCMa44ZHc/V4MNnFzah9I/AAAAAAAAAQs/sbG28Lf33Dwq_QsZLvCNcyEVyZIFOOeCQCKgB/s640/NVR-Mon-R-PF.png" width="472" /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;br /&gt;
+And if your site has a &lt;b&gt;dynamic external IP address&lt;/b&gt;, as opposed to a &lt;b&gt;static external IP address&lt;/b&gt;, your Provision-ISR installer can easily set up a secure &lt;b&gt;DDNS &lt;/b&gt;for you.&lt;br /&gt;
+&lt;br /&gt;
+&lt;div style="text-align: center;"&gt;
+&lt;a href="http://4.bp.blogspot.com/-iVGkdkVJAys/V4Mgd0wTyuI/AAAAAAAAASk/L5jia8FVRU8nm98Yo4e2JyrAlWsChZDiwCK4B/s1600/NVR-Mon-R-PF-DDNS.png" imageanchor="1"&gt;&lt;img border="0" height="640" src="https://4.bp.blogspot.com/-iVGkdkVJAys/V4Mgd0wTyuI/AAAAAAAAASk/L5jia8FVRU8nm98Yo4e2JyrAlWsChZDiwCK4B/s640/NVR-Mon-R-PF-DDNS.png" width="330" /&gt;&lt;/a&gt;&lt;/div&gt;
+</content>
+    <blogger:created>2016-07-11T02:43:00.444Z</blogger:created>
+    <published>2016-07-11T04:31:00.002Z</published>
+    <updated>2016-07-11T04:31:51.898Z</updated>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='port forwarding'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='router'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='cctvsystems'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='provision-isr'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='nvr'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='ddns'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='dhcp'/>
+    <blogger:filename>/2016/07/provision-isr-nvr-without-poe.html</blogger:filename>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-5323274751351292320</id>
+    <blogger:parent>tag:blogger.com,1999:blog-83871756728038292.post-7749618261422594379</blogger:parent>
+    <blogger:type>COMMENT</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Safeall</name>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title></title>
+    <content type='html'>Thank you for your post. It is amazing and wonderful to visit your Blog.
+&lt;a href="http://safeall.in/" rel="nofollow"&gt;SAFEALL Cheapest Video Door Phones
+&lt;/a&gt;</content>
+    <blogger:created>2019-02-08T07:21:58.533Z</blogger:created>
+    <published>2019-02-08T07:21:58.533Z</published>
+    <updated>2019-02-08T07:21:58.533Z</updated>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-5328589983213598138</id>
+    <blogger:type>POST</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Alexander Garber</name>
+      <uri>https://plus.google.com/+AlexanderGarber1984</uri>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>How To Adjust a Provision-ISR AHD Camera Light Sensor</title>
+    <content type='html'>&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 3pt; margin-top: 0pt;"&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; line-height: 1.38; white-space: pre-wrap;"&gt;by Alexander Garber&lt;/span&gt;&lt;br /&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; line-height: 1.38; white-space: pre-wrap;"&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; line-height: 1.38; white-space: pre-wrap;"&gt;Provision-ISR AHD cameras are made to switch seamlessly between day and night modes to give excellent coverage around the clock.&lt;/span&gt;&lt;/div&gt;&lt;b id="docs-internal-guid-0e31cfed-93ab-df02-fe08-d6d315e9edeb" style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;There are times when the settings need to be adjusted.&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Two occasional problems an installer might face are these:&lt;/span&gt;&lt;/div&gt;&lt;ol style="margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; list-style-type: decimal; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;The camera switches to Day mode (and then back to Night mode) during the night.&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; list-style-type: decimal; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;The camera switches to Night mode during the day.&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;If you are using a 1080p Provision-ISR AHD recorder, the camera settings can be adjusted from the DVR itself; if you are using a 720p recorder, you’ll have to use the joystick on the camera itself.&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;OSD MENU INSTRUCTIONS&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Press the camera joystick to summon the OSD menu.&lt;/span&gt;&lt;/div&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Go to Option 5: Day&amp;amp;Night&lt;/span&gt;&lt;/div&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="351" src="https://lh3.googleusercontent.com/cTfNfzR5cqViuWGbxlc9swyWvcRc_HNnojTB1emTXWNJ8cah5rYTeI5ol2amQGxUzfeNFRnUBtu77eMY6gcJiDigo9fi3E26AfU-bW3nfxGcEDWInEVDRdvll3JVr3kHRVcXTmkU" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;ul style="margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; list-style-type: disc; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;If the option is "EXT", click to go to the sensor sub-menu.&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; list-style-type: disc; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;If the option is not "EXT", toggle left or right until you arrive at "EXT". &amp;nbsp;The other options are as follows:&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Once you are in the Day&amp;amp;Night sub-menu, you will see these default settings:&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="351" src="https://lh5.googleusercontent.com/I2slhwpX1WkaeK0HiIIYyf0Xnsq9zyDiFLoZ9ArUSlr7orsagrcgBCM-Xus-ISYlo06C1QT8fgzzhXVyJg5aamBN7FBYT3AlYfDOhTEnSp4s3ri6SI0QRQgfexYZd9LRJL4ZnoVv" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Toggle left or right to adjust the delay.&lt;/span&gt;&lt;/div&gt;&lt;ul style="margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; list-style-type: disc; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Day to Night (D-N)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; list-style-type: disc; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Night to Day (N-D)&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;If you have a camera switching frequently to day mode at night, increase the N-D delay to 6 seconds.&lt;/span&gt;&lt;/div&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;If you have a camera switching frequently to night mode during the day, increase the D-N to 6 seconds.&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Here is an example:&lt;/span&gt;&lt;/div&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="351" src="https://lh4.googleusercontent.com/c3RDmClfBKVOXMQlXrRXGPMH_cTXVEE3gYM8BNNvW2O6AOjrLCKYxpJvrqHm03R8fYseOmxI0xhpR4R0LendSTF_mi911rIQRW0cwTTldWSZPwS-m1VQqJitBQnJuKZPY0ow8PRu" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;You can also set the camera to remain on "color" mode, even at night:&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="351" src="https://lh3.googleusercontent.com/HqCF5cUbRqyp8cRGuePDWa1eKxxaPbCBHZC9xKoEscKOQocPqArOJ5zYzxAptdiHiBlu1sIfP4RUD0ok7rxH-UiHNR45HeG3sEJl1boelzUJxRBmFgeXRCKQwaMGMVd_x2p1BPXW" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Or black-and-white mode, regardless of the amount of light available:&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="351" src="https://lh5.googleusercontent.com/yOWut1oQhSz8_aYuDb7VWJMFw3f5N3wYBaX1rRJtzTQGODYQ21mEqwpAWnTzth3nPJOmH21YXPUkuSJ7qhgER3-WtItQXyHvoLpd0pp8QDE4dF0Rw71HZuQNcA6ta_q4aLdsakkm" style="border: none; transform: rotate(0rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;But the default setting is "auto":&lt;/span&gt;&lt;/div&gt;&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="351" src="https://lh6.googleusercontent.com/gkLlcmePdh7hj5dL9KmSRzIt_VDUscFxLoo9Rkrgcqdoq8G_asBoF2NWITAHVo4P6yE02HVuAM5JeMuj5yhM8-dM5zDGu5PVLxkt8mjGJ57bRLS4Bgg9E7xCVjoTO2Df2hNT2TNo" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</content>
+    <blogger:created>2016-05-09T04:16:03.004Z</blogger:created>
+    <published>2016-05-09T04:01:00Z</published>
+    <updated>2016-07-08T05:00:55.666Z</updated>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='720p'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='night mode'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='modes'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='day mode'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='joystick'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='light sensor'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='1080p'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='osd menu'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='provision-isr'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='tutorial'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='ahd'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='bullet'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='camera'/>
+    <blogger:filename>/2016/05/how-to-adjust-provision-isr-ahd-camera.html</blogger:filename>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-5781682563084692791</id>
+    <blogger:parent>tag:blogger.com,1999:blog-83871756728038292.post-476181257959721782</blogger:parent>
+    <blogger:type>COMMENT</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Joseph King</name>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title></title>
+    <content type='html'>Nice system, unfortunately the browser ability to run the cameras on anything except IE11 is a very bad FAIL! The plug-in for Firefox does NOT work and when trying to use Chrome the same plug-in with Mozilla registry entries wants to run.  Doesn&amp;#39;t work.  As for Firefox, NO popup screen appears after the plug-in has been run and Firefox reopened.
+
+As said, great system but if this is the extent of your technical support it make a great system totally useless if you have an issue.  Jas N asked a question &lt;b&gt;14 months&lt;/b&gt; ago and looks like they are still waiting for an answer.  Great support guys.....&lt;b&gt;NOT!&lt;/b&gt;
+
+Also, what&amp;#39;s with the Chinese characters in the Remark lines in the setup.cmd?  </content>
+    <blogger:created>2018-02-17T17:13:20.604Z</blogger:created>
+    <published>2018-02-17T17:13:20.604Z</published>
+    <updated>2018-02-17T17:13:20.604Z</updated>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-5851273718023098165</id>
+    <blogger:parent>tag:blogger.com,1999:blog-83871756728038292.post-476181257959721782</blogger:parent>
+    <blogger:type>COMMENT</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>sandhya</name>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title></title>
+    <content type='html'>Thank you for sharing useful information.
+&lt;a href="http://www.cctvinstallationdubai.ae" rel="nofollow"&gt;security cameras dubai&lt;/a&gt;</content>
+    <blogger:created>2019-05-22T06:48:52.613Z</blogger:created>
+    <published>2019-05-22T06:48:52.613Z</published>
+    <updated>2019-05-22T06:48:52.613Z</updated>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-5942798940804998000</id>
+    <blogger:type>PAGE</blogger:type>
+    <blogger:status>IMPORTED_DRAFT</blogger:status>
+    <author>
+      <name>Alexander Garber</name>
+      <uri>https://plus.google.com/+AlexanderGarber1984</uri>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>Published Chapters</title>
+    <content type='html'>&lt;h2&gt;&lt;/h2&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://1.bp.blogspot.com/-iGpqx_fTplI/Ut567FKSXZI/AAAAAAAACxw/R1F8wYTIVqo/s1600/books_magic.jpeg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"&gt;&lt;img border="0" src="http://1.bp.blogspot.com/-iGpqx_fTplI/Ut567FKSXZI/AAAAAAAACxw/R1F8wYTIVqo/s1600/books_magic.jpeg" height="180" width="320" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;&lt;h2&gt;&lt;/h2&gt;&lt;h3&gt;&lt;a href="http://theodessia.blogspot.com.au/2013/12/chapter-i-while-our-sports-shall-be-seen.html" target="_blank"&gt;Introduction: Our Sports Shall Be Seen&lt;/a&gt; &amp;nbsp;&lt;/h3&gt;Introducing Odessa and Trousers, the Crossings, and the mysterious green. &lt;br /&gt;&lt;h2&gt;&amp;nbsp;&lt;/h2&gt;&lt;h2&gt;Part I: The Man in the Mountain&lt;/h2&gt;&lt;br /&gt;&lt;h3&gt;&lt;a href="http://theodessia.blogspot.com/2013/12/chapter-ii-man-in-mountain.html" target="_blank"&gt;Chapter I: Climbing the Mountain&lt;/a&gt;&lt;/h3&gt;A talking mountain and a few friendly hands reaching out.&lt;br /&gt;&lt;br /&gt;&lt;h3&gt;&lt;a href="http://theodessia.blogspot.com/2014/01/chapter-ii-part-two-meeting-man.html" target="_blank"&gt;Chapter II: Meeting the Man &lt;/a&gt;&lt;/h3&gt;Odessa discovers the heart and soul of the mountain.&lt;br /&gt;&lt;br /&gt;&lt;h2&gt;&lt;/h2&gt;&lt;h2&gt;Part II: The Garden in the Sky&lt;/h2&gt;&lt;br /&gt;&lt;h3&gt;&lt;a href="http://theodessia.blogspot.com/2014/01/chapter-iv-piano-in-park_944.html" target="_blank"&gt;Chapter III: The Piano in the Park&lt;/a&gt; &lt;/h3&gt;Our heroes visit an English garden in the sky and help two feuding siblings to make happy music together.&lt;br /&gt;Published on 24th January 2014. &lt;br /&gt;&lt;br /&gt;&lt;h3&gt;&lt;a href="http://theodessia.blogspot.com.au/2014/01/chapter-iv-trousers-and-waistcoat.html" target="_blank"&gt;Chapter IV: Trousers and Waistcoat&lt;/a&gt; &lt;/h3&gt;Where Trousers goes wandering and wondering.&lt;br /&gt;Published on 31st January 2014.&lt;br /&gt;&lt;h3&gt;&lt;a href="http://theodessia.blogspot.com.au/2014/02/chapter-vi-timotheos.html" target="_blank"&gt;Chapter V: Timotheos&lt;/a&gt; &lt;/h3&gt;Odessa meets a mysterious young man.&lt;br /&gt;Published on 7th February 2014.&lt;br /&gt;&lt;br /&gt;&lt;h2&gt;&lt;/h2&gt;&lt;h2&gt;Part III: In the Ogres' Lair&lt;/h2&gt;&lt;br /&gt;&lt;h3&gt;&lt;a href="http://theodessia.blogspot.com.au/2014/02/chapter-vi-cave-in-canyon.html" target="_blank"&gt;Chapter VI: The Cave in the Canyon&lt;/a&gt;&lt;/h3&gt;Odessa and Trousers enter a mysterious cave and find themselves caught between a rock and hard place.&lt;br /&gt;&lt;br /&gt;&lt;h3&gt;&lt;a href="http://theodessia.blogspot.com.au/2014/02/chapter-vii-city-of-ogres.html" target="_blank"&gt;Chapter VII: The City of Ogres&lt;/a&gt; &lt;/h3&gt;To be published on 21st February 2014.&lt;br /&gt;&lt;br /&gt;&lt;h3&gt;&lt;a href="http://theodessia.blogspot.com.au/2014/03/chapter-viii-conversation-about.html" target="_blank"&gt;Chapter VIII: O&lt;/a&gt;n Girls and Women&lt;/h3&gt;To be published on 28th February 2014.&lt;br /&gt;&lt;br /&gt;&lt;h3&gt;Chapter IX: The Catacombs&lt;/h3&gt;To be published on 7th March 2014.&lt;br /&gt;&lt;br /&gt;&lt;h3&gt;Chapter X: The Council&lt;/h3&gt;To be published on 14th March 2014.&lt;br /&gt;&lt;br /&gt;&lt;h3&gt;Chapter XI: Trousers' Report on Ogressia&lt;/h3&gt;To be published on 21st March 2014.&lt;br /&gt;&lt;br /&gt;&lt;h3&gt;Chapter XII: The Cleansing&lt;/h3&gt;To be published on 28th March 2014.&lt;br /&gt;&lt;h3&gt;Chapter XIII: Tazagthrog's Scars&lt;/h3&gt;To be published on 28th March 2014.&lt;br /&gt;&lt;h3&gt;Chapter XIV: The Fall To Freedom&lt;/h3&gt;To be published on 28th March 2014.&lt;br /&gt;&lt;br /&gt;&lt;h2&gt;Part IV: Money and Power &lt;/h2&gt;&lt;br /&gt;&lt;h3&gt;Chapter XIII:&amp;nbsp; The King in the Tree&lt;/h3&gt;To be published on 4th April 2014.&lt;br /&gt;&lt;br /&gt;&lt;h3&gt;Chapter XIV: Hollywood Man [Planned]&lt;/h3&gt;Odessa meets a man who communicates the unspoken through the famous.&lt;br /&gt;(Publication date TBC)</content>
+    <blogger:created>2016-05-09T04:16:04.617Z</blogger:created>
+    <published>2016-05-09T04:16:00.003Z</published>
+    <updated>2016-05-09T04:16:04.619Z</updated>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-6097104154524450579</id>
+    <blogger:type>POST</blogger:type>
+    <blogger:status>DRAFT</blogger:status>
+    <author>
+      <name>Alexander Garber</name>
+      <uri>https://plus.google.com/+AlexanderGarber1984</uri>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>How To Remotely View Provision-ISR CCTV in Your Browser</title>
+    <content type='html'>&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 3pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; line-height: 1.38; white-space: pre-wrap;"&gt;by Alexander Garber&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 3pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; line-height: 1.38; white-space: pre-wrap;"&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 3pt; margin-top: 0pt;"&gt;
+&lt;span style="font-family: &amp;quot;arial&amp;quot;; font-size: 14.6667px; line-height: 1.38; white-space: pre-wrap;"&gt;You can log into a Provision-ISR DVR or NVR or even a stand-alone IP camera via Internet Explorer or Firefox on Windows, or Safari on MacOSX.&lt;/span&gt;&lt;/div&gt;
+&lt;h1 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 20pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 26.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Windows&lt;/span&gt;&lt;/h1&gt;
+&lt;h2 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 18pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 21.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Internet Explorer&lt;/span&gt;&lt;/h2&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Make sure that your Security Settings allow the ActiveX plug-in.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img alt="img5.jpg" height="484" src="https://lh5.googleusercontent.com/kLRy1jTLDDIwP47b1eEj0oNvDW19F2CiTYmB77u8RQiHu9s-GvZIRYjU8PGZJ65kXg53Db-BD7yxYh3vdAJGnewfon1MsfvVDxqEk-xMemaEYd06ACQDSXDtOUB9Qk5NWrZB7BRu" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="427" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;b id="docs-internal-guid-335b9d28-93b2-e3f1-e707-75a55a1c29fd" style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Next, go to the external IP or DDNS address provided by your installer.&lt;/span&gt;&lt;/div&gt;
+&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;You will see a screen with a light blue background. &amp;nbsp;Your browser should prompt you to run an ActiveX control. &amp;nbsp;Authorise your browser to do so, and when this screen appears, enter your username and password.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img alt="2016-04-07_internet_explorer_04.PNG" height="423" src="https://lh4.googleusercontent.com/h7CG1NaCUlcmIL5Jj44RA5NHL1nE6H1vlHVCDNhcvPaTpIGgf3tpdy3Z_odIDZYKepA06NXuz9n4Ci82Smnd85qh4WSy8SQ08tMi5JxDnYbfhQKIN4qq-3qD2hpHl62ZxLLZfOVg" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="586" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;
+&lt;h2 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 18pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 21.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt; &lt;/span&gt;&lt;/h2&gt;
+&lt;h2 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 18pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 21.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Firefox&lt;/span&gt;&lt;/h2&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt; &lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Your CCTV system’s web address will take you to a light-blue page with a large download button and a refresh button. &amp;nbsp;Click the download button to download the file Webclient.exe.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="325" src="https://docs.google.com/drawings/d/scMeo3EmezAPA1jjEi24GmA/image?w=624&amp;amp;h=325&amp;amp;rev=7&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img alt="2016-04-07_Firefox_ActiveX_3.PNG" height="256" src="https://lh4.googleusercontent.com/uEyn8LGN1qPDUc6bfJR6v7Ku9OpsOUW5FbOvvesBg55SnXYsUtv0_J4Mzg0owokkX3I1E2uzqA0M9d60lved0luXekG8-9gFphqQb3aGeBo1n9lELCT4oxycS1GEl716chCdp5aN" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="554" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Close Firefox.&lt;/span&gt;&lt;/div&gt;
+&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Open Windows Explorer, locate the downloaded Webclient.exe and run it.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img alt="2016-04-07_Firefox_ActiveX_4.PNG" height="292" src="https://lh6.googleusercontent.com/YfhmBu-QQKcNZqB18_SHTlMq6xFADe5kMcKx4UxRqFeoV0cCLbcVk6OWp6ZJIvDCctggsNUcthil_fQS_7Bh0hGhPqHNhcSHDQ5pZnyzZb_tGZ2kTEvv0zZCp_lbN4PpmFMdmah1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="298" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;A terminal window will open briefly and then close again.&lt;/span&gt;&lt;/div&gt;
+&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Re-open Firefox and return to your CCTV system’s web address. &amp;nbsp;Now you should receive a pop-up notification asking for permission to run an ActiveX control.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img height="325" src="https://docs.google.com/drawings/d/s0fMV9ulCVjLqcw_t8PurRw/image?w=624&amp;amp;h=325&amp;amp;rev=11&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img alt="Firefox Active X 2.PNG" height="238" src="https://lh5.googleusercontent.com/mScjiDcDV8rAv4MgfXSRd0AJirBnsYMW3o85N2qA0Ze0dZCtgwN8GgqlwzGeuZx4GZkKpER8khwkslMyoBBt8udY6cwCV2j-DUH4HDiOziX8CCtX_RazvWmtp-SMnT5N9VHEKkjy" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="558" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Finally, refresh the page.&lt;/span&gt;&lt;/div&gt;
+&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;You will see a screen with a light blue background. &amp;nbsp;Your browser should prompt you to run an ActiveX control. &amp;nbsp;Authorise your browser to do so, and when this screen appears, enter your username and password.&lt;/span&gt;&lt;/div&gt;
+&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;img alt="2016-04-07_internet_explorer_04.PNG" height="423" src="https://lh4.googleusercontent.com/h7CG1NaCUlcmIL5Jj44RA5NHL1nE6H1vlHVCDNhcvPaTpIGgf3tpdy3Z_odIDZYKepA06NXuz9n4Ci82Smnd85qh4WSy8SQ08tMi5JxDnYbfhQKIN4qq-3qD2hpHl62ZxLLZfOVg" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="586" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;b style="font-weight: normal;"&gt;&lt;br /&gt;&lt;/b&gt;
+&lt;h1 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 20pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 26.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Mac OSX&lt;/span&gt;&lt;/h1&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Safari is the only browser on Mac OSX that consistently allows the necessary ActiveX controls for logging into a Provision-ISR system, although it is theoretically possible on Firefox too.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Instructions for Mac OSX will be made available soon.&lt;/span&gt;&lt;/div&gt;
+&lt;h1 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 20pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 26.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;Linux&lt;/span&gt;&lt;/h1&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;There is currently no way to log into a Provision-ISR system via a browser on Linux, as the ActiveX controls necessary are not available for Linux. &amp;nbsp;Your best bet is to run Internet Explorer or Firefox in a Windows Virtualbox. &amp;nbsp;A theoretical possibility is to run Internet Explorer in Wine, but this has not been done to date with any success.&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+    <blogger:created>2016-05-09T04:16:02.778Z</blogger:created>
+    <published>2016-05-09T04:08:00Z</published>
+    <updated>2016-07-08T05:08:15.948Z</updated>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='remote view'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='safari'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='internet explorer'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='browser'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='provision-isr'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='firefox'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='tutorial'/>
+    <blogger:filename>/2016/05/how-to-remotely-view-provision-isr-cctv.html</blogger:filename>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-7642951990054113735</id>
+    <blogger:type>POST</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Centrevision</name>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>How To Get Essential Information About Your Network</title>
+    <content type='html'>&lt;div dir="ltr" id="docs-internal-guid-d74fb69b-4396-9266-94fe-b58d4d8bb30e" style="line-height: 1.38; margin-bottom: 3pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 34.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;How To Get Essential Information About Your Network&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Click the Windows logo in the bottom left to bring up the Windows Search tool.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="601" src="https://docs.google.com/a/centrevision.com.au/drawings/d/s8rvXoQGs7v15qf5KcNkQHw/image?w=586&amp;amp;h=601&amp;amp;rev=1&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="586" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Type “run”.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="601" src="https://docs.google.com/a/centrevision.com.au/drawings/d/sZWgnq2TjB3m-xrKpU8xMOQ/image?w=573&amp;amp;h=601&amp;amp;rev=1&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="573" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;In the Windows Search Tool, type “cmd” in the Run program and click “OK”.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="373" src="https://docs.google.com/a/centrevision.com.au/drawings/d/s-iEKqEDApq_-59b-xx4BEg/image?w=530&amp;amp;h=373&amp;amp;rev=1&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="530" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;This will open a command line terminal. &amp;nbsp;At the command prompt, type “ipconfig /all”.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="117" src="https://docs.google.com/a/centrevision.com.au/drawings/d/shF9R2ElbzPyFq2RwFqxWsw/image?w=624&amp;amp;h=117&amp;amp;rev=13&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Note every instance of the following, it may vary between adapters:&lt;/span&gt;&lt;/div&gt;
+&lt;ul style="margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; list-style-type: disc; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline;"&gt;Default gateway&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; list-style-type: disc; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline;"&gt;DHCP Server&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; list-style-type: disc; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline;"&gt;DNS Servers&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="380" src="https://docs.google.com/a/centrevision.com.au/drawings/d/sxXNfNnpgWr5PqrXWtA9cvQ/image?w=624&amp;amp;h=380&amp;amp;rev=16&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;To copy all of the information from the terminal:&lt;/span&gt;&lt;/div&gt;
+&lt;ol style="margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; list-style-type: decimal; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline;"&gt;Right-click&lt;/span&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt; in the terminal screen to bring up the context menu &lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; list-style-type: decimal; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline;"&gt;Left-click &lt;/span&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;“Select All”&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="419" src="https://docs.google.com/a/centrevision.com.au/drawings/d/s9iU5lUl5TlbhkYiI3sWsRg/image?w=624&amp;amp;h=419&amp;amp;rev=8&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Then press Enter to copy the selected text.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="563" src="https://docs.google.com/a/centrevision.com.au/drawings/d/s1cDVRYCa_FxeSG7_OaUZiw/image?w=624&amp;amp;h=563&amp;amp;rev=145&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;h1 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 20pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 26.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Saving the Information&lt;/span&gt;&lt;/h1&gt;
+&lt;ol style="margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; list-style-type: decimal; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Click the Windows icon.&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; list-style-type: decimal; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Type Notepad.&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; list-style-type: decimal; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Left-click the Notepad Desktop App icon.&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="459" src="https://lh3.googleusercontent.com/CDDQzSDl-FmRm9a9rNTKFWTWI5V1-066qk3WvdeVMRdLM4pnyunKwBH8nXeE4V9VF7jy1lzlJVJf1DkJXqEJJBrOfiX9aBDgc0BPjr98Flod7fTLa1Wgio1r1C68PEvoxEKXlkHz" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="307" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Paste the contents into a Notepad window and save&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="465" src="https://lh3.googleusercontent.com/27M3WcwIEAINn_BTi00HwjBTf6Ro4jMRGXOXo3fqQnT_kiq7w9drODYSo2MYyi9B8By56g5QdVRb0TaqbWL_bOzFigdBehwA1tsHqy2_Z7EiB22Dn277ro2iG5C6zubuuyhlEmX5" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="616" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Copy the same text.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="432" src="https://lh5.googleusercontent.com/A_0OfwkkFjHlBMO5jMxai3x92M2n40q7ThDjaJkxjZFUeeEHQ1lOl8a8zAJcHM4RpFR-dhHYMzXyJ6TC_adyp9HWswib2RRMwlR4YQSJS9u8BxJkcD1E0i9mbu0kXKzzVCkxXWmT" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="561" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Send the email to your support representative or security installer.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="473" src="https://lh3.googleusercontent.com/nqjueiVYS3FGXGlhWJv4a-3U5ONORRCEQomzPB9NmiawPDUaT6NeiyXlmCHioe3giK4BLlXkx-ViIN7xfiMQzWvI-S4RZ8ZIGA0u80JivZPhg-Da1jT5E9X6aos2O4D9EQoLz0Zb" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+</content>
+    <blogger:created>2016-08-01T00:52:26.661Z</blogger:created>
+    <published>2016-08-01T00:54:00Z</published>
+    <updated>2016-08-01T00:54:07.330Z</updated>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='dns'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='windows'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='ipconfig'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='gateway'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='dhcp'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='network'/>
+    <blogger:filename>/2016/07/how-to-get-essential-information-about.html</blogger:filename>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-7749618261422594379</id>
+    <blogger:type>POST</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Centrevision</name>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>How to Adjust a Provision-ISR AHD Camera with Control over Coax (CoC)</title>
+    <content type='html'>&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;
+&lt;div dir="ltr" id="docs-internal-guid-89cde15e-289c-b618-953a-a0be91f24287" style="line-height: 1.38; margin-bottom: 3pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 34.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;How To Adjust a Provision-ISR AHD Camera via Control over Coax (CoC)&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Certain Provision-ISR AHD cameras are equipped with CoC (Control over Coax), which gives you access to the full camera menu from the browser.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Please check with your local Provision-ISR supplier to make sure that this option is available for your AHD camera.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;The camera used in this demonstration is &lt;a href="http://www.provision-isr.com/index.php?page=shop.product_details&amp;amp;flypage=flypage.tpl&amp;amp;category_id=88&amp;amp;product_id=551&amp;amp;option=com_virtuemart&amp;amp;Itemid=18&amp;amp;lang=en&amp;amp;vmcchk=1&amp;amp;Itemid=18" target="_blank"&gt;IV-390AHD37&lt;/a&gt;.&lt;/span&gt;&lt;/div&gt;
+&lt;h2 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 18pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 21.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Step One: Open the Browser Interface.&lt;/span&gt;&lt;/h2&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Here are &lt;/span&gt;&lt;a href="http://tipsandtricksforprovisionisr.blogspot.com/2016/06/how-to-remotely-view-provision-isr-cctv.html" style="text-decoration: none;" target="_blank"&gt;&lt;span style="background-color: transparent; color: #1155cc; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: underline; vertical-align: baseline;"&gt;full instructions for logging into your Provision-ISR DVR via the browser&lt;/span&gt;&lt;/a&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="2016-04-07_internet_explorer_04.PNG" height="423" src="https://lh3.googleusercontent.com/Ew-hJIIu-W24nJeXpH3pv8oAD6u02S58PGppq6mJpL8U37prFeVkpx4FL2qmwVbqq2xWG9liikGPkgixtcmJp5sNhVotNhtJ1eX5uv5DTjUdPltlah66Kzw2KLNFB8gJ5O0FVwDl" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="586" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;h2 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 18pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 21.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;STEP TWO: Bring up the Camera’s PTZ Settings&lt;/span&gt;&lt;/h2&gt;
+&lt;ol style="margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; list-style-type: decimal; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Bring up the full-screen view of your desired camera.&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="403" src="https://docs.google.com/drawings/u/0/d/s4TM8YyXKioOyTvbC37fUUg/image?w=624&amp;amp;h=403&amp;amp;rev=8&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;ol start="2" style="margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;li dir="ltr" style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; list-style-type: decimal; text-decoration: none; vertical-align: baseline;"&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Select the PTZ settings from the right-hand sidebar.&lt;/span&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="405" src="https://docs.google.com/drawings/u/0/d/sAwoRfSci9iLJ4KjXA4aCvg/image?w=624&amp;amp;h=405&amp;amp;rev=9&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;h2 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 18pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 21.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;STEP THREE: Summon the Camera Settings Menu&lt;/span&gt;&lt;/h2&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Click the Plus sign next to the IRIS icon to summon the camera settings menu.&lt;/span&gt;&lt;/div&gt;
+&lt;h2 dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 18pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 21.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="415" src="https://docs.google.com/drawings/u/0/d/s1-NugjPYI_WyBHuQvsgcrg/image?w=624&amp;amp;h=415&amp;amp;rev=10&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 21.333333333333332px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;STEP FOUR: Navigate the Camera Settings Menu&lt;/span&gt;&lt;/h2&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;The PTZ controls serve as the Control over Coax interface.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: &amp;quot;arial&amp;quot;; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img alt="AHD Camera Live View PTZ Settings 4 overlay with arrows.png" height="347" src="https://lh3.googleusercontent.com/lHh8Sg4tR05Nlo3kBeOqW9e1rQzwPTKFKDQXZhW5o3ogaArdDKXWFE1UnWr1o_7w7TpLYxy3OpE0bsP4pyyYN8MOSPTU1cpU6ZSYpl2tK6Lp8xJgEJxhW2yaFiGyVIG2hwqlz3hA" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content>
+    <blogger:created>2016-06-07T02:07:36.426Z</blogger:created>
+    <published>2016-06-07T02:10:00Z</published>
+    <updated>2016-07-08T05:00:55.675Z</updated>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='coc'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='browser'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='ptz'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='joystick'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='control over coax'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='tutorial'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='ahd'/>
+    <blogger:filename>/2016/06/how-to-adjust-provision-isr-ahd-camera.html</blogger:filename>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-8166445176861476811</id>
+    <blogger:type>POST</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Centrevision</name>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>How To Find Out The Default Gateway On Windows</title>
+    <content type='html'>&lt;div dir="ltr" id="docs-internal-guid-2de22390-2f2f-7ec8-329e-8cc3c0b5f5f0" style="line-height: 1.38; margin-bottom: 3pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 34.666666666666664px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;How To Find Out The Default Gateway On Windows&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Click the Windows logo in the bottom left to bring up the Windows Search tool.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="601" src="https://docs.google.com/drawings/u/0/d/sTBgsKGfzcPZBwJvpVw0qzQ/image?w=586&amp;amp;h=601&amp;amp;rev=12&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="586" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Type “run”.&lt;/span&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;br /&gt;&lt;/div&gt;
+&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="601" src="https://docs.google.com/drawings/u/0/d/sWZJsEC5_YcRKdcoD72F7tA/image?w=573&amp;amp;h=601&amp;amp;rev=7&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="573" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;In the Windows Search Tool, type “cmd” in the Run program and click “OK”.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="373" src="https://docs.google.com/drawings/u/0/d/s0K9QUb16UosBkb9wT4FdNQ/image?w=530&amp;amp;h=373&amp;amp;rev=3&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="530" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;This will open a command line terminal. &amp;nbsp;At the command prompt, type “ipconfig”.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="424" src="https://docs.google.com/drawings/u/0/d/s77-7qS819cQ81Yh7G7p1cQ/image?w=624&amp;amp;h=424&amp;amp;rev=3&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;Look for the &lt;/span&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: underline; vertical-align: baseline;"&gt;default gateway&lt;/span&gt;&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;. &amp;nbsp;In a simple network, this will also be the address of the router.&lt;/span&gt;&lt;/div&gt;
+&lt;br /&gt;&lt;div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"&gt;
+&lt;span style="background-color: transparent; color: black; font-family: Arial; font-size: 14.666666666666666px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline;"&gt;&lt;img height="432" src="https://docs.google.com/drawings/u/0/d/s5j3Q6IIkdcH_jJ2ErKbUjA/image?w=624&amp;amp;h=432&amp;amp;rev=7&amp;amp;ac=1" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /&gt;&lt;/span&gt;&lt;/div&gt;
+</content>
+    <blogger:created>2016-07-28T01:30:05.723Z</blogger:created>
+    <published>2016-07-28T01:49:00.003Z</published>
+    <updated>2016-07-28T01:49:53.492Z</updated>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='router'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='command line'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='terminal'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='windows'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='gateway'/>
+    <category scheme='tag:blogger.com,1999:blog-83871756728038292' term='network'/>
+    <blogger:filename>/2016/07/how-to-find-out-default-gateway-on.html</blogger:filename>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-8229263933941154252</id>
+    <blogger:parent>tag:blogger.com,1999:blog-83871756728038292.post-5328589983213598138</blogger:parent>
+    <blogger:type>COMMENT</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Safeall</name>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title></title>
+    <content type='html'>Thank you for your post. It is amazing and wonderful to visit your Blog.
+&lt;a href="http://safeall.in/" rel="nofollow"&gt;SAFEALL Cheapest Video Door Phones
+&lt;/a&gt;</content>
+    <blogger:created>2019-02-08T07:22:15.036Z</blogger:created>
+    <published>2019-02-08T07:22:15.036Z</published>
+    <updated>2019-02-08T07:22:15.036Z</updated>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-8743832147179769180</id>
+    <blogger:type>PAGE</blogger:type>
+    <blogger:status>IMPORTED</blogger:status>
+    <author>
+      <name>Alexander Garber</name>
+      <uri>https://plus.google.com/+AlexanderGarber1984</uri>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>RSS Feeds</title>
+    <content type='html'>&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;If you would like to subscribe to specific topics covered by this blog, here are RSS feeds to suit your tastes.&amp;nbsp; Simply copy the hyperlink and feed it into your RSS reader.&lt;br /&gt;&lt;h2 style="text-align: left;"&gt;&lt;a href="http://alexandergarber.blogspot.com.au/search/label/theodessia" target="_blank"&gt;The Odessia&lt;/a&gt;&lt;/h2&gt;&lt;div style="text-align: left;"&gt;Anything and everything that pertains to The Odessia, a fantasy novel about an adventurous young woman and her feline companion.&lt;/div&gt;&lt;div style="text-align: left;"&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style="text-align: left;"&gt;RSS Feed:&lt;/div&gt;&lt;div style="text-align: left;"&gt;&lt;a href="http://alexandergarber.blogspot.com/feeds/posts/default/-/theodessia?alt=rss"&gt;http://alexandergarber.blogspot.com/feeds/posts/default/-/theodessia?alt=rss&lt;/a&gt;&lt;/div&gt;&lt;h2 style="text-align: left;"&gt;&lt;a href="http://alexandergarber.blogspot.com.au/search/label/faijournal" target="_blank"&gt;FAI Journal&lt;/a&gt; &lt;/h2&gt;&lt;div style="text-align: left;"&gt;A record of my thoughts, experiences, experiments, successes, and setbacks in my pursuit of mobility, flexibility, fitness, strength, balance, and agility.&lt;/div&gt;&lt;div style="text-align: left;"&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style="text-align: left;"&gt;RSS Feed:&lt;/div&gt;&lt;a href="http://alexandergarber.blogspot.com/feeds/posts/default/-/faijournal?alt=rss"&gt;http://alexandergarber.blogspot.com/feeds/posts/default/-/faijournal?alt=rss&lt;/a&gt;&lt;br /&gt;&lt;h2 style="text-align: left;"&gt;&lt;a href="http://alexandergarber.blogspot.com.au/search/label/reflections" target="_blank"&gt;Reflections&lt;/a&gt;&lt;/h2&gt;&lt;div style="text-align: left;"&gt;Thoughts and musings on whatever comes to mind, which one way or another does not pertain to the other two topics.&amp;nbsp; I suspect most of it will have to do with cooking.&lt;/div&gt;&lt;div style="text-align: left;"&gt;&lt;br /&gt;&lt;/div&gt;&lt;div style="text-align: left;"&gt;RSS Feed:&amp;nbsp;&lt;/div&gt;&lt;div style="text-align: left;"&gt;&lt;a href="http://alexandergarber.blogspot.com/feeds/posts/default/-/reflections?alt=rss"&gt;http://alexandergarber.blogspot.com/feeds/posts/default/-/reflections?alt=rss&lt;/a&gt;&lt;/div&gt;&lt;div style="text-align: left;"&gt;&lt;br /&gt;&lt;/div&gt;&lt;/div&gt;</content>
+    <blogger:created>2016-05-09T04:16:04.574Z</blogger:created>
+    <published>2016-05-09T04:16:00Z</published>
+    <updated>2016-05-09T04:16:04.576Z</updated>
+    <blogger:filename>/p/rss-feeds.html</blogger:filename>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-83871756728038292.post-9103205282197649284</id>
+    <blogger:type>PAGE</blogger:type>
+    <blogger:status>IMPORTED_DRAFT</blogger:status>
+    <author>
+      <name>Alexander Garber</name>
+      <uri>https://plus.google.com/+AlexanderGarber1984</uri>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>Creative Commons Artwork</title>
+    <content type='html'>&lt;h2&gt;Images&lt;/h2&gt;&lt;br /&gt;</content>
+    <blogger:created>2016-05-09T04:16:04.591Z</blogger:created>
+    <published>2016-05-09T04:16:00.001Z</published>
+    <updated>2016-05-09T04:16:04.593Z</updated>
+  </entry>
+</feed>

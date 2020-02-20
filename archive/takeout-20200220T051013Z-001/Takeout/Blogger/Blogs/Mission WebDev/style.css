@@ -1,0 +1,36 @@
+body {
+	font-size:	1.0em;
+	font-weight:	normal;
+}
+table{
+  display: table;
+}
+
+tr{
+  border: 1px solid red;
+  display: table-row;
+}
+
+th{
+  font-weight: bold;
+  text-decoration: underline;
+  padding: 0.5em 1.0em 1.0em 1.0em;
+}
+
+td{
+  padding: 1.0em;
+  vertical-align: top;
+}
+
+h1 {
+	font-weight: bold;
+	font-size:	3.0em;
+}
+h2 {
+	font-weight: bold;
+	font-size:	2.0em;
+}
+h3 {
+	text-transform: uppercase;
+	font-size:	1.5em;
+}

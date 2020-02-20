@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns='http://www.w3.org/2005/Atom' xmlns:blogger='http://schemas.google.com/blogger/2018'>
+  <id>tag:blogger.com,1999:blog-5420908981876822688</id>
+  <title>Evyatar's English Blog</title>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5420908981876822688.post-6455828829775288592</id>
+    <blogger:type>POST</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Semper Veritas</name>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>Homework and other tasks (14/11/2012)</title>
+    <content type='html'>This is just a demo</content>
+    <blogger:created>2012-11-14T07:49:36.112Z</blogger:created>
+    <published>2012-11-14T07:49:00.001Z</published>
+    <updated>2012-11-14T07:50:04.800Z</updated>
+    <blogger:filename>/2012/11/homework-and-other-tasks-14112012.html</blogger:filename>
+  </entry>
+  <entry>
+    <id>tag:blogger.com,1999:blog-5420908981876822688.post-8003204304789002066</id>
+    <blogger:type>POST</blogger:type>
+    <blogger:status>LIVE</blogger:status>
+    <author>
+      <name>Semper Veritas</name>
+      <blogger:type>BLOGGER</blogger:type>
+    </author>
+    <title>Welcome!</title>
+    <content type='html'>Welcome to the blog of Evyatar!&lt;br /&gt;
+&lt;br /&gt;
+I am an Israeli boy 
+living in Melbourne, Australia, and I'll use this blog to improve my 
+English, develop my writing, and reflect on life in Australia.</content>
+    <blogger:created>2012-11-14T05:37:04.147Z</blogger:created>
+    <published>2012-11-14T05:39:00.001Z</published>
+    <updated>2012-11-14T05:39:37.808Z</updated>
+    <blogger:filename>/2012/11/welcome.html</blogger:filename>
+  </entry>
+</feed>
