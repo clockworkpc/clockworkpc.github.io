@@ -27,8 +27,12 @@ twitter_username: clockworkpc
 github_username:  clockworkpc
 
 # Build settings
+<<<<<<< HEAD
 # theme: jekyll-theme-hacker
 theme: jekyll-dash
+=======
+theme: jekyll-theme-hacker
+>>>>>>> ec334d1ee2f77fee3e8980502110d8c8524ae2bc
 plugins:
   - jekyll-feed
   - jekyll/tagging
