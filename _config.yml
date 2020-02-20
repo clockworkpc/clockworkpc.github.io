@@ -29,6 +29,7 @@ github_username:  clockworkpc
 # Build settings
 # theme: jekyll-theme-hacker
 theme: jekyll-dash
+remote_theme: bitbrain/jekyll-dash
 # theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
