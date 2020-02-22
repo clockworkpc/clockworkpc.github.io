@@ -1,0 +1,9 @@
+---
+layout: post
+title: "Rails Study, Day 4: Docker and Vagrant"
+date: "2017-03-29"
+author: "Alexander Garber"
+tags: []
+---
+
+I came for Rails, I'm working on DevOps.The purpose of this post is to give an account of setting up my development environment in order to study Ruby on Rails.I am already familiar with Vagrant, and initially thought I would spin an Ubuntu 16.04 box and work in that.  However, the obvious and numerous disadvantages of working in a virtual machine on a local hard drive demanded that I find something better.So I decided to finally invest some time on Docker, and I have to say, once I wrapped my head around the concept of containers, getting started seems fairly straightforward.Initial Steps:Install Vagrant on my hostInstall Docker on my hostSpin up an Ubuntu box in VagrantInstall Docker on my VMCreate an account on Docker HubDownload the Heroku Cedar 16 imageCreate a private docker repository on my hostRun the Heroku Docker imagePush a modified Docker image to my own repositoryPull the modified Docker image to my VMAnd so forth.As I want my development environment to mirror Heroku's settings as closely as possible, I decided to see what the Heroku website itself has to say on the matter.My inclination was to keep it simple by using Vagrant, but Heroku's Cedar stack is available as a Docker image, so I will go with Docker instead.  I've been meaning to familiarise myself with Docker for a while, so this works for me.Official Notes for Docker are available from Gist.This videos helps to demystify Docker.I'm now looking into simplifying it further and using a Droplet from Digital Ocean.

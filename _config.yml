@@ -28,8 +28,8 @@ github_username:  clockworkpc
 
 # Build settings
 # theme: jekyll-theme-hacker
-# theme: jekyll-dash
-remote_theme: bitbrain/jekyll-dash
+theme: jekyll-dash
+# remote_theme: bitbrain/jekyll-dash
 # theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
@@ -59,7 +59,7 @@ plugins:
 url: https://your-site-url
 
 # jekyll-paginate
-paginate: 15
+paginate: 300
 paginate_path: "/blog/page:num/"
 
 # jekyll-tagging (optional)

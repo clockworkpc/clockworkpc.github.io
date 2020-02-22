@@ -1,0 +1,9 @@
+---
+layout: post
+title: "State of the Mission: Sunday, 11th December 2016"
+date: "2016-12-11"
+author: "Alexander Garber"
+tags: []
+---
+
+Week 50 of 2016Mission DevOpsWork CompletedI started Learn Ruby the Hard Way, got up to Chapter 40, and have been posting about my learning along the way.Plans for Next WeekFocusing on Learn Ruby the Hard Way is proving as beneficial as I had hoped, and I have every reason to complete it by the end of Week 51 of 2016.  Thereafter, my focus will be on PROJECTS, i.e. something to show for all my efforts.Transferring my Pastebin to Gist using APIs.The Toy Robot ChallengeAdvent of CodeStarting my job research web scraper and analysis tool.There is every reason for me to get started on substantive projects that I can put on Github and then direct all and sundry to.  Owing to the paucity of code in my Github, I have been reticent to contact potential recruiters and apply for jobs, but come the last of December, business shutting down notwithstanding, I should have every reason to send out missives and apply online. Special ProjectMy super-special-but-perhaps-not-so-top-secret project is ticking along on schedule.  I have a few more weeks to go, so that's all I've got to say about it for now.The OdessiaNot much progress on the Odessia this week, but my schedule will permit a lot more creative writing time soon.Personal MattersJust the usual washing, cleaning, tidying for the most part.  I have been in touch with uncle, who has been unwell, and attended to the usual bits and pieces that crop up.  One day, when I'm very wealthy and successful, I will have a secretary to handle these matters.

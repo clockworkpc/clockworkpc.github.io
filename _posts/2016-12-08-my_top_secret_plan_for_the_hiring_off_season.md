@@ -1,0 +1,9 @@
+---
+layout: post
+title: "My Top Secret Plan for the Hiring Off-season"
+date: "2016-12-08"
+author: "Alexander Garber"
+tags: []
+---
+
+Let's be realistic: I shan't get a start as a junior developer  before Christmas, nor can I expect to be hired before the end of January.  Back in September, I had hoped to get a start in late November, maybe get something lined up in December, but that did not come to pass.Would I prefer to get a start straight away?  Of course I do.Can I change prospective employers' hiring practices?  No.I could bemoan the effect of two months of unemployment on my savings, but that won't get me anywhere.Instead, let's look at this as an opportunity: I have two whole months in which to learn as much as possible about programming in Ruby, and build up a portfolio of code in Github.  I can't batter down doors that are closed for Christmas and New Year's, but I can put myself in the best position for when they re-open.So what's the plan?Complete Learn Ruby the Hard WayBlog about what I learnLearn about test-driven development (TDD)Transfer the contents of my Pastebin to Gist in an intelligent wayBuild the web scraper for my research tool and get it up on GithubBuild the analysis component of my research tool and get it up on GithubGo to meet-upsParticipate in SlackFind a mentor to review my codeWrite an end-of-month summary for all the Leads and Contacts in my CRMIn addition to all that, work on the Odessia, keep a clean home, cook, exercise, early to bed and early to rise, and enjoy every weekend with my beloved, friends, and family.So this year, Christmas 2016, there will be no reason for me to slow down, and every reason to push harder into 2017.
