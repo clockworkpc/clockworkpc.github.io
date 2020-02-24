@@ -6,4 +6,4 @@ author: "Alexander Garber"
 tags: []
 ---
 
-Closed [melbourne-code-reading-club] Created Alexander's profile and added to members.html by clockworkpc via GitHub
+<br>

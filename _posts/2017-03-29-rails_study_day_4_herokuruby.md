@@ -6,4 +6,9 @@ author: "Alexander Garber"
 tags: []
 ---
 
-Alright, I've jotted down my plan, let's see how we go:docker pull heroku/ruby
+<div dir="ltr" style="text-align: left;" trbidi="on">Alright, I've jotted down my plan, let's see how we go:<br><br>
+          <ol style="text-align: left;">
+            <li>docker pull heroku/ruby</li>
+            <li><br></li>
+          </ol>
+        </div>

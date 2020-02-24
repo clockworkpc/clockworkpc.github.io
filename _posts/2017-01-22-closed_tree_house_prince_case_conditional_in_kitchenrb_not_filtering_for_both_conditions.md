@@ -6,4 +6,4 @@ author: "Alexander Garber"
 tags: []
 ---
 
-Closed [tree-house-prince] Case Conditional in Kitchen.rb not filtering for both conditions by clockworkpc via GitHub
+<br>

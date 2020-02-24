@@ -6,4 +6,4 @@ author: "Alexander Garber"
 tags: []
 ---
 
-Closed [melbourne-code-reading-club] Added Liam's profile. Updated members list. by liamcoopersmith via GitHub
+<br>

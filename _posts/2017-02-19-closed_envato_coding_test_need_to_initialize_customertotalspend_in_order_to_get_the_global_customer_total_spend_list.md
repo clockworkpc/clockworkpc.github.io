@@ -6,4 +6,4 @@ author: "Alexander Garber"
 tags: []
 ---
 
-Closed [envato_coding_test] Need to initialize CustomerTotalSpend in order to get the global $customer_total_spend list by clockworkpc via GitHub
+<br>
