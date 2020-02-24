@@ -6,4 +6,39 @@ author: "Alexander Garber"
 tags: []
 ---
 
-I can't see a practical difference between the boolean operators AND and OR in a Ruby case conditional.For example, I want to get the user to input the sentence:sudo make me a sandwichAnd the case conditional starts as follows:case user_selectionwhen /sudo/ && /sandwich/However, if the user enters:make me a sandwichThe condition will be a satisfied.My way around it in this instance is to re-order the conditions:case user_selectionwhen /sandwich/ && /sudo/But that pre-supposes that every time a user thinks to use "sudo" he will include the string "sandwich" in his response.  However, this is functionally no different from this:case user_selectionwhen /sudo/I looked up boolean operators for Ruby conditionals, but have not found a satisfactory answer.
+<div dir="ltr" style="text-align: left;" trbidi="on">I can't see a practical difference between the boolean operators AND and OR in a Ruby case conditional.<div><br></div>
+        <div>For example, I want to get the user to input the sentence:</div>
+        <div><br></div>
+        <div>
+          <pre class="brush:plain">sudo make me a sandwich</pre>
+        </div>
+        <div><br></div>
+        <div>And the case conditional starts as follows:</div>
+        <div><br></div>
+        <div>
+          <pre class="brush:ruby">case user_selection<br>when /sudo/ &amp;&amp; /sandwich/</pre>
+        </div>
+        <div><br></div>
+        <div>However, if the user enters:</div>
+        <div><br></div>
+        <div>
+          <pre class="brush:ruby">make me a sandwich</pre>
+        </div>
+        <div><br></div>
+        <div>The condition will be a satisfied.</div>
+        <div><br></div>
+        <div>My way around it in this instance is to re-order the conditions:</div>
+        <div><br></div>
+        <div>
+          <pre class="brush:ruby">case user_selection<br>when /sandwich/ &amp;&amp; /sudo/</pre>
+          <div><br></div>
+          <div>But that pre-supposes that every time a user thinks to use "sudo" he will include the string "sandwich" in his response.  However, this is functionally no different from this:</div>
+          <div><br></div>
+          <div>
+            <pre class="brush:ruby">case user_selection<br>when /sudo/</pre>
+          </div>
+<br>
+          <div>I looked up boolean operators for Ruby conditionals, but have not found a satisfactory answer.</div>
+          <div><br></div>
+        </div>
+      </div>

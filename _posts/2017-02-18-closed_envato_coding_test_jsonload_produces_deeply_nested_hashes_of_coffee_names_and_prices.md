@@ -6,4 +6,4 @@ author: "Alexander Garber"
 tags: []
 ---
 
-Closed [envato_coding_test] JSON.load produces deeply nested hashes of coffee names and prices by clockworkpc via GitHub
+<br>

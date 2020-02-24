@@ -6,4 +6,4 @@ author: "Alexander Garber"
 tags: []
 ---
 
-Closed [envato_coding_test] payments.json contains more than one entry per customer by clockworkpc via GitHub
+<br>

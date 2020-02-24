@@ -6,4 +6,4 @@ author: "Alexander Garber"
 tags: []
 ---
 
-Closed [envato_coding_test] Trying to create a Hash of customer history, but keep on over-writing the previous entry by clockworkpc via GitHub
+<br>
