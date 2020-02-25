@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Toy Robot Problem | CPC Blog</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Toy Robot Problem" />
+<meta name="author" content="Alexander Garber" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Refer to Ryan Bigg&#39;s book: https://leanpub.com/toyrobot Code problem details: Toy Robot Simulator Description:The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units. There are no other obstructions on the table surface. The robot is free to roam around the surface of the table, but must beprevented from falling to destruction. Any movement that would result in the robot falling from the table must be prevented, however further valid movement commands must still be allowed.Create an application that can read in commands of the following form: PLACE X,Y,FMOVELEFTRIGHTREPORT PLACE will put the toy robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST. The origin (0,0) can be considered to be the SOUTH WEST most corner. The first valid command to the robot is a PLACE command, after that, any sequence of commands may be issued, in any order, including another PLACE command. The application should discard all commands in the sequence until a  valid PLACE command has been executed.  MOVE will move the toy robot one unit forward in the direction it is currently facing.  LEFT and RIGHT will rotate the robot 90 degrees in the specified direction without changing the position of the robot.  REPORT will announce the X,Y and F of the robot. This can be in any form, but standard output is sufficient. A robot that is not on the table can choose the ignore the MOVE, LEFT, RIGHT and REPORT commands. Input can be from a file, or from standard input, as the developer chooses. Provide test data to exercise the application. Constraints:The toy robot must not fall off the table during movement. This also includes the initial placement of the toy robot.  Any move that would cause the robot to fall must be ignored. Example Input and Output:a) PLACE 0,0,NORTHMOVEREPORTOutput: 0,1,NORTHb) PLACE 0,0,NORTHLEFTREPORTOutput: 0,0,WESTc) PLACE 1,2,EASTMOVEMOVELEFTMOVEREPORTOutput: 3,3,NORTH Deliverables:The source files, the test data and any test code.It is not required to provide any graphical output showing the movement of thetoy robot." />
+<meta property="og:description" content="Refer to Ryan Bigg&#39;s book: https://leanpub.com/toyrobot Code problem details: Toy Robot Simulator Description:The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units. There are no other obstructions on the table surface. The robot is free to roam around the surface of the table, but must beprevented from falling to destruction. Any movement that would result in the robot falling from the table must be prevented, however further valid movement commands must still be allowed.Create an application that can read in commands of the following form: PLACE X,Y,FMOVELEFTRIGHTREPORT PLACE will put the toy robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST. The origin (0,0) can be considered to be the SOUTH WEST most corner. The first valid command to the robot is a PLACE command, after that, any sequence of commands may be issued, in any order, including another PLACE command. The application should discard all commands in the sequence until a  valid PLACE command has been executed.  MOVE will move the toy robot one unit forward in the direction it is currently facing.  LEFT and RIGHT will rotate the robot 90 degrees in the specified direction without changing the position of the robot.  REPORT will announce the X,Y and F of the robot. This can be in any form, but standard output is sufficient. A robot that is not on the table can choose the ignore the MOVE, LEFT, RIGHT and REPORT commands. Input can be from a file, or from standard input, as the developer chooses. Provide test data to exercise the application. Constraints:The toy robot must not fall off the table during movement. This also includes the initial placement of the toy robot.  Any move that would cause the robot to fall must be ignored. Example Input and Output:a) PLACE 0,0,NORTHMOVEREPORTOutput: 0,1,NORTHb) PLACE 0,0,NORTHLEFTREPORTOutput: 0,0,WESTc) PLACE 1,2,EASTMOVEMOVELEFTMOVEREPORTOutput: 3,3,NORTH Deliverables:The source files, the test data and any test code.It is not required to provide any graphical output showing the movement of thetoy robot." />
+<link rel="canonical" href="http://localhost:4000/2017/02/02/toy_robot_problem.html" />
+<meta property="og:url" content="http://localhost:4000/2017/02/02/toy_robot_problem.html" />
+<meta property="og:site_name" content="CPC Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-02-02T00:00:00+11:00" />
+<script type="application/ld+json">
+{"description":"Refer to Ryan Bigg&#39;s book: https://leanpub.com/toyrobot Code problem details: Toy Robot Simulator Description:The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units. There are no other obstructions on the table surface. The robot is free to roam around the surface of the table, but must beprevented from falling to destruction. Any movement that would result in the robot falling from the table must be prevented, however further valid movement commands must still be allowed.Create an application that can read in commands of the following form: PLACE X,Y,FMOVELEFTRIGHTREPORT PLACE will put the toy robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST. The origin (0,0) can be considered to be the SOUTH WEST most corner. The first valid command to the robot is a PLACE command, after that, any sequence of commands may be issued, in any order, including another PLACE command. The application should discard all commands in the sequence until a  valid PLACE command has been executed.  MOVE will move the toy robot one unit forward in the direction it is currently facing.  LEFT and RIGHT will rotate the robot 90 degrees in the specified direction without changing the position of the robot.  REPORT will announce the X,Y and F of the robot. This can be in any form, but standard output is sufficient. A robot that is not on the table can choose the ignore the MOVE, LEFT, RIGHT and REPORT commands. Input can be from a file, or from standard input, as the developer chooses. Provide test data to exercise the application. Constraints:The toy robot must not fall off the table during movement. This also includes the initial placement of the toy robot.  Any move that would cause the robot to fall must be ignored. Example Input and Output:a) PLACE 0,0,NORTHMOVEREPORTOutput: 0,1,NORTHb) PLACE 0,0,NORTHLEFTREPORTOutput: 0,0,WESTc) PLACE 1,2,EASTMOVEMOVELEFTMOVEREPORTOutput: 3,3,NORTH Deliverables:The source files, the test data and any test code.It is not required to provide any graphical output showing the movement of thetoy robot.","@type":"BlogPosting","url":"http://localhost:4000/2017/02/02/toy_robot_problem.html","headline":"Toy Robot Problem","dateModified":"2017-02-02T00:00:00+11:00","datePublished":"2017-02-02T00:00:00+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/02/02/toy_robot_problem.html"},"author":{"@type":"Person","name":"Alexander Garber"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/favicon.png" /><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="CPC Blog" /></head>
+<body><div class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">CPC Blog<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
+    <span class="social_links">
+        <a class="color-cyan-hover" href="https://twitter.com/alexandergarber"><i class="fab fa-twitter-square"></i></a><a class="color-red-hover" href="http://clockworkpc.com.au"><i class="fab fa-itch-io"></i></a><a class="color-purple-hover" href="https://github.com/clockworkpc"><i class="fab fa-github-square"></i></a>
+    </span>
+  </div>
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="author-box">
+
+A blog about software by Alexander JK Garber.
+</div>
+
+<div class="post">
+  <h1 class="post-title">Toy Robot Problem</h1>
+  
+  <div class="post-tags">
+      
+  </div>
+  
+  <div class="post-date">Published on 02 Feb 2017</div>
+  
+  <div dir="ltr" style="text-align: left;" trbidi="on">
+          <table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;">
+            <tbody>
+              <tr>
+                <td style="text-align: center;"><a href="https://1.bp.blogspot.com/-J7dLfrS_HNk/WJJaUnB1oJI/AAAAAAAANMo/2T-CQJXE6PsTdMK1a0murvbI8KQ6oI6FwCPcB/s1600/toy_robot.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="320" src="https://1.bp.blogspot.com/-J7dLfrS_HNk/WJJaUnB1oJI/AAAAAAAANMo/2T-CQJXE6PsTdMK1a0murvbI8KQ6oI6FwCPcB/s320/toy_robot.png" width="237" /></a></td>
+              </tr>
+              <tr>
+                <td class="tr-caption" style="text-align: center;">Refer to Ryan Bigg's book: <a href="https://leanpub.com/toyrobot">https://leanpub.com/toyrobot</a>
+</td>
+              </tr>
+            </tbody>
+          </table>
+          <h2 style="text-align: left;">Code problem details: Toy Robot Simulator</h2>
+          <h3 style="text-align: left;">Description:</h3>The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units. There are no other obstructions on the table surface. The robot is free to roam
+          around the surface of the table, but must be<br />prevented from falling to destruction. Any movement that would result in the robot falling from the table must be prevented, however further valid movement commands must still be allowed.<br /><br />Create
+          an application that can read in commands of the following form:<br />
+          <blockquote class="tr_bq">PLACE X,Y,F<br />MOVE<br />LEFT<br />RIGHT<br />REPORT</blockquote>
+<br />
+          <ul style="text-align: left;">
+            <li>PLACE will put the toy robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST. The origin (0,0) can be considered to be the SOUTH WEST most corner. The first valid command to the robot is a PLACE command, after
+              that, any sequence of commands may be issued, in any order, including another PLACE command. The application should discard all commands in the sequence until a  valid PLACE command has been executed. </li>
+            <li>MOVE will move the toy robot one unit forward in the direction it is currently facing. </li>
+            <li>LEFT and RIGHT will rotate the robot 90 degrees in the specified direction without changing the position of the robot. </li>
+            <li>REPORT will announce the X,Y and F of the robot. This can be in any form, but standard output is sufficient.</li>
+          </ul>
+<br />A robot that is not on the table can choose the ignore the MOVE, LEFT, RIGHT and REPORT commands. Input can be from a file, or from standard input, as the developer chooses. Provide test data to exercise the application.<br />
+          <h3 style="text-align: left;">Constraints:</h3>The toy robot must not fall off the table during movement. This also includes the initial placement of the toy robot.  Any move that would cause the robot to fall must be ignored.<br />
+          <h4 style="text-align: left;">Example Input and Output:</h4>a)<br />
+          <blockquote class="tr_bq">PLACE 0,0,NORTH<br />MOVE<br />REPORT<br />Output: 0,1,NORTH</blockquote>b)<br />
+          <blockquote class="tr_bq">PLACE 0,0,NORTH<br />LEFT<br />REPORT<br />Output: 0,0,WEST</blockquote>c)<br />
+          <blockquote class="tr_bq">PLACE 1,2,EAST<br />MOVE<br />MOVE<br />LEFT<br />MOVE<br />REPORT<br />Output: 3,3,NORTH</blockquote>
+          <h3 style="text-align: left;">Deliverables:</h3>The source files, the test data and any test code.<br />It is not required to provide any graphical output showing the movement of the<br />toy robot.
+        </div>
+
+</div>
+
+
+<div class="comments">
+<div id="disqus_thread"></div>
+<script>
+ var disqus_config = function () {
+     this.page.url = 'http://localhost:4000/2017/02/02/toy_robot_problem.html';
+     this.page.identifier = '/2017/02/02/toy_robot_problem';
+     this.page.title = 'Toy Robot Problem';
+ };
+
+ (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+     var d = document, s = d.createElement('script');
+
+     s.src = '//<your-discuss-shortname>.disqus.com/embed.js';
+
+     s.setAttribute('data-timestamp', +new Date());
+     (d.head || d.body).appendChild(s);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+
+
+<div class="related">
+  <h2>related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2020/02/25/2017-01-30-finished_learn_ruby_the_hard_way.html">
+            
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2020/02/20/a_little_note_on_git.html">
+            A Little Note on Git
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2020/01/06/how-i-learned-to-stop-worrying-and-love-apis.html">
+            How I Learned To Stop Worrying And Love APIs
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+  
+  <h2>all tags</h2>
+  <div class="tag-cloud"><a href="/tag/api/" class="set-1">api</a> <a href="/tag/atom/" class="set-1">atom</a> <a href="/tag/bash/" class="set-1">bash</a> <a href="/tag/career/" class="set-2">career</a> <a href="/tag/code/" class="set-3">code</a> <a href="/tag/css/" class="set-1">css</a> <a href="/tag/devops/" class="set-1">devops</a> <a href="/tag/gist/" class="set-1">gist</a> <a href="/tag/ide/" class="set-1">ide</a> <a href="/tag/isbn-fetcher/" class="set-1">isbn-fetcher</a> <a href="/tag/javascript/" class="set-1">javascript</a> <a href="/tag/job-search/" class="set-1">job search</a> <a href="/tag/kanban/" class="set-1">kanban</a> <a href="/tag/kanban%5C/" class="set-1">kanban\</a> <a href="/tag/pastbin/" class="set-1">pastbin</a> <a href="/tag/python/" class="set-1">python</a> <a href="/tag/rails/" class="set-1">rails</a> <a href="/tag/refactoring/" class="set-1">refactoring</a> <a href="/tag/ruby/" class="set-4">ruby</a> <a href="/tag/study/" class="set-5">study</a> <a href="/tag/tdd/" class="set-1">tdd</a> <a href="/tag/testing/" class="set-1">testing</a> <a href="/tag/walkthrough/" class="set-1">walkthrough</a> <a href="/tag/workflow/" class="set-3">workflow</a></div>
+  
+
+
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits"><a href="https://github.com/bitbrain/jekyll-dash">dash</a> theme for Jekyll by <a href="https://github.com/bitbrain">bitbrain</a> made with <i class="fas fa-heart"></i><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+if (theme === 'undefined') {
+   theme = "dark";
+}
+if (theme === "dark") {
+	document.documentElement.setAttribute('data-theme', 'dark');
+} else {
+    document.documentElement.setAttribute('data-theme', 'light');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>

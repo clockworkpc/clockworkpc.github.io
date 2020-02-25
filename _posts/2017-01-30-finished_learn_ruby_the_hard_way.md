@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Finished "Learn Ruby the Hard Way""
+title: "Finished Learn Ruby the Hard Way"
 date: "2017-01-30"
 author: "Alexander Garber"
 tags: []
