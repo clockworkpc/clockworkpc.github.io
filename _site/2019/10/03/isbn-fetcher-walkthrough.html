@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>ISBN Fetcher Walkthrough | CPC Blog</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="ISBN Fetcher Walkthrough" />
+<meta name="author" content="Alexander Garber" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is a walkthrough for the “ISBN Fetcher” defined by the class Cpc::Toolkit::IsbnFetcher." />
+<meta property="og:description" content="This is a walkthrough for the “ISBN Fetcher” defined by the class Cpc::Toolkit::IsbnFetcher." />
+<link rel="canonical" href="http://localhost:4000/2019/10/03/isbn-fetcher-walkthrough.html" />
+<meta property="og:url" content="http://localhost:4000/2019/10/03/isbn-fetcher-walkthrough.html" />
+<meta property="og:site_name" content="CPC Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-10-03T17:36:00+10:00" />
+<script type="application/ld+json">
+{"description":"This is a walkthrough for the “ISBN Fetcher” defined by the class Cpc::Toolkit::IsbnFetcher.","@type":"BlogPosting","url":"http://localhost:4000/2019/10/03/isbn-fetcher-walkthrough.html","headline":"ISBN Fetcher Walkthrough","dateModified":"2019-10-03T17:36:00+10:00","datePublished":"2019-10-03T17:36:00+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/10/03/isbn-fetcher-walkthrough.html"},"author":{"@type":"Person","name":"Alexander Garber"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/favicon.png" /><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="CPC Blog" /></head>
+<body><div class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">CPC Blog<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
+    <span class="social_links">
+        <a class="color-cyan-hover" href="https://twitter.com/alexandergarber"><i class="fab fa-twitter-square"></i></a><a class="color-red-hover" href="http://clockworkpc.com.au"><i class="fab fa-itch-io"></i></a><a class="color-purple-hover" href="https://github.com/clockworkpc"><i class="fab fa-github-square"></i></a>
+    </span>
+  </div>
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="author-box">
+
+A blog about software by Alexander JK Garber.
+</div>
+
+<div class="post">
+  <h1 class="post-title">ISBN Fetcher Walkthrough</h1>
+  
+  <div class="post-tags">
+      
+      <a class="tag" href="/tag/walkthrough/">walkthrough</a>
+      
+      <a class="tag" href="/tag/isbn-fetcher/">isbn-fetcher</a>
+      
+  </div>
+  
+  <div class="post-date">Published on 03 Oct 2019</div>
+  
+  <p>This is a walkthrough for the “ISBN Fetcher” defined by the class <code class="highlighter-rouge">Cpc::Toolkit::IsbnFetcher</code>.</p>
+
+<p>The story of this solution follows a process that should be familiar to anyone involved in Agile software development:</p>
+
+<ol>
+  <li>Discussion of requirements</li>
+  <li>Preparation of sample inputs</li>
+  <li>Feature specification with sample inputs and outputs</li>
+  <li>Behaviour-driven development</li>
+  <li>Test-driven development</li>
+  <li>Integration testing</li>
+  <li>End-to-end testing</li>
+  <li>Review and approval</li>
+</ol>
+
+<h2 id="background">Background</h2>
+
+<p>My wife and I wanted an easy way to catalogue our books for sale, which would satisfy the following criteria:</p>
+<ol>
+  <li>The catalogue should be a complete record of our books.</li>
+  <li>That it should be as easy as possible to record an entry for each book.</li>
+  <li>That each record should also include the book’s location, i.e. which box it is in.</li>
+</ol>
+
+<p>This is the solution we came up with:</p>
+<ol>
+  <li>Use a USB bar-code scanner to scan each book’s ISBN into a spreadsheet.</li>
+  <li>Retrieve the full details of the book – title, author, etc. – via the ISBN.</li>
+  <li>Save the full details of each book in a new spreadsheet.</li>
+</ol>
+
+<h3 id="manual-input">Manual Input</h3>
+
+<p>My wife scanned into a spreadsheet every book in the collection and manually added which box the scanned book was located in.  Thus, we started with a spreadsheet that started like this:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ISBN</th>
+      <th>BOX</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>661741006715</td>
+      <td>01 Craft</td>
+    </tr>
+    <tr>
+      <td>9780307587060</td>
+      <td>01 Craft</td>
+    </tr>
+    <tr>
+      <td>9780615528540</td>
+      <td>01 Craft</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="database">Database</h3>
+
+<p>While my wife was doing her bit, I looked for a suitable ISBN database.  I eventually decided to pay for access to <a href="https://isbndb.com/">ISBNdb</a>, which, as the name suggests, is a large database for ISBNs, and more to the point, has very good API documentation.</p>
+
+<h2 id="development">Development</h2>
+
+<p>At this point we had two important pieces of the puzzle:</p>
+<ol>
+  <li>Input data: A spreadsheet of ISBNs and box numbers.</li>
+  <li>Output data source: a database accessible via API.</li>
+</ol>
+
+<p>It was now time to start work on putting together a software solution.</p>
+
+<h3 id="specification">Specification</h3>
+<p>The first step was to describe the feature in language that both my wife and I could understand, so I wrote a Cucumber feature file called <code class="highlighter-rouge">isbn_fetcher.feature</code>.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@online_extra
+Feature: ISBN Fetcher
+  In order to put together a list of books for sale
+  I want to fetch the details of books via their ISBNs from ISBNdb
+
+  Scenario Outline: ISBN Numbers Provided
+    Given the box title is "<span class="nt">&lt;box&gt;</span>"
+    And I make an API call to "ISBNdb" with "<span class="nt">&lt;isbn&gt;</span>"
+    And the API response code is "200"
+    When I parse the API response body and write it to "ISBN CSV"
+    Then I should have a copy of the response body in a CSV
+    And in the API response the box title should be "<span class="nt">&lt;box&gt;</span>"
+    And in the API response the long title of the book should be "<span class="nt">&lt;long</span><span class="na">_title</span><span class="nt">&gt;</span>"
+    And in the API response the the author of the book should be "<span class="nt">&lt;author&gt;</span>"
+    And in the API response the the publisher of the book should be "<span class="nt">&lt;publisher&gt;</span>"
+    And in the API response the the binding of the book should be "<span class="nt">&lt;binding&gt;</span>"
+    And in the API response the the book should have "<span class="nt">&lt;pages&gt;</span>" pages
+    And in the API response the the publication date of the book should be "<span class="nt">&lt;date</span><span class="na">_published</span><span class="nt">&gt;</span>"<span class="sb">
+
+    Examples:
+    | isbn          | box                 | long_title                                      | author        | publisher                                     | binding      | pages | date_published |
+    | 9781931499651 | 01 Craft            | Knitting Vintage Socks                          | Nancy Bush    | Interweave                                    | Spiral-bound | 128   | 2005           |
+    | 9781596688513 | 02 Craft            | Scottish Knits: Colorwork &amp; Cables With A Twist | Martin Storey | Interweave                                    | Paperback    | 152   | 2013           |
+    | 9780957740358 | 04 Children's Books | Eye_spy_who_am_i                                | N/A           | Melbourne : Borghesi &amp; Adam Publishers, 2001. | N/A          | N/A   | N/A            |
+</span></code></pre></div></div>
+
+<h3 id="step-definitions">Step Definitions</h3>
+<p>Once we had described the desired behaviour of our feature, the next step was to write Cucumber Steps, which define Cucumber’s handling of the inputs and the expectations.</p>
+
+<p>The Cucumber Steps invoked are contained in two Step files, according to whether the Step is specific to the ISBN Fetcher or could be re-used in testing another feature:</p>
+<ul>
+  <li><code class="highlighter-rouge">features/step_definitions/api_steps.rb</code></li>
+  <li><code class="highlighter-rouge">features/step_definitions/isbn_fetcher_steps.rb</code></li>
+</ul>
+
+<p>Thus, <code class="highlighter-rouge">api_steps.rb</code> covers these Steps, which would be part of any feature that makes API calls:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>And I make an API call to "ISBNdb" with "&lt;isbn&gt;"
+And the API response code is "200"
+When I parse the API response body and write it to "ISBN CSV"
+</code></pre></div></div>
+
+<p>And the rest of the Steps, being specific to ISBN Fetcher, are defined in <code class="highlighter-rouge">isbn_fetcher_steps.rb</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Then I should have a copy of the response body in a CSV
+And in the API response the box title should be "&lt;box&gt;"
+And in the API response the long title of the book should be "&lt;long_title&gt;"
+And in the API response the the author of the book should be "&lt;author&gt;"
+And in the API response the the publisher of the book should be "&lt;publisher&gt;"
+And in the API response the the binding of the book should be "&lt;binding&gt;"
+And in the API response the the book should have "&lt;pages&gt;" pages
+And in the API response the the publication date of the book should be "&lt;date_published&gt;"
+</code></pre></div></div>
+
+<p>The most important Step, for the purposes of our story, is this:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="s2">"I make an API call to {string} with {string}"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">string1</span><span class="p">,</span> <span class="n">string2</span><span class="o">|</span>
+  <span class="k">case</span>
+  <span class="k">when</span> <span class="n">string1</span> <span class="o">==</span> <span class="s2">"ISBNdb"</span>
+    <span class="n">isbn_str</span> <span class="o">=</span> <span class="n">string2</span>
+    <span class="n">isbn</span> <span class="o">=</span> <span class="no">Cpc</span><span class="o">::</span><span class="no">Toolkit</span><span class="o">::</span><span class="no">IsbnFetcher</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'ISBN_DB_API_KEY'</span><span class="p">)</span>
+    <span class="vi">@book_details_hsh</span> <span class="o">=</span> <span class="n">isbn</span><span class="p">.</span><span class="nf">collect_book_details</span><span class="p">(</span><span class="n">isbn_str</span><span class="p">,</span> <span class="vi">@box_str</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Because it asserts that everything in this feature test will hinge on the following:</p>
+
+<ol>
+  <li>A Class called <code class="highlighter-rouge">Cpc::Toolkit::IsbnFetcher</code>.</li>
+  <li>This Class will be initialized with an API key.</li>
+  <li>This class will contain an instance method called <code class="highlighter-rouge">book_details</code>.</li>
+  <li>The instance method <code class="highlighter-rouge">book_details</code> will return a Hash containing all the details of a given book, given an <strong>ISBN</strong> and a <strong>box label</strong>.</li>
+</ol>
+
+<h3 id="rspecs">RSpecs</h3>
+
+<p>At this point, with an outline of where the code for my solution would be housed (<code class="highlighter-rouge">Cpc::Toolkit::IsbnFetcher</code>), what the pivotal method would be called (<code class="highlighter-rouge">book_details</code>), and the requisite inputs (API key, ISBN, box label), I was ready to start writing my unit tests in RSpec.</p>
+
+<p>Naturally, the Spec file would be called <code class="highlighter-rouge">spec/cpc/toolkit/isbn_fetcher_spec.rb</code>, and it would start like this:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'spec_helper'</span>
+
+<span class="no">RSpec</span><span class="p">.</span><span class="nf">describe</span> <span class="no">Cpc</span><span class="o">::</span><span class="no">Toolkit</span><span class="o">::</span><span class="no">IsbnFetcher</span> <span class="k">do</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>And it would contain a <code class="highlighter-rouge">context</code> block like this:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">context</span> <span class="s1">'Authorised API key'</span><span class="p">,</span> <span class="ss">online_extra: </span><span class="kp">true</span> <span class="k">do</span>
+  <span class="n">subject</span> <span class="o">=</span> <span class="no">Cpc</span><span class="o">::</span><span class="no">Toolkit</span><span class="o">::</span><span class="no">IsbnFetcher</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'ISBN_DB_API_KEY'</span><span class="p">)</span>
+  <span class="n">context</span> <span class="s1">'ISBN 9781931499651'</span> <span class="k">do</span>
+    <span class="n">isbn_str</span> <span class="o">=</span> <span class="s1">'9781931499651'</span>
+    <span class="n">box_str</span> <span class="o">=</span> <span class="s1">'01 Craft'</span>
+
+    <span class="n">before</span><span class="p">(</span><span class="ss">:all</span><span class="p">)</span> <span class="k">do</span>
+      <span class="vi">@book_details</span> <span class="o">=</span> <span class="n">subject</span><span class="p">.</span><span class="nf">collect_book_details</span><span class="p">(</span><span class="n">isbn_str</span><span class="p">,</span> <span class="n">box_str</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="c1">## A series of `it` blocks containing expectations</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h4 id="api-key">API Key</h4>
+
+<p>However, before I could proceed, I needed to securely handle my API key.  Rails 5 makes it easy to store sensitive data in an encrypted credentials file, but in a pure Ruby project like this, the most suitable option I found is the <code class="highlighter-rouge">dotenv</code> gem, so I stored my API key in a <code class="highlighter-rouge">.env</code> as <code class="highlighter-rouge">ISBN_DB_API_KEY</code>, which makes it available to my code as <code class="highlighter-rouge">ENV['ISBN_DB_API_KEY']</code>.</p>
+
+<h4 id="apiutil">ApiUtil</h4>
+
+<p>Seeing as I was on the topic of handling an API key, and the entire feature is based on making API calls, the next item to concentrate on was the code that does just that.</p>
+
+<p>I didn’t want to make API calls specific to ISBN Fetcher, so in my <code class="highlighter-rouge">Util</code> module, I decided to create a small Module called <code class="highlighter-rouge">ApiUtil</code>, which would contain a wrapper <code class="highlighter-rouge">api_call</code>, which in turn would accept a Hash of API request parameters.</p>
+
+<p>This way, <code class="highlighter-rouge">IsbnFetcher</code>, and any future features, could pass all the API request parameters in one simple Hash to the wrapper, and get back the API response.</p>
+
+<p>To that end, I created another Spec file: <code class="highlighter-rouge">spec/cpc/util/api_util_spec.rb</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'spec_helper'</span>
+
+<span class="no">RSpec</span><span class="p">.</span><span class="nf">describe</span> <span class="no">Cpc</span><span class="o">::</span><span class="no">Util</span><span class="o">::</span><span class="no">ApiUtil</span> <span class="k">do</span>
+  <span class="kp">include</span> <span class="no">Cpc</span><span class="o">::</span><span class="no">Util</span><span class="o">::</span><span class="no">ApiUtil</span>
+
+  <span class="n">let</span><span class="p">(</span><span class="ss">:args_hsh</span><span class="p">)</span> <span class="k">do</span>
+    <span class="p">{</span>
+      <span class="ss">url: </span><span class="s2">"https://api2.isbndb.com/book/9781931499651?with_prices=0"</span><span class="p">,</span>
+      <span class="ss">request_headers: </span><span class="p">{</span>
+        <span class="s2">"accept"</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+        <span class="s2">"Authorization"</span><span class="p">:</span> <span class="no">ENV</span><span class="p">[</span><span class="s1">'ISBN_DB_API_KEY'</span><span class="p">],</span>
+        <span class="s2">"cache-control"</span><span class="p">:</span> <span class="s1">'no-cache'</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s1">'should return book details of 9781931499651'</span><span class="p">,</span> <span class="ss">online_extra: </span><span class="kp">true</span> <span class="k">do</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">api_get_request</span><span class="p">(</span><span class="n">args_hsh</span><span class="p">)</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="nf">code</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="s2">"200"</span><span class="p">)</span>
+    <span class="n">expect</span><span class="p">(</span><span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="nf">body</span><span class="p">).</span><span class="nf">keys</span><span class="p">.</span><span class="nf">first</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="s2">"book"</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>The code that passes this spec is in <code class="highlighter-rouge">lib/cpc/util/api_util.rb</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># frozen_string_literal: true</span>
+
+<span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="k">module</span> <span class="nn">Cpc</span>
+  <span class="k">module</span> <span class="nn">Util</span>
+    <span class="k">module</span> <span class="nn">ApiUtil</span>
+      <span class="k">def</span> <span class="nf">api_get_request</span><span class="p">(</span><span class="n">args_hsh</span><span class="p">)</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="n">args_hsh</span><span class="p">[</span><span class="ss">:url</span><span class="p">])</span>
+        <span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+        <span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+        <span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">args_hsh</span><span class="p">[</span><span class="ss">:request_headers</span><span class="p">].</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">|</span> <span class="n">request</span><span class="p">[</span><span class="n">k</span><span class="p">.</span><span class="nf">to_s</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span> <span class="p">}</span>
+        <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h3 id="back-to-isbnfetcher">Back to IsbnFetcher</h3>
+
+<p>With a reliable API wrapper in place, the role of the method <code class="highlighter-rouge">book_details</code> was clarified:</p>
+<ol>
+  <li>Take an ISBN String (<code class="highlighter-rouge">isbn_str</code>) and a box label (<code class="highlighter-rouge">box_str</code>) as parameters;</li>
+  <li>Create a Hash of API request parameters (<code class="highlighter-rouge">args_hsh</code>)</li>
+  <li>Pass the API request parameters Hash to the <code class="highlighter-rouge">Cpc::Util::ApiUtil.api_get_request(args_hsh)</code> wrapper</li>
+  <li>Parse the API response body (<code class="highlighter-rouge">res</code>)</li>
+  <li>Return a Hash containing the details of a book – title, author, etc. (<code class="highlighter-rouge">details_hsh</code>)</li>
+</ol>
+
+<h4 id="let-variables">(:let) Variables</h4>
+
+<p>If you have a paid ISBNdb account, you can use the API caller that is built into its API documentation page to collect a few samples.  For example, an API call for <code class="highlighter-rouge">9781931499651</code> will return the following details, which I added to <code class="highlighter-rouge">isbn_fetcher_spec.rb</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">let</span><span class="p">(</span><span class="ss">:long_title</span><span class="p">)</span> <span class="p">{</span><span class="s2">"Knitting Vintage Socks"</span><span class="p">}</span>
+<span class="n">let</span><span class="p">(</span><span class="ss">:author</span><span class="p">)</span> <span class="p">{</span><span class="s2">"Nancy Bush"</span><span class="p">}</span>
+<span class="n">let</span><span class="p">(</span><span class="ss">:publisher</span><span class="p">)</span> <span class="p">{</span><span class="s2">"Interweave"</span><span class="p">}</span>
+<span class="n">let</span><span class="p">(</span><span class="ss">:binding_type</span><span class="p">)</span> <span class="p">{</span><span class="s2">"Spiral-bound"</span><span class="p">}</span>
+<span class="n">let</span><span class="p">(</span><span class="ss">:pages</span><span class="p">)</span> <span class="p">{</span><span class="mi">128</span><span class="p">}</span>
+<span class="n">let</span><span class="p">(</span><span class="ss">:date_published</span><span class="p">)</span> <span class="p">{</span><span class="s2">"2005"</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>Which meant I could finally populate my <code class="highlighter-rouge">context</code> block from before with <code class="highlighter-rouge">it</code> blocks:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">context</span> <span class="s1">'Authorised API key'</span><span class="p">,</span> <span class="ss">online_extra: </span><span class="kp">true</span> <span class="k">do</span>
+  <span class="n">subject</span> <span class="o">=</span> <span class="no">Cpc</span><span class="o">::</span><span class="no">Toolkit</span><span class="o">::</span><span class="no">IsbnFetcher</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'ISBN_DB_API_KEY'</span><span class="p">)</span>
+  <span class="n">context</span> <span class="s1">'ISBN 9781931499651'</span> <span class="k">do</span>
+    <span class="n">isbn_str</span> <span class="o">=</span> <span class="s1">'9781931499651'</span>
+    <span class="n">box_str</span> <span class="o">=</span> <span class="s1">'01 Craft'</span>
+
+    <span class="n">before</span><span class="p">(</span><span class="ss">:all</span><span class="p">)</span> <span class="k">do</span>
+      <span class="vi">@book_details</span> <span class="o">=</span> <span class="n">subject</span><span class="p">.</span><span class="nf">collect_book_details</span><span class="p">(</span><span class="n">isbn_str</span><span class="p">,</span> <span class="n">box_str</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">it</span> <span class="s1">'should have the right headers'</span> <span class="k">do</span>
+      <span class="n">expect</span><span class="p">(</span><span class="vi">@book_details</span><span class="p">.</span><span class="nf">keys</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">header_str_ary</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">it</span> <span class="s1">'should return book title from ISBNdb'</span> <span class="k">do</span>
+      <span class="n">expect</span><span class="p">(</span><span class="vi">@book_details</span><span class="p">[</span><span class="ss">:isbn</span><span class="p">]).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">isbn_str</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">it</span> <span class="s1">'should return book title from ISBNdb'</span> <span class="k">do</span>
+      <span class="n">expect</span><span class="p">(</span><span class="vi">@book_details</span><span class="p">[</span><span class="ss">:box</span><span class="p">]).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">box_str</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">it</span> <span class="s1">'should return book title from ISBNdb'</span> <span class="k">do</span>
+      <span class="n">expect</span><span class="p">(</span><span class="vi">@book_details</span><span class="p">[</span><span class="ss">:long_title</span><span class="p">]).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">long_title</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">it</span> <span class="s1">'should return author from ISBNdb'</span> <span class="k">do</span>
+      <span class="n">expect</span><span class="p">(</span><span class="vi">@book_details</span><span class="p">[</span><span class="ss">:author</span><span class="p">]).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">author</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">it</span> <span class="s1">'should return publisher from ISBNdb'</span> <span class="k">do</span>
+      <span class="n">expect</span><span class="p">(</span><span class="vi">@book_details</span><span class="p">[</span><span class="ss">:publisher</span><span class="p">]).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">publisher</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">it</span> <span class="s1">'should return binding from ISBNdb'</span> <span class="k">do</span>
+      <span class="n">expect</span><span class="p">(</span><span class="vi">@book_details</span><span class="p">[</span><span class="ss">:binding_type</span><span class="p">]).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">binding_type</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">it</span> <span class="s1">'should return page count from ISBNdb'</span> <span class="k">do</span>
+      <span class="n">expect</span><span class="p">(</span><span class="vi">@book_details</span><span class="p">[</span><span class="ss">:pages</span><span class="p">]).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">pages</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">it</span> <span class="s1">'should return publication date from ISBNdb'</span> <span class="k">do</span>
+      <span class="n">expect</span><span class="p">(</span><span class="vi">@book_details</span><span class="p">[</span><span class="ss">:date_published</span><span class="p">]).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">date_published</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+</code></pre></div></div>
+
+<p>And now I was ready to start writing the code.</p>
+
+<h3 id="the-code">THE CODE</h3>
+
+<p>From here on, it is the familiar story of iteratively solving problems through TDD and BDD as they crop up:</p>
+
+<ul>
+  <li>How do I package the API request parameters?</li>
+  <li>How do I handle failed API requests? (Not “200”)</li>
+  <li>How do I save the result to CSV?</li>
+</ul>
+
+<p>And so on.  The end result of this back-and-forth process are the methods:</p>
+<ul>
+  <li><code class="highlighter-rouge">book_details</code></li>
+  <li><code class="highlighter-rouge">save_to_csv</code></li>
+  <li><code class="highlighter-rouge">batch_fetch_save_to_csv</code></li>
+</ul>
+
+<p>Around which all the other methods in <a href="">isbn_fetcher.rb</a> are written:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">collect_book_details</span><span class="p">(</span><span class="n">isbn_str</span><span class="p">,</span> <span class="n">box_str</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Fetching book details for </span><span class="si">#{</span><span class="n">isbn_str</span><span class="si">}</span><span class="s2"> in </span><span class="si">#{</span><span class="n">box_str</span><span class="si">}</span><span class="s2"> box"</span>
+  <span class="n">args_hsh</span> <span class="o">=</span> <span class="n">isbn_db_args</span><span class="p">(</span><span class="n">isbn_str</span><span class="p">)</span>
+
+  <span class="n">res</span> <span class="o">=</span> <span class="n">api_get_request</span><span class="p">(</span><span class="n">args_hsh</span><span class="p">)</span>
+  <span class="n">book_hsh</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">res</span><span class="p">.</span><span class="nf">body</span><span class="p">)[</span><span class="s2">"book"</span><span class="p">]</span>
+  <span class="n">response_code</span> <span class="o">=</span> <span class="n">res</span><span class="p">.</span><span class="nf">code</span>
+
+  <span class="k">case</span> <span class="n">response_code</span>
+  <span class="k">when</span> <span class="s2">"200"</span>
+    <span class="nb">puts</span> <span class="no">Rainbow</span><span class="p">(</span><span class="s2">"Details found for </span><span class="si">#{</span><span class="n">isbn_str</span><span class="si">}</span><span class="s2">"</span><span class="p">).</span><span class="nf">green</span>
+    <span class="n">details_hsh</span> <span class="o">=</span> <span class="n">collect_details_book_found_true</span><span class="p">(</span><span class="n">isbn_str</span><span class="p">,</span> <span class="n">box_str</span><span class="p">,</span> <span class="n">response_code</span><span class="p">,</span> <span class="n">book_hsh</span><span class="p">)</span>
+  <span class="k">else</span>
+    <span class="nb">puts</span> <span class="no">Rainbow</span><span class="p">(</span><span class="s2">"No details found for </span><span class="si">#{</span><span class="n">isbn_str</span><span class="si">}</span><span class="s2">"</span><span class="p">).</span><span class="nf">red</span>
+    <span class="n">details_hsh</span> <span class="o">=</span> <span class="n">collect_details_book_found_false</span><span class="p">(</span><span class="n">isbn_str</span><span class="p">,</span> <span class="n">box_str</span><span class="p">,</span> <span class="n">response_code</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">details_hsh</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">save_to_csv</span><span class="p">(</span><span class="n">details_hsh</span><span class="p">,</span> <span class="n">csv_filepath</span><span class="p">)</span>
+  <span class="n">no_headers</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">exist?</span><span class="p">(</span><span class="n">csv_filepath</span><span class="p">)</span> <span class="o">==</span> <span class="kp">false</span> <span class="o">||</span> <span class="no">File</span><span class="p">.</span><span class="nf">empty?</span><span class="p">(</span><span class="n">csv_filepath</span><span class="p">)</span>
+  <span class="n">write_to_csv</span><span class="p">(</span><span class="n">details_hsh</span><span class="p">,</span> <span class="n">csv_filepath</span><span class="p">)</span> <span class="k">if</span> <span class="n">no_headers</span>
+  <span class="n">append_to_csv</span><span class="p">(</span><span class="n">details_hsh</span><span class="p">,</span> <span class="n">csv_filepath</span><span class="p">)</span> <span class="k">unless</span> <span class="n">no_headers</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">batch_fetch_save_to_csv</span><span class="p">(</span><span class="n">isbn_hsh_ary</span><span class="p">,</span> <span class="n">csv_filepath</span><span class="p">)</span>
+  <span class="n">countdown</span> <span class="o">=</span> <span class="n">isbn_hsh_ary</span><span class="p">.</span><span class="nf">count</span>
+  <span class="n">countup</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="n">isbn_hsh_ary</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">isbn_hsh</span><span class="p">,</span> <span class="n">box_str</span><span class="o">|</span>
+    <span class="n">isbn_str</span> <span class="o">=</span> <span class="n">isbn_hsh</span><span class="p">[</span><span class="ss">:isbn</span><span class="p">]</span>
+    <span class="n">box_str</span> <span class="o">=</span> <span class="n">isbn_hsh</span><span class="p">[</span><span class="ss">:box</span><span class="p">]</span>
+
+    <span class="n">details_hsh</span> <span class="o">=</span> <span class="n">collect_book_details</span><span class="p">(</span><span class="n">isbn_str</span><span class="p">,</span> <span class="n">box_str</span><span class="p">)</span>
+    <span class="n">save_to_csv</span><span class="p">(</span><span class="n">details_hsh</span><span class="p">,</span> <span class="n">csv_filepath</span><span class="p">)</span>
+
+    <span class="n">countdown</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="n">countup</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">puts</span> <span class="s2">"ISBNs checked: </span><span class="si">#{</span><span class="n">countup</span><span class="si">}</span><span class="s2">"</span>
+    <span class="nb">puts</span> <span class="s2">"Books remaining: </span><span class="si">#{</span><span class="n">countdown</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>It could be argued that in the time it took to follow this process, I could have just written a script to achieve the same result.</p>
+
+<p>However, this disciplined approach to the solution means that not only shall I be able to return to my code in the future and understand what it does, but my project is enhanced by the example of a clear Feature file, well organised Steps, organised RSpecs, an additional <code class="highlighter-rouge">Util</code> module, and clear, easy-to-follow code.  In the future, if I wish to extend or refactor this feature, or share my knowledge, this example will make life easier not only for me, but for anyone I collaborate with too.</p>
+
+</div>
+
+
+<div class="comments">
+<div id="disqus_thread"></div>
+<script>
+ var disqus_config = function () {
+     this.page.url = 'http://localhost:4000/2019/10/03/isbn-fetcher-walkthrough.html';
+     this.page.identifier = '/2019/10/03/isbn-fetcher-walkthrough';
+     this.page.title = 'ISBN Fetcher Walkthrough';
+ };
+
+ (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+     var d = document, s = d.createElement('script');
+
+     s.src = '//<your-discuss-shortname>.disqus.com/embed.js';
+
+     s.setAttribute('data-timestamp', +new Date());
+     (d.head || d.body).appendChild(s);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+
+
+<div class="related">
+  <h2>related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2020/02/25/2017-01-30-finished_learn_ruby_the_hard_way.html">
+            
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2020/02/20/a_little_note_on_git.html">
+            A Little Note on Git
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2020/01/06/how-i-learned-to-stop-worrying-and-love-apis.html">
+            How I Learned To Stop Worrying And Love APIs
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+  
+  <h2>all tags</h2>
+  <div class="tag-cloud"><a href="/tag/api/" class="set-1">api</a> <a href="/tag/atom/" class="set-1">atom</a> <a href="/tag/bash/" class="set-1">bash</a> <a href="/tag/career/" class="set-2">career</a> <a href="/tag/code/" class="set-3">code</a> <a href="/tag/css/" class="set-1">css</a> <a href="/tag/devops/" class="set-1">devops</a> <a href="/tag/gist/" class="set-1">gist</a> <a href="/tag/ide/" class="set-1">ide</a> <a href="/tag/isbn-fetcher/" class="set-1">isbn-fetcher</a> <a href="/tag/javascript/" class="set-1">javascript</a> <a href="/tag/job-search/" class="set-1">job search</a> <a href="/tag/kanban/" class="set-1">kanban</a> <a href="/tag/kanban%5C/" class="set-1">kanban\</a> <a href="/tag/pastbin/" class="set-1">pastbin</a> <a href="/tag/python/" class="set-1">python</a> <a href="/tag/rails/" class="set-1">rails</a> <a href="/tag/refactoring/" class="set-1">refactoring</a> <a href="/tag/ruby/" class="set-4">ruby</a> <a href="/tag/study/" class="set-5">study</a> <a href="/tag/tdd/" class="set-1">tdd</a> <a href="/tag/testing/" class="set-1">testing</a> <a href="/tag/walkthrough/" class="set-1">walkthrough</a> <a href="/tag/workflow/" class="set-3">workflow</a></div>
+  
+
+
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits"><a href="https://github.com/bitbrain/jekyll-dash">dash</a> theme for Jekyll by <a href="https://github.com/bitbrain">bitbrain</a> made with <i class="fas fa-heart"></i><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+if (theme === 'undefined') {
+   theme = "dark";
+}
+if (theme === "dark") {
+	document.documentElement.setAttribute('data-theme', 'dark');
+} else {
+    document.documentElement.setAttribute('data-theme', 'light');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>

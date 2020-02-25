@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-02-25T16:56:39+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">CPC Blog</title><subtitle>A blog about software by Alexander JK Garber.</subtitle><entry><title type="html"></title><link href="http://localhost:4000/2020/02/25/2017-01-30-finished_learn_ruby_the_hard_way.html" rel="alternate" type="text/html" title="" /><published>2020-02-25T16:56:39+11:00</published><updated>2020-02-25T16:56:39+11:00</updated><id>http://localhost:4000/2020/02/25/2017-01-30-finished_learn_ruby_the_hard_way</id><content type="html" xml:base="http://localhost:4000/2020/02/25/2017-01-30-finished_learn_ruby_the_hard_way.html">&lt;div dir=&quot;ltr&quot; style=&quot;text-align: left;&quot; trbidi=&quot;on&quot;&gt;
+          &lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;https://1.bp.blogspot.com/-AhHpOpZ1Fqk/WD_Su_AyUBI/AAAAAAAAKcg/x2amVeUFA0wqq5FA2z6jyBTutOFJXEsPwCPcB/s1600/Screenshot%2Bfrom%2B2016-12-01%2B18-35-06.png&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;https://1.bp.blogspot.com/-AhHpOpZ1Fqk/WD_Su_AyUBI/AAAAAAAAKcg/x2amVeUFA0wqq5FA2z6jyBTutOFJXEsPwCPcB/s1600/Screenshot%2Bfrom%2B2016-12-01%2B18-35-06.png&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;br /&gt;Although
+          it took me quite a bit longer than I expected, I am very pleased that I have *just about* finished Learn Ruby the Hard Way.  The final couple chapters are on Sinatra, which I don't strictly need, as I will focus on Rails.&lt;br /&gt;&lt;br /&gt;I
+          started working through this book in late November, and were it not for my record on this blog of my progress, it would be difficult to convey how much I have learned.  When I look back at the exercises, things that I couldn't
+          understand make perfect sense; problems that seemed insurmountable are now approachable.  I thoroughly recommend the book to anyone who wants to learn Ruby and feel free to check out my repositories on Github to see how I went about
+          it:&lt;br /&gt;&lt;br /&gt;&lt;a href=&quot;https://github.com/clockworkpc/tree-house-prince&quot; target=&quot;_blank&quot;&gt;Tree House Prince&lt;/a&gt;: A simple text-adventure game demonstrating my grasp of OOP and testing with Rake.&lt;br /&gt;&lt;br /&gt;&lt;a href=&quot;https://github.com/clockworkpc/learnrubythehardway&quot; target=&quot;_blank&quot;&gt;Completed exercises&lt;/a&gt;: From the book, mostly by the book, with a few extra details here and there.&lt;br /&gt;&lt;br /&gt;&lt;a href=&quot;https://github.com/clockworkpc/ProjectSkeletonGenerator&quot; target=&quot;_blank&quot;&gt;Project skeleton generator&lt;/a&gt;:
+          a script written in Ruby.  Note that the target directory is ~/Dropbox/Devops/Github_Projects/
+        &lt;/div&gt;</content><author><name></name></author></entry><entry><title type="html">A Little Note on Git</title><link href="http://localhost:4000/2020/02/20/a_little_note_on_git.html" rel="alternate" type="text/html" title="A Little Note on Git" /><published>2020-02-20T00:00:00+11:00</published><updated>2020-02-20T00:00:00+11:00</updated><id>http://localhost:4000/2020/02/20/a_little_note_on_git</id><content type="html" xml:base="http://localhost:4000/2020/02/20/a_little_note_on_git.html"></content><author><name>Alexander Garber</name></author><summary type="html"></summary></entry><entry><title type="html">How I Learned To Stop Worrying And Love APIs</title><link href="http://localhost:4000/2020/01/06/how-i-learned-to-stop-worrying-and-love-apis.html" rel="alternate" type="text/html" title="How I Learned To Stop Worrying And Love APIs" /><published>2020-01-06T07:30:00+11:00</published><updated>2020-01-06T07:30:00+11:00</updated><id>http://localhost:4000/2020/01/06/how-i-learned-to-stop-worrying-and-love-apis</id><content type="html" xml:base="http://localhost:4000/2020/01/06/how-i-learned-to-stop-worrying-and-love-apis.html">&lt;h2 id=&quot;time-to-crack-the-api-walnut&quot;&gt;Time To Crack the API Walnut&lt;/h2&gt;
+
+&lt;p&gt;Comprehending what an API is in theory is quite easy for anyone who understands how to write shell scripts or code at the most basic level, but understanding how to make API calls to a variety of endpoints and parse the responses takes time and effort.  I already had a practical understanding of simple GET requests, but I decided over the Christmas break to master the fundamentals of APIs.&lt;/p&gt;
+
+&lt;p&gt;My learning-by-doing approach was as follows:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Create a wrapper Module for Ruby’s &lt;code class=&quot;highlighter-rouge&quot;&gt;http/net&lt;/code&gt; called &lt;code class=&quot;highlighter-rouge&quot;&gt;ApiUtil&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Write unit tests in RSpec for a variety of public, open API endpoints.&lt;/li&gt;
+  &lt;li&gt;Continually refine and extend &lt;code class=&quot;highlighter-rouge&quot;&gt;ApiUtil&lt;/code&gt; until it could reliably work with all the endpoints.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To this end, I cut my teeth on &lt;a href=&quot;https://jsonplaceholder.typicode.com&quot;&gt;JSON Placeholder&lt;/a&gt;,
+then refined my base driver code on &lt;a href=&quot;https://httpbin.org&quot;&gt;Httpbin&lt;/a&gt;,
+then toyed with a selection of endpoints from &lt;a href=&quot;https://http.cat&quot;&gt;HTTPCat&lt;/a&gt;
+then finished with the most recognisable &lt;a href=&quot;https://app.bitly.com/bbt2/&quot;&gt;Bit.ly&lt;/a&gt; endpoints for shortening a link and expanding a bitlink.&lt;/p&gt;
+
+&lt;p&gt;By the end of my project, I had a tidy API wrapper method &lt;code class=&quot;highlighter-rouge&quot;&gt;ApiUtil#api_request&lt;/code&gt; which does the following:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Accept as parameters all the information needed to make the appropriate API call to a given endpoint.&lt;/li&gt;
+  &lt;li&gt;Create and send an API request object, e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;Net::HTTP::GET&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;Net::HTTP::POST&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Receive the response as an &lt;code class=&quot;highlighter-rouge&quot;&gt;HTTP::OK&lt;/code&gt; object (if successful).&lt;/li&gt;
+  &lt;li&gt;Return the parsed response as a &lt;code class=&quot;highlighter-rouge&quot;&gt;Cpc::Util::ApiResponse&lt;/code&gt; class instance.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;why-not-just-use-an-existing-library&quot;&gt;Why Not Just Use An Existing Library?&lt;/h2&gt;
+
+&lt;p&gt;At work, where time is of the essence, I would have spent the equivalent time in familiarising myself with a third-party library, but seeing as all the gems out there are wrappers for &lt;code class=&quot;highlighter-rouge&quot;&gt;net/http&lt;/code&gt;, and I was on holiday, I could afford to advance my learning by working directly with pure API calls and API responses.&lt;/p&gt;
+
+&lt;h2 id=&quot;apiutilapi_request&quot;&gt;ApiUtil#api_request&lt;/h2&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Cpc&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Util&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;ApiUtil&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;api_request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encoding_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This method takes three parameters:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;type_str&lt;/code&gt; =&amp;gt; the type of request, e.g. GET or POST, as a String.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;args_hsh&lt;/code&gt; =&amp;gt; URL, request headers, and request body, all packaged into a Hash.  (Nested key-value pairs)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;encoding_str&lt;/code&gt; =&amp;gt; Encoding to apply to the response body, as a String.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The method then constructs the request:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Converts the URL into a URI,&lt;/li&gt;
+  &lt;li&gt;Determines whether to use SSL,&lt;/li&gt;
+  &lt;li&gt;Creates a new request object – GET, POST, etc.&lt;/li&gt;
+  &lt;li&gt;Adds request headers, if any included,&lt;/li&gt;
+  &lt;li&gt;Adds the request body, if any included,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The method then sends the request and receives the response from the server:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;If the response is &lt;strong&gt;302&lt;/strong&gt; (Redirect), a subsequent API call is constructed and sent to the redirect endpoint.&lt;/li&gt;
+  &lt;li&gt;If the response is not &lt;strong&gt;302&lt;/strong&gt;, the response&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The final &lt;code class=&quot;highlighter-rouge&quot;&gt;HTTP::OK&lt;/code&gt; object is passed to a instance of my custom Class &lt;code class=&quot;highlighter-rouge&quot;&gt;Cpc::Util::ApiResponse&lt;/code&gt;, which parses the response object and makes available as readable attributes the API response code, response body, and response headers:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Cpc&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Util&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ApiResponse&lt;/span&gt;
+      &lt;span class=&quot;kp&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Cpc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Util&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;StringUtil&lt;/span&gt;
+      &lt;span class=&quot;kp&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Cpc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Util&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;CollectionUtil&lt;/span&gt;
+
+      &lt;span class=&quot;nb&quot;&gt;attr_reader&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:headers&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res_obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;encoding_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;vi&quot;&gt;@res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res_obj&lt;/span&gt;
+        &lt;span class=&quot;vi&quot;&gt;@code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res_obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to_i&lt;/span&gt;
+        &lt;span class=&quot;vi&quot;&gt;@body&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;parse_response_body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encoding_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;vi&quot;&gt;@headers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collect_headers&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;parse_response_body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encoding_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;# Parses @res.body as JSON, HTML, XML, or simply returns as is.&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;# Forces encoding if conditions are met&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;collect_headers&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;headers_hsh&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;
+        &lt;span class=&quot;vi&quot;&gt;@res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to_hash&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;headers_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;headers_hsh&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This light-weight object is more comfortable to work with than a simple Hash, and includes a couple of methods for nested information which it would not be worthwhile to add as readable attributes:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;temporary_headers&lt;/span&gt;
+  &lt;span class=&quot;vi&quot;&gt;@body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'headers'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt;
+  &lt;span class=&quot;vi&quot;&gt;@body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'method'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;origin&lt;/span&gt;
+  &lt;span class=&quot;vi&quot;&gt;@body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'origin'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Thus &lt;code class=&quot;highlighter-rouge&quot;&gt;res&lt;/code&gt;, an initialized Class instance, would have the following&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;res.code&lt;/code&gt; =&amp;gt; the API response code, converted to an integer.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;res.body&lt;/code&gt; =&amp;gt; key-value pairs, image, text, etc.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;res.headers&lt;/code&gt; =&amp;gt; usually key-value pairs.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In most cases, the response body is UTF-8-encoded String, but the method &lt;code class=&quot;highlighter-rouge&quot;&gt;#parse_response_body&lt;/code&gt; allows for others such as Base64 for images.
+The response body is returned either as a String or it parsed:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;If valid JSON, then &lt;code class=&quot;highlighter-rouge&quot;&gt;JSON#parse&lt;/code&gt; returns a JSON object.&lt;/li&gt;
+  &lt;li&gt;If valid HTML, then &lt;code class=&quot;highlighter-rouge&quot;&gt;Nokogiri::HTML&lt;/code&gt; returns an HTML object.&lt;/li&gt;
+  &lt;li&gt;If valid XML, then &lt;code class=&quot;highlighter-rouge&quot;&gt;Nokogiri::XML&lt;/code&gt; return an XML object.&lt;/li&gt;
+  &lt;li&gt;Else, the response body is returned as it is.  (If an image is expected, the method that invokes &lt;code class=&quot;highlighter-rouge&quot;&gt;ApiUtil#api_request&lt;/code&gt; can save the body to an image file, e.g. JPG or PNG)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;api-classes&quot;&gt;API Classes&lt;/h2&gt;
+
+&lt;p&gt;At the time of writing, there are four Classes in the Module &lt;code class=&quot;highlighter-rouge&quot;&gt;Cpc::Api&lt;/code&gt; that utilise &lt;code class=&quot;highlighter-rouge&quot;&gt;ApiUtil&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jsonplaceholder.typicode.com&quot;&gt;JsonPlaceholder&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://httpbin.org&quot;&gt;Httpbin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://http.cat&quot;&gt;HttpCat&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://app.bitly.com/bbt2/&quot;&gt;Bitly&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In each class, there is an instance method for every API endpoint. Because &lt;code class=&quot;highlighter-rouge&quot;&gt;ApiUtil#api_request&lt;/code&gt; takes care of the entire API call from request to response, all that is required to invoke it are the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;URL&lt;/li&gt;
+  &lt;li&gt;Request headers&lt;/li&gt;
+  &lt;li&gt;Request body&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These parameters are bundled into a Hash – &lt;code class=&quot;highlighter-rouge&quot;&gt;args_hsh&lt;/code&gt; – which is the most important parameter of the &lt;code class=&quot;highlighter-rouge&quot;&gt;ApiUtil#api_request&lt;/code&gt; method.  To make &lt;code class=&quot;highlighter-rouge&quot;&gt;api_request&lt;/code&gt; a little easier to work with, each type of API call has its own wrapper method:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;api_get_request&lt;/code&gt; =&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;api_request('get', args_hsh, encoding)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;api_post_request&lt;/code&gt; =&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;api_request('post', args_hsh, encoding)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;api_put_request&lt;/code&gt; =&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;api_request('put', args_hsh, encoding)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;api_delete_request&lt;/code&gt; =&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;api_request('delete', args_hsh, encoding)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;api_patch_request&lt;/code&gt; =&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;api_request('patch', args_hsh, encoding)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus, any method that invokes &lt;code class=&quot;highlighter-rouge&quot;&gt;api_request&lt;/code&gt; is constructed as follows:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Declare a Hash that contains at least the URL.&lt;/li&gt;
+  &lt;li&gt;Pass the Hash, and encoding if required, to the appropriate &lt;code class=&quot;highlighter-rouge&quot;&gt;api_request&lt;/code&gt; method.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;At the end of the process &lt;code class=&quot;highlighter-rouge&quot;&gt;ApiUtil#api_request&lt;/code&gt; instantiates and returns a &lt;code class=&quot;highlighter-rouge&quot;&gt;Cpc::Util::ApiResponse&lt;/code&gt; object, which has the following instance variables:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;@code&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;@body&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;@headers&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;example-naked-get-request&quot;&gt;Example: Naked GET Request&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://httpbin.org&quot;&gt;Httpbin&lt;/a&gt; provides an endpoint for a simple GET request with neither headers nor a body: https://httpbin.org/get&lt;/p&gt;
+
+&lt;p&gt;The Class &lt;code class=&quot;highlighter-rouge&quot;&gt;Cpc::Api::Httpbin&lt;/code&gt; initializes with an instance variable &lt;code class=&quot;highlighter-rouge&quot;&gt;@host&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host_url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;host_url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;nil?&lt;/span&gt;
+    &lt;span class=&quot;vi&quot;&gt;@host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https://httpbin.org'&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+    &lt;span class=&quot;vi&quot;&gt;@host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;host_url&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Thus, a method to hit the GET endpoint:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;naked_get&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;args_hsh&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;url: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;host: &lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;path: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'get'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;api_get_request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ApiUtil#api_get_request&lt;/code&gt; joins the values of the nested Hash &lt;code class=&quot;highlighter-rouge&quot;&gt;{ host: @host, path: 'get' }&lt;/code&gt; into a URL String and then passes that String to &lt;code class=&quot;highlighter-rouge&quot;&gt;URI#parse&lt;/code&gt;; the URI is added to a new GET request; and ultimately, &lt;code class=&quot;highlighter-rouge&quot;&gt;api_request&lt;/code&gt; returns a &lt;code class=&quot;highlighter-rouge&quot;&gt;Cpc::Util::ApiResponse&lt;/code&gt; object:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;vi&quot;&gt;@body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;args&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;
+   &lt;span class=&quot;s2&quot;&gt;&quot;headers&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Accept&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;*/*&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Accept-Encoding&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;gzip;q=1.0,deflate;q=0.6,identity;q=0.3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Connection&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;close&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Host&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0.0.0.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;User-Agent&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Ruby&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+   &lt;span class=&quot;s2&quot;&gt;&quot;origin&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;172.17.0.1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;s2&quot;&gt;&quot;url&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;http://0.0.0.0/get&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+ &lt;span class=&quot;vi&quot;&gt;@code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+ &lt;span class=&quot;vi&quot;&gt;@headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;server&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;gunicorn/19.9.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;s2&quot;&gt;&quot;date&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Tue, 07 Jan 2020 21:19:32 GMT&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;s2&quot;&gt;&quot;connection&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;close&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;s2&quot;&gt;&quot;content-type&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;application/json&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;s2&quot;&gt;&quot;content-length&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;263&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;s2&quot;&gt;&quot;access-control-allow-origin&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;*&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;s2&quot;&gt;&quot;access-control-allow-credentials&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;example-post-with-url-parameters&quot;&gt;Example: POST with URL Parameters&lt;/h2&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;post_response_headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;args_hsh&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;url: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;host: &lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;path: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'response-headers'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;url_params: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;freeform&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;api_post_request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ApiUtil#&lt;/code&gt;&lt;/p&gt;</content><author><name>Alexander Garber</name></author><category term="walkthrough" /><category term="api" /><summary type="html">Time To Crack the API Walnut</summary></entry><entry><title type="html">ISBN Fetcher Walkthrough</title><link href="http://localhost:4000/2019/10/03/isbn-fetcher-walkthrough.html" rel="alternate" type="text/html" title="ISBN Fetcher Walkthrough" /><published>2019-10-03T17:36:00+10:00</published><updated>2019-10-03T17:36:00+10:00</updated><id>http://localhost:4000/2019/10/03/isbn-fetcher-walkthrough</id><content type="html" xml:base="http://localhost:4000/2019/10/03/isbn-fetcher-walkthrough.html">&lt;p&gt;This is a walkthrough for the “ISBN Fetcher” defined by the class &lt;code class=&quot;highlighter-rouge&quot;&gt;Cpc::Toolkit::IsbnFetcher&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The story of this solution follows a process that should be familiar to anyone involved in Agile software development:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Discussion of requirements&lt;/li&gt;
+  &lt;li&gt;Preparation of sample inputs&lt;/li&gt;
+  &lt;li&gt;Feature specification with sample inputs and outputs&lt;/li&gt;
+  &lt;li&gt;Behaviour-driven development&lt;/li&gt;
+  &lt;li&gt;Test-driven development&lt;/li&gt;
+  &lt;li&gt;Integration testing&lt;/li&gt;
+  &lt;li&gt;End-to-end testing&lt;/li&gt;
+  &lt;li&gt;Review and approval&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;My wife and I wanted an easy way to catalogue our books for sale, which would satisfy the following criteria:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;The catalogue should be a complete record of our books.&lt;/li&gt;
+  &lt;li&gt;That it should be as easy as possible to record an entry for each book.&lt;/li&gt;
+  &lt;li&gt;That each record should also include the book’s location, i.e. which box it is in.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This is the solution we came up with:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Use a USB bar-code scanner to scan each book’s ISBN into a spreadsheet.&lt;/li&gt;
+  &lt;li&gt;Retrieve the full details of the book – title, author, etc. – via the ISBN.&lt;/li&gt;
+  &lt;li&gt;Save the full details of each book in a new spreadsheet.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;manual-input&quot;&gt;Manual Input&lt;/h3&gt;
+
+&lt;p&gt;My wife scanned into a spreadsheet every book in the collection and manually added which box the scanned book was located in.  Thus, we started with a spreadsheet that started like this:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;ISBN&lt;/th&gt;
+      &lt;th&gt;BOX&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;661741006715&lt;/td&gt;
+      &lt;td&gt;01 Craft&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;9780307587060&lt;/td&gt;
+      &lt;td&gt;01 Craft&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;9780615528540&lt;/td&gt;
+      &lt;td&gt;01 Craft&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;database&quot;&gt;Database&lt;/h3&gt;
+
+&lt;p&gt;While my wife was doing her bit, I looked for a suitable ISBN database.  I eventually decided to pay for access to &lt;a href=&quot;https://isbndb.com/&quot;&gt;ISBNdb&lt;/a&gt;, which, as the name suggests, is a large database for ISBNs, and more to the point, has very good API documentation.&lt;/p&gt;
+
+&lt;h2 id=&quot;development&quot;&gt;Development&lt;/h2&gt;
+
+&lt;p&gt;At this point we had two important pieces of the puzzle:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Input data: A spreadsheet of ISBNs and box numbers.&lt;/li&gt;
+  &lt;li&gt;Output data source: a database accessible via API.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;It was now time to start work on putting together a software solution.&lt;/p&gt;
+
+&lt;h3 id=&quot;specification&quot;&gt;Specification&lt;/h3&gt;
+&lt;p&gt;The first step was to describe the feature in language that both my wife and I could understand, so I wrote a Cucumber feature file called &lt;code class=&quot;highlighter-rouge&quot;&gt;isbn_fetcher.feature&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@online_extra
+Feature: ISBN Fetcher
+  In order to put together a list of books for sale
+  I want to fetch the details of books via their ISBNs from ISBNdb
+
+  Scenario Outline: ISBN Numbers Provided
+    Given the box title is &quot;&lt;span class=&quot;nt&quot;&gt;&amp;lt;box&amp;gt;&lt;/span&gt;&quot;
+    And I make an API call to &quot;ISBNdb&quot; with &quot;&lt;span class=&quot;nt&quot;&gt;&amp;lt;isbn&amp;gt;&lt;/span&gt;&quot;
+    And the API response code is &quot;200&quot;
+    When I parse the API response body and write it to &quot;ISBN CSV&quot;
+    Then I should have a copy of the response body in a CSV
+    And in the API response the box title should be &quot;&lt;span class=&quot;nt&quot;&gt;&amp;lt;box&amp;gt;&lt;/span&gt;&quot;
+    And in the API response the long title of the book should be &quot;&lt;span class=&quot;nt&quot;&gt;&amp;lt;long&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;_title&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&quot;
+    And in the API response the the author of the book should be &quot;&lt;span class=&quot;nt&quot;&gt;&amp;lt;author&amp;gt;&lt;/span&gt;&quot;
+    And in the API response the the publisher of the book should be &quot;&lt;span class=&quot;nt&quot;&gt;&amp;lt;publisher&amp;gt;&lt;/span&gt;&quot;
+    And in the API response the the binding of the book should be &quot;&lt;span class=&quot;nt&quot;&gt;&amp;lt;binding&amp;gt;&lt;/span&gt;&quot;
+    And in the API response the the book should have &quot;&lt;span class=&quot;nt&quot;&gt;&amp;lt;pages&amp;gt;&lt;/span&gt;&quot; pages
+    And in the API response the the publication date of the book should be &quot;&lt;span class=&quot;nt&quot;&gt;&amp;lt;date&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;_published&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&quot;&lt;span class=&quot;sb&quot;&gt;
+
+    Examples:
+    | isbn          | box                 | long_title                                      | author        | publisher                                     | binding      | pages | date_published |
+    | 9781931499651 | 01 Craft            | Knitting Vintage Socks                          | Nancy Bush    | Interweave                                    | Spiral-bound | 128   | 2005           |
+    | 9781596688513 | 02 Craft            | Scottish Knits: Colorwork &amp;amp; Cables With A Twist | Martin Storey | Interweave                                    | Paperback    | 152   | 2013           |
+    | 9780957740358 | 04 Children's Books | Eye_spy_who_am_i                                | N/A           | Melbourne : Borghesi &amp;amp; Adam Publishers, 2001. | N/A          | N/A   | N/A            |
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;step-definitions&quot;&gt;Step Definitions&lt;/h3&gt;
+&lt;p&gt;Once we had described the desired behaviour of our feature, the next step was to write Cucumber Steps, which define Cucumber’s handling of the inputs and the expectations.&lt;/p&gt;
+
+&lt;p&gt;The Cucumber Steps invoked are contained in two Step files, according to whether the Step is specific to the ISBN Fetcher or could be re-used in testing another feature:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;features/step_definitions/api_steps.rb&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;features/step_definitions/isbn_fetcher_steps.rb&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thus, &lt;code class=&quot;highlighter-rouge&quot;&gt;api_steps.rb&lt;/code&gt; covers these Steps, which would be part of any feature that makes API calls:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;And I make an API call to &quot;ISBNdb&quot; with &quot;&amp;lt;isbn&amp;gt;&quot;
+And the API response code is &quot;200&quot;
+When I parse the API response body and write it to &quot;ISBN CSV&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And the rest of the Steps, being specific to ISBN Fetcher, are defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;isbn_fetcher_steps.rb&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Then I should have a copy of the response body in a CSV
+And in the API response the box title should be &quot;&amp;lt;box&amp;gt;&quot;
+And in the API response the long title of the book should be &quot;&amp;lt;long_title&amp;gt;&quot;
+And in the API response the the author of the book should be &quot;&amp;lt;author&amp;gt;&quot;
+And in the API response the the publisher of the book should be &quot;&amp;lt;publisher&amp;gt;&quot;
+And in the API response the the binding of the book should be &quot;&amp;lt;binding&amp;gt;&quot;
+And in the API response the the book should have &quot;&amp;lt;pages&amp;gt;&quot; pages
+And in the API response the the publication date of the book should be &quot;&amp;lt;date_published&amp;gt;&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The most important Step, for the purposes of our story, is this:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;Given&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;I make an API call to {string} with {string}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;string1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ISBNdb&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;isbn_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;string2&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;isbn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Cpc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Toolkit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;IsbnFetcher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ISBN_DB_API_KEY'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;vi&quot;&gt;@book_details_hsh&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isbn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;collect_book_details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isbn_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;vi&quot;&gt;@box_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Because it asserts that everything in this feature test will hinge on the following:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;A Class called &lt;code class=&quot;highlighter-rouge&quot;&gt;Cpc::Toolkit::IsbnFetcher&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;This Class will be initialized with an API key.&lt;/li&gt;
+  &lt;li&gt;This class will contain an instance method called &lt;code class=&quot;highlighter-rouge&quot;&gt;book_details&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;The instance method &lt;code class=&quot;highlighter-rouge&quot;&gt;book_details&lt;/code&gt; will return a Hash containing all the details of a given book, given an &lt;strong&gt;ISBN&lt;/strong&gt; and a &lt;strong&gt;box label&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;rspecs&quot;&gt;RSpecs&lt;/h3&gt;
+
+&lt;p&gt;At this point, with an outline of where the code for my solution would be housed (&lt;code class=&quot;highlighter-rouge&quot;&gt;Cpc::Toolkit::IsbnFetcher&lt;/code&gt;), what the pivotal method would be called (&lt;code class=&quot;highlighter-rouge&quot;&gt;book_details&lt;/code&gt;), and the requisite inputs (API key, ISBN, box label), I was ready to start writing my unit tests in RSpec.&lt;/p&gt;
+
+&lt;p&gt;Naturally, the Spec file would be called &lt;code class=&quot;highlighter-rouge&quot;&gt;spec/cpc/toolkit/isbn_fetcher_spec.rb&lt;/code&gt;, and it would start like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'spec_helper'&lt;/span&gt;
+
+&lt;span class=&quot;no&quot;&gt;RSpec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;describe&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Cpc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Toolkit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;IsbnFetcher&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And it would contain a &lt;code class=&quot;highlighter-rouge&quot;&gt;context&lt;/code&gt; block like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Authorised API key'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;online_extra: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;subject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Cpc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Toolkit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;IsbnFetcher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ISBN_DB_API_KEY'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ISBN 9781931499651'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;isbn_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'9781931499651'&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;box_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'01 Craft'&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;before&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;vi&quot;&gt;@book_details&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;subject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;collect_book_details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isbn_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;box_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;## A series of `it` blocks containing expectations&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;api-key&quot;&gt;API Key&lt;/h4&gt;
+
+&lt;p&gt;However, before I could proceed, I needed to securely handle my API key.  Rails 5 makes it easy to store sensitive data in an encrypted credentials file, but in a pure Ruby project like this, the most suitable option I found is the &lt;code class=&quot;highlighter-rouge&quot;&gt;dotenv&lt;/code&gt; gem, so I stored my API key in a &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; as &lt;code class=&quot;highlighter-rouge&quot;&gt;ISBN_DB_API_KEY&lt;/code&gt;, which makes it available to my code as &lt;code class=&quot;highlighter-rouge&quot;&gt;ENV['ISBN_DB_API_KEY']&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;apiutil&quot;&gt;ApiUtil&lt;/h4&gt;
+
+&lt;p&gt;Seeing as I was on the topic of handling an API key, and the entire feature is based on making API calls, the next item to concentrate on was the code that does just that.&lt;/p&gt;
+
+&lt;p&gt;I didn’t want to make API calls specific to ISBN Fetcher, so in my &lt;code class=&quot;highlighter-rouge&quot;&gt;Util&lt;/code&gt; module, I decided to create a small Module called &lt;code class=&quot;highlighter-rouge&quot;&gt;ApiUtil&lt;/code&gt;, which would contain a wrapper &lt;code class=&quot;highlighter-rouge&quot;&gt;api_call&lt;/code&gt;, which in turn would accept a Hash of API request parameters.&lt;/p&gt;
+
+&lt;p&gt;This way, &lt;code class=&quot;highlighter-rouge&quot;&gt;IsbnFetcher&lt;/code&gt;, and any future features, could pass all the API request parameters in one simple Hash to the wrapper, and get back the API response.&lt;/p&gt;
+
+&lt;p&gt;To that end, I created another Spec file: &lt;code class=&quot;highlighter-rouge&quot;&gt;spec/cpc/util/api_util_spec.rb&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'spec_helper'&lt;/span&gt;
+
+&lt;span class=&quot;no&quot;&gt;RSpec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;describe&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Cpc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Util&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ApiUtil&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;kp&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Cpc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Util&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ApiUtil&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:args_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;ss&quot;&gt;url: &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://api2.isbndb.com/book/9781931499651?with_prices=0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;ss&quot;&gt;request_headers: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;accept&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'application/json'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;Authorization&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ISBN_DB_API_KEY'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;cache-control&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'no-cache'&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'should return book details of 9781931499651'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;online_extra: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;api_get_request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;200&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;book&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The code that passes this spec is in &lt;code class=&quot;highlighter-rouge&quot;&gt;lib/cpc/util/api_util.rb&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# frozen_string_literal: true&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'uri'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'net/http'&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Cpc&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Util&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;ApiUtil&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;api_get_request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;URI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;http&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Net&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;HTTP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;use_ssl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Net&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;HTTP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;args_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:request_headers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to_s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;back-to-isbnfetcher&quot;&gt;Back to IsbnFetcher&lt;/h3&gt;
+
+&lt;p&gt;With a reliable API wrapper in place, the role of the method &lt;code class=&quot;highlighter-rouge&quot;&gt;book_details&lt;/code&gt; was clarified:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Take an ISBN String (&lt;code class=&quot;highlighter-rouge&quot;&gt;isbn_str&lt;/code&gt;) and a box label (&lt;code class=&quot;highlighter-rouge&quot;&gt;box_str&lt;/code&gt;) as parameters;&lt;/li&gt;
+  &lt;li&gt;Create a Hash of API request parameters (&lt;code class=&quot;highlighter-rouge&quot;&gt;args_hsh&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;Pass the API request parameters Hash to the &lt;code class=&quot;highlighter-rouge&quot;&gt;Cpc::Util::ApiUtil.api_get_request(args_hsh)&lt;/code&gt; wrapper&lt;/li&gt;
+  &lt;li&gt;Parse the API response body (&lt;code class=&quot;highlighter-rouge&quot;&gt;res&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;Return a Hash containing the details of a book – title, author, etc. (&lt;code class=&quot;highlighter-rouge&quot;&gt;details_hsh&lt;/code&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;let-variables&quot;&gt;(:let) Variables&lt;/h4&gt;
+
+&lt;p&gt;If you have a paid ISBNdb account, you can use the API caller that is built into its API documentation page to collect a few samples.  For example, an API call for &lt;code class=&quot;highlighter-rouge&quot;&gt;9781931499651&lt;/code&gt; will return the following details, which I added to &lt;code class=&quot;highlighter-rouge&quot;&gt;isbn_fetcher_spec.rb&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:long_title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Knitting Vintage Socks&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:author&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Nancy Bush&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:publisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Interweave&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:binding_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Spiral-bound&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:pages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;128&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:date_published&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2005&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Which meant I could finally populate my &lt;code class=&quot;highlighter-rouge&quot;&gt;context&lt;/code&gt; block from before with &lt;code class=&quot;highlighter-rouge&quot;&gt;it&lt;/code&gt; blocks:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Authorised API key'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;online_extra: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;subject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Cpc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Toolkit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;IsbnFetcher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ISBN_DB_API_KEY'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ISBN 9781931499651'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;isbn_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'9781931499651'&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;box_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'01 Craft'&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;before&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;vi&quot;&gt;@book_details&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;subject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;collect_book_details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isbn_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;box_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'should have the right headers'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@book_details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;header_str_ary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'should return book title from ISBNdb'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@book_details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:isbn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isbn_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'should return book title from ISBNdb'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@book_details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:box&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;box_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'should return book title from ISBNdb'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@book_details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:long_title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;long_title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'should return author from ISBNdb'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@book_details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:author&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'should return publisher from ISBNdb'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@book_details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:publisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;publisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'should return binding from ISBNdb'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@book_details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:binding_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;binding_type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'should return page count from ISBNdb'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@book_details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:pages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pages&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'should return publication date from ISBNdb'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@book_details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:date_published&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date_published&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And now I was ready to start writing the code.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-code&quot;&gt;THE CODE&lt;/h3&gt;
+
+&lt;p&gt;From here on, it is the familiar story of iteratively solving problems through TDD and BDD as they crop up:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;How do I package the API request parameters?&lt;/li&gt;
+  &lt;li&gt;How do I handle failed API requests? (Not “200”)&lt;/li&gt;
+  &lt;li&gt;How do I save the result to CSV?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And so on.  The end result of this back-and-forth process are the methods:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;book_details&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;save_to_csv&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;batch_fetch_save_to_csv&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Around which all the other methods in &lt;a href=&quot;&quot;&gt;isbn_fetcher.rb&lt;/a&gt; are written:&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;collect_book_details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isbn_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;box_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Fetching book details for &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isbn_str&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; in &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;box_str&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; box&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;args_hsh&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isbn_db_args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isbn_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;api_get_request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;book_hsh&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;book&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;response_code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;code&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response_code&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;200&quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Rainbow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Details found for &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isbn_str&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;green&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;details_hsh&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collect_details_book_found_true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isbn_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;box_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response_code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;book_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Rainbow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;No details found for &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isbn_str&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;red&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;details_hsh&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collect_details_book_found_false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isbn_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;box_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response_code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;details_hsh&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;save_to_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;details_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;csv_filepath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;no_headers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;exist?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;csv_filepath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;empty?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;csv_filepath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;write_to_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;details_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;csv_filepath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;no_headers&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;append_to_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;details_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;csv_filepath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;no_headers&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;batch_fetch_save_to_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isbn_hsh_ary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;csv_filepath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;countdown&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isbn_hsh_ary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;count&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;countup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;isbn_hsh_ary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isbn_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;box_str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;isbn_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isbn_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:isbn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;box_str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isbn_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:box&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;details_hsh&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collect_book_details&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isbn_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;box_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;save_to_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;details_hsh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;csv_filepath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;countdown&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;countup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ISBNs checked: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;countup&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Books remaining: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;countdown&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;It could be argued that in the time it took to follow this process, I could have just written a script to achieve the same result.&lt;/p&gt;
+
+&lt;p&gt;However, this disciplined approach to the solution means that not only shall I be able to return to my code in the future and understand what it does, but my project is enhanced by the example of a clear Feature file, well organised Steps, organised RSpecs, an additional &lt;code class=&quot;highlighter-rouge&quot;&gt;Util&lt;/code&gt; module, and clear, easy-to-follow code.  In the future, if I wish to extend or refactor this feature, or share my knowledge, this example will make life easier not only for me, but for anyone I collaborate with too.&lt;/p&gt;</content><author><name>Alexander Garber</name></author><category term="walkthrough" /><category term="isbn-fetcher" /><summary type="html">This is a walkthrough for the “ISBN Fetcher” defined by the class Cpc::Toolkit::IsbnFetcher.</summary></entry><entry><title type="html">Pomodoro Cycle XXII: Work Cycle II</title><link href="http://localhost:4000/2018/08/03/pomodoro_cycle_xxii_work_cycle_ii.html" rel="alternate" type="text/html" title="Pomodoro Cycle XXII: Work Cycle II " /><published>2018-08-03T00:00:00+10:00</published><updated>2018-08-03T00:00:00+10:00</updated><id>http://localhost:4000/2018/08/03/pomodoro_cycle_xxii_work_cycle_ii</id><content type="html" xml:base="http://localhost:4000/2018/08/03/pomodoro_cycle_xxii_work_cycle_ii.html">&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;a href=&quot;https://lh3.googleusercontent.com/-WQjy6oJiqp8/W2PXIJwM2TI/AAAAAAAAbgY/z0aT8rVv_jg9BHwXrIdWi5CNz7yRLGGMQCHMYCw/s2560/%255BUNSET%255D&quot; onblur=&quot;try {parent.deselectBloggerImageGracefully();} catch(e) {}&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;https://lh3.googleusercontent.com/-WQjy6oJiqp8/W2PXIJwM2TI/AAAAAAAAbgY/z0aT8rVv_jg9BHwXrIdWi5CNz7yRLGGMQCHMYCw/s640/%255BUNSET%255D&quot; style=&quot;display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;&quot; /&gt;&lt;/a&gt;&lt;/div&gt;</content><author><name>Alexander Garber</name></author><summary type="html"></summary></entry><entry><title type="html">1,050 hours</title><link href="http://localhost:4000/2018/06/11/1_050_hours.html" rel="alternate" type="text/html" title="1,050 hours " /><published>2018-06-11T00:00:00+10:00</published><updated>2018-06-11T00:00:00+10:00</updated><id>http://localhost:4000/2018/06/11/1_050_hours</id><content type="html" xml:base="http://localhost:4000/2018/06/11/1_050_hours.html">&lt;div dir=&quot;ltr&quot; style=&quot;text-align: left;&quot; trbidi=&quot;on&quot;&gt;
+          &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;a href=&quot;https://lh3.googleusercontent.com/-z3JTRUynqLM/WxibtLPNcEI/AAAAAAAAa0s/rrJ8uwsiBnUZTKYYbqEBOKr3TlxsXRUGgCHMYCw/s2560/%255BUNSET%255D&quot; onblur=&quot;try {parent.deselectBloggerImageGracefully();} catch(e) {}&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;https://lh3.googleusercontent.com/-z3JTRUynqLM/WxibtLPNcEI/AAAAAAAAa0s/rrJ8uwsiBnUZTKYYbqEBOKr3TlxsXRUGgCHMYCw/s640/%255BUNSET%255D&quot; style=&quot;cursor: hand; cursor: pointer; display: block; margin: 0px auto 10px; text-align: center;&quot; /&gt;&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;It
+            took me 13 working days to complete my first 100 &quot;work&quot; pomodoros as a Junior Software Tester at Profectus Group.  Much of my time has been spent deep in documentation, trying to learn the key rules that govern Profectus RDM
+            software, and I have even knocked off a couple of very simple testing and support cards.  My definition of a &quot;work&quot; pomodoro is time spent either in research or in writing, or put another way, time spent that I have something to
+            show for afterwards, be it a completed card, communications with the team, or my own notes.  Breaks, chats, meetings, exercise, and anything that cannot be classified as productive work is not counted as a &quot;work&quot; pomodoro.&lt;br /&gt;&lt;br /&gt;My
+            daily average of &quot;work&quot; pomodoros for this cycle was 7.69, or a bit over 4½ hours, which taking into account time spent in meetings, stand-ups, and generally finding my way around the office, it's not too bad.  I predict that over
+            the long term my daily average will sit between four and five hours, with the other two hours being taken up mostly in meetings of various kinds.&lt;br /&gt;&lt;br /&gt;Everyone in my team is friendly and helpful, and although there is plenty to
+            learn, I haven't been thrown in the deep end, and I am entrusted with the autonomy to chart my own path to proficiency.&lt;br /&gt;&lt;br /&gt;We'll have to wait until August for my second pomodoro cycle, as I will be off from work after this week
+            until I get back from my honeymoon.  Life is a lot brighter in light of a job to come back to.&lt;br /&gt;&lt;br /&gt;Looking forward to doing plenty of good work upon my return.&lt;/div&gt;
+        &lt;/div&gt;</content><author><name>Alexander Garber</name></author><summary type="html">It took me 13 working days to complete my first 100 &quot;work&quot; pomodoros as a Junior Software Tester at Profectus Group.  Much of my time has been spent deep in documentation, trying to learn the key rules that govern Profectus RDM software, and I have even knocked off a couple of very simple testing and support cards.  My definition of a &quot;work&quot; pomodoro is time spent either in research or in writing, or put another way, time spent that I have something to show for afterwards, be it a completed card, communications with the team, or my own notes.  Breaks, chats, meetings, exercise, and anything that cannot be classified as productive work is not counted as a &quot;work&quot; pomodoro.My daily average of &quot;work&quot; pomodoros for this cycle was 7.69, or a bit over 4½ hours, which taking into account time spent in meetings, stand-ups, and generally finding my way around the office, it's not too bad.  I predict that over the long term my daily average will sit between four and five hours, with the other two hours being taken up mostly in meetings of various kinds.Everyone in my team is friendly and helpful, and although there is plenty to learn, I haven't been thrown in the deep end, and I am entrusted with the autonomy to chart my own path to proficiency.We'll have to wait until August for my second pomodoro cycle, as I will be off from work after this week until I get back from my honeymoon.  Life is a lot brighter in light of a job to come back to.Looking forward to doing plenty of good work upon my return.</summary></entry><entry><title type="html">1,000 Hours in Code: What Do I Have To Show For It?</title><link href="http://localhost:4000/2018/06/07/1_000_hours_in_code_what_do_i_have_to_show_for_it.html" rel="alternate" type="text/html" title="1,000 Hours in Code: What Do I Have To Show For It?" /><published>2018-06-07T00:00:00+10:00</published><updated>2018-06-07T00:00:00+10:00</updated><id>http://localhost:4000/2018/06/07/1_000_hours_in_code_what_do_i_have_to_show_for_it</id><content type="html" xml:base="http://localhost:4000/2018/06/07/1_000_hours_in_code_what_do_i_have_to_show_for_it.html">&lt;div dir=&quot;ltr&quot; style=&quot;text-align: left;&quot; trbidi=&quot;on&quot;&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;a href=&quot;https://lh3.googleusercontent.com/-sTt-iYK_l14/WvwR1cM5wfI/AAAAAAAAakk/l8b6E2f-_TYAz1k2j4yFeHuabosj-s1lACHMYCw/s2560/%255BUNSET%255D&quot; onblur=&quot;try {parent.deselectBloggerImageGracefully();} catch(e) {}&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;https://lh3.googleusercontent.com/-sTt-iYK_l14/WvwR1cM5wfI/AAAAAAAAakk/l8b6E2f-_TYAz1k2j4yFeHuabosj-s1lACHMYCw/s640/%255BUNSET%255D&quot; style=&quot;cursor: hand; cursor: pointer; display: block; margin: 0px auto 10px; text-align: center;&quot; /&gt;&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;It
+          was not a happy day when I passed the official milestone of 1,000 hours of trying to become a developer.  I was still without a job, and long, painful experience had taught me that interviews in the offing counted for little.&lt;br /&gt;&lt;br /&gt;So
+          I saved this photograph in a draft of this post, wiped my board clean, and stenciled out the twenty-first matrix.  I intended to write a blog post about how far I've come in my coding journey and all the things that I can work with
+          now, of which I had scant knowledge a year-and-a-half ago — Ruby, Rails, coding puzzles, HTML, CSS, JavaScript, etc.  Instead, I turned off my computer and went to the gym.&lt;br /&gt;&lt;br /&gt;A career change is always hard, and these days
+          no-one cares much for the travails of a married man who dreams of providing for his family.  Looking for work is laborious, thankless, frustrating, exhausting, and depressing.  But what's the alternative?  I had to keep on
+          going.&lt;br /&gt;&lt;br /&gt;So the next day I turned on my System76 computer, for which I am most grateful, and spent the next few days studying hard on Udemy.  I put thoughts of whether I might get a job out of my mind and concentrated on
+          studying and writing code — which, despite all the frustrations, I enjoy for its own sake — and to cut a long story short, fortune smiled on me two weeks later.&lt;br /&gt;&lt;br /&gt;Those of you who follow me on LinkedIn will have noticed a small,
+          but rather important update in my profile:&lt;br /&gt;&lt;br /&gt;
+          &lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;https://3.bp.blogspot.com/-O2WHIMnWPZo/WxiJTDXhwtI/AAAAAAAAa0U/TjhZPKH6NVY-0GDKWSM9efYf9A490sPLQCLcBGAs/s1600/Screenshot%2Bfrom%2B2018-06-07%2B11-24-02.png&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; data-original-height=&quot;292&quot; data-original-width=&quot;375&quot; height=&quot;249&quot; src=&quot;https://3.bp.blogspot.com/-O2WHIMnWPZo/WxiJTDXhwtI/AAAAAAAAa0U/TjhZPKH6NVY-0GDKWSM9efYf9A490sPLQCLcBGAs/s320/Screenshot%2Bfrom%2B2018-06-07%2B11-24-02.png&quot; width=&quot;320&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;br /&gt;It's been two weeks in the job and I've almost completed a full cycle of pomodoros of productive work.  After going to roughly twenty interviews, someone finally agreed to give me a chance, and I
+          think my colleagues will agree that I've grabbed it with both hands.&lt;br /&gt;&lt;br /&gt;So, it didn't take me exactly 1,000 hours, but rather 1,015½ hours, but what do I have to show for it?  A mission accomplished and a career change
+          effected.&lt;br /&gt;&lt;br /&gt;Of course, in an important way, my work has only just begun: time is limited and there's lots to learn.&lt;br /&gt;&lt;br /&gt;But if there's one thing I'm good at, it's making the most of my time.&lt;br /&gt;&lt;br /&gt;Tick, tock, and all
+          that.
+        &lt;/div&gt;</content><author><name>Alexander Garber</name></author><summary type="html">It was not a happy day when I passed the official milestone of 1,000 hours of trying to become a developer.  I was still without a job, and long, painful experience had taught me that interviews in the offing counted for little.So I saved this photograph in a draft of this post, wiped my board clean, and stenciled out the twenty-first matrix.  I intended to write a blog post about how far I've come in my coding journey and all the things that I can work with now, of which I had scant knowledge a year-and-a-half ago — Ruby, Rails, coding puzzles, HTML, CSS, JavaScript, etc.  Instead, I turned off my computer and went to the gym.A career change is always hard, and these days no-one cares much for the travails of a married man who dreams of providing for his family.  Looking for work is laborious, thankless, frustrating, exhausting, and depressing.  But what's the alternative?  I had to keep on going.So the next day I turned on my System76 computer, for which I am most grateful, and spent the next few days studying hard on Udemy.  I put thoughts of whether I might get a job out of my mind and concentrated on studying and writing code — which, despite all the frustrations, I enjoy for its own sake — and to cut a long story short, fortune smiled on me two weeks later.Those of you who follow me on LinkedIn will have noticed a small, but rather important update in my profile: It's been two weeks in the job and I've almost completed a full cycle of pomodoros of productive work.  After going to roughly twenty interviews, someone finally agreed to give me a chance, and I think my colleagues will agree that I've grabbed it with both hands.So, it didn't take me exactly 1,000 hours, but rather 1,015½ hours, but what do I have to show for it?  A mission accomplished and a career change effected.Of course, in an important way, my work has only just begun: time is limited and there's lots to learn.But if there's one thing I'm good at, it's making the most of my time.Tick, tock, and all that.</summary></entry><entry><title type="html">112 Things I Have Learned about Ruby Programming</title><link href="http://localhost:4000/2018/05/16/112_things_i_have_learned_about_ruby_programming.html" rel="alternate" type="text/html" title="112 Things I Have Learned about Ruby Programming" /><published>2018-05-16T00:00:00+10:00</published><updated>2018-05-16T00:00:00+10:00</updated><id>http://localhost:4000/2018/05/16/112_things_i_have_learned_about_ruby_programming</id><content type="html" xml:base="http://localhost:4000/2018/05/16/112_things_i_have_learned_about_ruby_programming.html">&lt;div dir=&quot;ltr&quot; style=&quot;text-align: left;&quot; trbidi=&quot;on&quot;&gt;
+          &lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;https://udemy-certificate.s3.amazonaws.com/image/UC-UHDQOFNR.jpg&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; data-original-height=&quot;597&quot; data-original-width=&quot;800&quot; height=&quot;238&quot; src=&quot;https://udemy-certificate.s3.amazonaws.com/image/UC-UHDQOFNR.jpg&quot; width=&quot;320&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+          &lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;br /&gt;&lt;/div&gt;
+          &lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;br /&gt;&lt;/div&gt;
+          &lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: left;&quot;&gt;I worked through the excellent introductory course to Ruby by Boris Paskhaver on Udemy.com (&lt;a href=&quot;https://www.udemy.com/learn-to-code-with-ruby-lang&quot;&gt;https://www.udemy.com/learn-to-code-with-ruby-lang&lt;/a&gt;).
+            The following is a list of things the course has either taught me or refreshed in my mind, which I hope will be of use to others.&lt;/div&gt;
+          &lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: left;&quot;&gt;&lt;br /&gt;&lt;/div&gt;
+          &lt;script src=&quot;https://gist.github.com/clockworkpc/0e05fd1e623d10e0c599db041a3f873e.js&quot;&gt;&lt;/script&gt;
+        &lt;/div&gt;</content><author><name>Alexander Garber</name></author><summary type="html">I worked through the excellent introductory course to Ruby by Boris Paskhaver on Udemy.com (https://www.udemy.com/learn-to-code-with-ruby-lang). The following is a list of things the course has either taught me or refreshed in my mind, which I hope will be of use to others.</summary></entry><entry><title type="html">Functional programming in #JavaScript makes a lot more sense now</title><link href="http://localhost:4000/2018/05/05/functional_programming_in_javascript_makes_a_lot_more_sense_now.html" rel="alternate" type="text/html" title="Functional programming in #JavaScript makes a lot more sense now " /><published>2018-05-05T00:00:00+10:00</published><updated>2018-05-05T00:00:00+10:00</updated><id>http://localhost:4000/2018/05/05/functional_programming_in_javascript_makes_a_lot_more_sense_now</id><content type="html" xml:base="http://localhost:4000/2018/05/05/functional_programming_in_javascript_makes_a_lot_more_sense_now.html">&lt;div dir=&quot;ltr&quot; style=&quot;text-align: left;&quot; trbidi=&quot;on&quot;&gt;
+          &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;a href=&quot;https://lh3.googleusercontent.com/-4x8G3wib1RQ/Wu2c7TQ4aoI/AAAAAAAAaMU/D1vahmg5NW4-w5gjlJISsUDgaR9I-ZBkQCHMYCw/s2560/%255BUNSET%255D&quot; onblur=&quot;try {parent.deselectBloggerImageGracefully();} catch(e) {}&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;https://lh3.googleusercontent.com/-4x8G3wib1RQ/Wu2c7TQ4aoI/AAAAAAAAaMU/D1vahmg5NW4-w5gjlJISsUDgaR9I-ZBkQCHMYCw/s640/%255BUNSET%255D&quot; style=&quot;cursor: hand; cursor: pointer; display: block; margin: 0px auto 10px; text-align: center;&quot; /&gt;&lt;/a&gt;&lt;br /&gt;It's
+            a small step, but I'm excited for the possibilities it augurs.&lt;/div&gt;
+        &lt;/div&gt;</content><author><name>Alexander Garber</name></author><summary type="html">It's a small step, but I'm excited for the possibilities it augurs.</summary></entry><entry><title type="html">Spent two hours on #JavaScript closures, but it was worth it</title><link href="http://localhost:4000/2018/05/04/spent_two_hours_on_javascript_closures_but_it_was_worth_it.html" rel="alternate" type="text/html" title="Spent two hours on #JavaScript closures, but it was worth it " /><published>2018-05-04T00:00:00+10:00</published><updated>2018-05-04T00:00:00+10:00</updated><id>http://localhost:4000/2018/05/04/spent_two_hours_on_javascript_closures_but_it_was_worth_it</id><content type="html" xml:base="http://localhost:4000/2018/05/04/spent_two_hours_on_javascript_closures_but_it_was_worth_it.html">&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;a href=&quot;https://lh3.googleusercontent.com/-CNyghM80MBU/WuuehaC3FzI/AAAAAAAAaLc/pttbep5DN4ICKhgQuxbrmvWuT2-LUrPrQCHMYCw/s2560/%255BUNSET%255D&quot; onblur=&quot;try {parent.deselectBloggerImageGracefully();} catch(e) {}&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;https://lh3.googleusercontent.com/-CNyghM80MBU/WuuehaC3FzI/AAAAAAAAaLc/pttbep5DN4ICKhgQuxbrmvWuT2-LUrPrQCHMYCw/s640/%255BUNSET%255D&quot; style=&quot;display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;&quot; /&gt;&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;a href=&quot;https://lh3.googleusercontent.com/-yJckFjhYn3c/WuuemBKpPHI/AAAAAAAAaLg/5_r1WjUiqsoMVneIl2KQr0R05wZ6JAzmQCHMYCw/s2560/%255BUNSET%255D&quot; onblur=&quot;try {parent.deselectBloggerImageGracefully();} catch(e) {}&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;https://lh3.googleusercontent.com/-yJckFjhYn3c/WuuemBKpPHI/AAAAAAAAaLg/5_r1WjUiqsoMVneIl2KQr0R05wZ6JAzmQCHMYCw/s640/%255BUNSET%255D&quot; style=&quot;display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;&quot; /&gt;&lt;/a&gt;
+&lt;/div&gt;</content><author><name>Alexander Garber</name></author><summary type="html"></summary></entry></feed>
