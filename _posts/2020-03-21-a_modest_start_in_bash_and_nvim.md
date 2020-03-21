@@ -4,7 +4,6 @@ title:  A Modest Start in BASH and NVIM
 date:   Sat 21 Mar 17:40:29 AEDT 2020
 tags: [bash, vim, scripting]
 ---
-# A Modest Start in BASH and NVIM
 
 Instead of using Ruby and Atom to write a "create post" script, I decided to do it in `bash` and `nvim` instead.  I'm still getting used to the vim keybinding, but I'm really enjoying climbing the learning curve, and there's something, well, empowering about learning how to interact more directly with the system in BASH.
 
@@ -37,7 +36,6 @@ elif [[ -z "$myTags" ]] ; then
   echo "No tags provided"
 else
   echo "${myYml}" > $filePath
-  echo "# ${myTitle}" >> ${filePath}
   nvim "${filePath}"
   glow "${filePath}"
 fi
@@ -45,7 +43,7 @@ fi
 
 If you're wondering, this is the YAML template:
 
-```yml
+```
 ---
 layout: post
 title:  MY_TITLE
