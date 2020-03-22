@@ -5,11 +5,9 @@ date:   Sat 21 Mar 17:40:29 AEDT 2020
 tags: [bash, vim, scripting]
 ---
 
-Instead of using Ruby and Atom to write a "create post" script, I decided to do it in `bash` and `nvim` instead.  I'm still getting used to the vim keybinding, but I'm really enjoying climbing the learning curve, and there's something, well, empowering about learning how to interact more directly with the system in BASH.
+Instead of using `ruby` and `atom` to write a "create post" shell script, I decided to do it in `bash` and `nvim` instead.  I'm still getting used to the vim keybindings, but it's actually a lot of fun, and there's something empowering about learning to interact more directly with the system in `bash`.
 
-I could have easily written the following script in Ruby in a fraction of the time, but in the process I've learned a few thing about shell scripting.
-
-On the whole, it's just a lot more satisfying.
+I could have easily written the following script in `ruby` in a fraction of the time, but in the process I learned a few new tricks in both `bash` and `nvim`.
 
 ```sh
 #!/bin/bash
