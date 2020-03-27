@@ -26,5 +26,7 @@ else
   nvim "${filePath}"
   glow "${filePath}"
   echo -e "${myYml}\n$(cat $filePath)" > $filePath
+  git add .
+  git commit -m "${myBasename}"
 fi
 
