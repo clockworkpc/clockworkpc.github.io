@@ -32,12 +32,24 @@ tags: [activerecord, sql, rails]
 
 ```
 
-## admin_users
-
+## Assocations: `admin_users`, `sections`, `section_edits`
 
 ```ruby
 
 AdminUser has_many :section_edits
+AdminUser has_many :sections, through: :section_edits
 SectionEdit belongs_to :admin_user
 
+Section has_many :section_edits
+Section has_many :admin_users, through: :section_edits
+SectionEdit belongs_to :section
+
 ```
+
+## Tables
+
+| admin_users | section_edits | sections |
+|-------------|---------------|----------|
+| **id**      | admin_id      |          |
+|             | section_id    | **id**   |
+
