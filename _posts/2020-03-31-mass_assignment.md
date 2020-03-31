@@ -1,3 +1,9 @@
+---
+layout: post
+title:  Mass Assignment
+date:   Tue 31 Mar 10:28:19 AEDT 2020
+tags: [rails, security, crud]
+---
 ## Security Flaw of Mass Assignment
 
 ```ruby
@@ -66,7 +72,7 @@ permitted = params[:user].require(:email).permit(:name)
 class SubjectsController < ApplicationController
 
     def create
-        @subject = Subject.new(params[:subject].require(:subject).permit(:name, :position, :visible))
+        @subject = Subject.new(subject_params)
 
         if @subject.save
             redirect_to(subjects_path)
@@ -74,6 +80,11 @@ class SubjectsController < ApplicationController
             render('new')
         end
     end
+
+    private
+
+    def subject_params
+        params.require(:subject).permit(:name, :position, :visible)
+    end
 end
 ```
-
