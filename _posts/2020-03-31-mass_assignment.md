@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  Mass Assignment
-date:   Tue 31 Mar 10:28:19 AEDT 2020
+title:  "Mass Assignment"
+date:   "Tue 31 Mar 10:28:19 AEDT 2020"
 tags: [rails, security, crud]
 ---
 ## Security Flaw of Mass Assignment
@@ -14,7 +14,7 @@ tags: [rails, security, crud]
 @user.update_attributes({username: '733thax0r', password: 'nososecretanymore', admin: true})
 ```
 
-## Failing Code
+## Failing Code (ActiveModel::ForbiddenAttributesError)
 
 ```ruby
 def create
@@ -63,8 +63,6 @@ params[:user] = { name: 'John Smith', email: 'john.smith@me.com', admin: false }
 @user = User.new(params[:user])
 permitted = params[:user].require(:email).permit(:name)
 ```
-
-
 
 ## Passing Code
 
