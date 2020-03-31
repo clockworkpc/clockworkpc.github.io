@@ -6,6 +6,6 @@ tags: [markdown, blog]
 ---
 Testing whether I can easily embed an image in this blog from the commandline.
 
-![This is an image](_images/screenshot_from_2020-04-01_05-53-40.png)
+![This is an image](/assets/screenshot_from_2020-04-01_05-53-40.png)
 
 Seems easy enough.  Let's see if this shows up on the blog.
