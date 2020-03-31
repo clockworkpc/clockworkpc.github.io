@@ -9,3 +9,21 @@ I always have to look this one up:
 ```sh
 for i in *.tar.xz; do tar xfv $i; done
 ```
+
+Or multiline:
+
+```sh
+for i in *.tar.xz
+    do tar xfv $i
+done
+```
+
+For `tar`:
+
+| switch | function |
+|--------|----------|
+| -x     | extract  |
+| -f     | file     |
+| -v     | verbose  |
+
+
