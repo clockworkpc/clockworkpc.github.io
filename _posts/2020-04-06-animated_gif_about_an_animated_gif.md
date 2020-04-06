@@ -8,4 +8,4 @@ As a rule, I am annoyed by animated GIFs.  Here is a simple way to make them go 
 
 ## Annoying GIF about an annoying GIF
 
-![annoying animated gif](assets/annoying_animated_gif.gif "Annoying Animated GIF")
+![annoying animated gif](/assets/annoying_animated_gif.gif "Annoying Animated GIF")
