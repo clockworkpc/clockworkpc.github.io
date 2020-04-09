@@ -74,40 +74,37 @@ html.vim                  search.vim
 ---
 
 ```sh
-
 #!/usr/bin/env bash
 
 nvimDir="${HOME}/.config/nvim"
 vimrcCoreDir="${nvimDir}/vimrcs_core"
 vimrcCustomDir="${nvimDir}/vimrcs_custom"
-customVimrcs=`ls ${vimrcCustomDir}`
 initFile="${nvimDir}/init.vim"
 
-headerFile="${vimrcCoreDir}/header.vim"
-pluginsFile="${vimrcCoreDir}/plugins.vim"
-keybindingsFile="${vimrcCoreDir}/keybindings.vim"
+function appendToInit() {
+  myDir=$1
+  vimFiles=`ls ${myDir}`
 
-echo "Neovim Directory: ${nvimDir}"
-echo "Core vimrc directory: ${vimrcCoreDir}"
-echo "Custom vimrc directory: ${vimrcCustomDir}"
-echo "headerFile: ${headerFile}"
-echo "Plugins file: ${pluginsFile}"
+  for f in "${myDir}/*"
+  do
+    cat ${f} >> ${initFile}
+  done
+
+
+  for f in ${vimFiles}
+  do
+    echo ${f}
+  done
+
+  echo
+  echo "Files added from ${myDir}"
+  echo
+}
 
 mv ${initFile} "${initFile}.bak"
-
 touch ${initFile}
-cat ${headerFile} >> ${initFile}
-cat ${pluginsFile} >> ${initFile}
-cat ${keybindingsFile} >> ${initFile}
 
-for f in ${customVimrcs}
-do
-  echo ${f}
-done
-
-for f in "${vimrcCustomDir}/*"
-do
-  cat ${f} >> ${initFile}
-done
+appendToInit ${vimrcCoreDir}
+appendToInit ${vimrcCustomDir}
 
 ```
