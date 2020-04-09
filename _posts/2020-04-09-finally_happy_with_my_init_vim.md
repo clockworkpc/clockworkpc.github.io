@@ -90,7 +90,6 @@ function appendToInit() {
     cat ${f} >> ${initFile}
   done
 
-
   for f in ${vimFiles}
   do
     echo ${f}
