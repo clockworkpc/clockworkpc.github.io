@@ -50,7 +50,7 @@ rails_conductor_inbound_email_reroute POST   /rails/conductor/action_mailbox/:in
 And you want to extract the **Verb** and **URI Pattern** for `subjects` and `authors`, and then sort the results by Verb.
 
 ```sh
-$ be rails routes | egrep -o '([A-Z]+)\s+\/(subjects|authors).*\s' | sort
+$ rails routes | egrep -o '([A-Z]+)\s+\/(subjects|authors).*\s' | sed 's/\s*$//' | xclip -selection c
 
 DELETE /authors/:id(.:format)
 DELETE /subjects/:id(.:format)
@@ -72,3 +72,19 @@ PUT    /subjects/:id(.:format)
 
 
 ```
+
+## Explanation
+
+| Command                 | Meaning                                    |
+|-------------------------|--------------------------------------------|
+| `rails routes`          | return all the routes in the Rails project |
+| `egrep`                 | grep with extended regex                   |
+| `-o`                    | only matching                              |
+| `([A-Z]+)`              | a string of capital letters, e.g. **POST** |
+| `\s+`                   | any number of whitespaces                  |
+| `\/(subjects\|authors)` | either **/subjects** or **/authors**       |
+| `.*\s`                  | any characters followed by whitespace      |
+| `sed 's/\s*$//'`        | remove trailing whitespaces                |
+| `xclip -selection c`    | copy to the clipboard                      |
+
+*NOTE*: In the grep it is `subjects|authors`, not `subjects\|authors`.  My markdown table formatter was reading `|` as a column delimiter.
