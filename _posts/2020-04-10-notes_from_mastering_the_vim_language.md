@@ -14,6 +14,7 @@ tags: [vim]
 | `ip`       | inner paragraph         |
 | `as`       | a sentence              |
 
-hello this as a sentence with lots of words and the wordsomething
+## Tips
 
-and here is another sentence with the word other
+- Use the dot command.
+- Use the more general text object, i.e. `iw` instead of `w`.
