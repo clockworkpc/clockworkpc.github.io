@@ -8,7 +8,7 @@ I was enjoying this lovely plugin, but it stopped working.
 
 After wasting some time on it, I decided to write the same functionality on my own.
 
-```lua
+```vimrc
 
 "*****************************************************************************
 "" vim-ruby-doc
