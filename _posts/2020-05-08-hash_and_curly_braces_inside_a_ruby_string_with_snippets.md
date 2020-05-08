@@ -31,4 +31,4 @@ Thus, when I type `#`-`TAB`:
 2. Places the cursor inside the braces
 3. And when I finish typing, I can press tab to jump out.
 
-I never used the original snippet anyway, because I use Ti
+I never used the original snippet anyway, because I use Tim Pope's excellent plugin, [Vim Commentary](https://github.com/tpope/vim-commentary).
