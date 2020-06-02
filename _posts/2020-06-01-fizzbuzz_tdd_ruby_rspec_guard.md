@@ -167,10 +167,94 @@ As we can see, FizzBash, much like FizzBuzz, passes the test.
 
 ### FizzBuzz
 
-To return to FizzBuzz, we can go one better, and save ourselves two lines of code, by putting the lambda definition directly into each Hash.  It would be worthwhile to declare the lambdas as variables if we used them many times, but there are short enough to fit comfortably on a single line each.
+To return to FizzBuzz, we can go one better, and save ourselves two lines of code, by putting the lambda definition directly into each Hash.  It would be worthwhile to declare the lambdas as variables if we used them many times, but they are short enough to fit comfortably on a single line each.
 
-## FizzBash
+### FizzBash
 
 By the same token, `fizz_bash` can dispense with the redundant lines.
 
-## Test I/O
+## Test Hash-Array
+
+Let's reassess the method `conditional_string_or_integer`.  It takes two arguments: an integer and an Array of Hashes, each Hash containing the same keys -- `condition` and `output.`
+
+We can abstract the creation of this Array in a method called `test_hash_array`, which takes a nested Array, and converts them into a single Array of Hashes.
+
+### FizzBuzz and FizzBash
+
+At first glance, this initially makes little practical difference to our `fizz_buzz` and `fizz_bash`, but the key is that instead of a constructing each Hash in the Array, it passes arguments the Array constructor.  In this iteration, the arguments are declared within the method, but as we shall soon see, these variables can now be drawn from outside the method definition, as long as they are within the same scope.
+
+## Abstracted Modulo and Square Root Methods
+
+We started with FizzBuzz, which is a game of divisibility, and created a spin-off called FizzBang, which introduces root division.
+
+It's time to give these two concepts their own methods.
+
+The method `modulo_io` takes as arguments an integer and a string, and returns an array containing two elements: a lambda that uses the number as a modulo divisor, and the string.
+
+The method `sqrt_io` takes only one argument, a string, and puts it into an array alongside a lambda containing a square root test.
+
+### FizzBuzz and FizzBash
+
+`fizz_buzz` can now declare its `fizz` and `buzz` variables by passing simple arguments -- a number and a string each -- to the `modulo_io` method.
+
+The variables are in turn passed to the `test_hash_array` method to give us the Array of Hashes.
+
+Likewise for `fizz_bash`, which declares `fizz` by the `modulo_io` method and `bash` by the `sqrt_io` method.
+
+## Game Abstractions
+
+We have now reach a point where the essence of these games can be expressed on a single line each.
+
+`fizz_buzz_io` returns an Array wherein each element is an invocation of `modulo_io`, and `fizz_bash_io` returns Array containing two invocations -- `modulo_io` and `sqrt_io`.
+
+### FizzBuzz and FizzBash
+
+We have now reached the most succinct expression of the games using the available methods.
+
+The variables `fizz` and `buzz` are declared on a single line using multiple assignment, and are passed together as arguments to `test_hash_array`, which itself is passed in a single line to `conditional_string_or_integer`.
+
+Likewise for `fizz_bash`.
+
+## Call A Game A Game
+
+After all this, we are left with an unsatisfying, lopsided, two-line method.
+
+Let's take one more step back and remind ourselves of what FizzBuzz is: a game with rules.
+
+First, a method called `game_rules` to `map` an Array of lambda and string into a Hash with the key-value pairs of `condition` and `result`.
+
+Using this method, we define the rules of FizzBuzz by passing `fizz_buzz_io` to it.
+
+Next, a method called `play_rule`, which takes the input and applies it the rule.
+
+Next, we recast `conditional_string_or_integer` as `play_game` and give it two arguments: the original input and the repackaged `rules` Array.
+
+### FizzBuzz Complete
+
+Finally, our `fizz_buzz` method can be refactored to a very tidy one-liner:
+a method call to `play_game` with two arguments: the input and `fizz_buzz_rules`.
+
+### FizzBash Complete
+
+And by the same token, we can easily put together FizzBash too.
+
+
+## Addendum, Refactoring Specs
+
+Finally, let's make our testing code slightly more sophisticated and extensible.
+
+We know that the simple IF-ELSE statement at the beginning of this video is a reliable solution of FizzBuzz, so let's use it as a test.
+
+We'll start with the same range, 1 through 15, convert it to an Array, and then iterate through it.
+
+If the FizzBuzz condition is satisfied, expect the method to return FizzBuzz; if the Fizz condition, return Fizz; if the Buzz condition, Buzz.
+
+Just to make sure it is indeed testing all the numbers properly, let's declare the operation and put its return value.
+
+As we can see, the refactored test gives us more coverage for less code, and by minimising the scope for human error, is more reliable to boot.
+
+## Closing Notes
+
+To hone the craft of programming, we sometimes need to step away from our day-to-day tasks and give ourselves the space to learn the ins-and-outs of the language.  In this video, I have used Ruby's native features to the best of my abilities; a solution in another language may differ in many respects.  I rely heavily on unit tests as I go, and it is certain that even the fact of my writing this in Vim has had some effect on my thinking.  (A very beneficial one, in my view)
+
+Irrespective of language, testing framework, and text editor, the principles of good code are universal, and I believe that any self-respecting programmer would benefit by applying himself to this deceptively simple game.
