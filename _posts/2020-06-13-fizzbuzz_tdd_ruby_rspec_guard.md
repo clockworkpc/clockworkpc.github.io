@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  FizzBuzz: TDD, Ruby, RSpec, Guard
-date:   Sat 13 Jun 08:38:42 AEST 2020
+title:  "FizzBuzz: TDD, Ruby, RSpec, Guard"
+date:   "Sat 13 Jun 08:38:42 AEST 2020"
 tags: [ruby, rspec, code]
 ---
 # FizzBuzz Rock Soup
