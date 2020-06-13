@@ -5,6 +5,7 @@ date:   "Sat 13 Jun 08:38:42 AEST 2020"
 tags: [ruby, rspec, code]
 ---
 # FizzBuzz Rock Soup
+## *A FizzBuzz Solution in Test-driven Development With Ruby, RSpec, Guard, and VIM
 
 This walkthrough of a FizzBuzz solution demonstrates the following:
 * behaviour-driven development and sound English
