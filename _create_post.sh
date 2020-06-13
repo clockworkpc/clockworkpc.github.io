@@ -8,8 +8,8 @@ myTitle=$1
 myTags=$2
 
 # Generate YAML front matter by sub-string replacement
-myYml="${ymlTemplate/MY_TITLE/$myTitle}"
-myYml="${myYml/MY_DATE/$currentDate}"
+myYml="\"${ymlTemplate/MY_TITLE/$myTitle}\""
+myYml="\"${myYml/MY_DATE/$currentDate}\""
 myYml="${myYml/MY_TAGS/$myTags}"
 
 myBasename="${myTitle}"
