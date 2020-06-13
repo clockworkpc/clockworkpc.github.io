@@ -12,7 +12,7 @@ myYml="${ymlTemplate/MY_TITLE/$myTitle}"
 myYml="${myYml/MY_DATE/$currentDate}"
 myYml="${myYml/MY_TAGS/$myTags}"
 
-myBasename="${myTitle,,}"
+myBasename="${myTitle}"
 myBasename=`echo $myBasename | sed 's/[^a-zA-Z0-9]/_/g' | sed -e 's/\([_]\)\1\+/\1/g'`
 
 # filePath="`pwd`/_posts/${dateStamp}${myBasename}.md"
@@ -29,4 +29,3 @@ else
   git add .
   git commit -m "${myBasename}"
 fi
-
