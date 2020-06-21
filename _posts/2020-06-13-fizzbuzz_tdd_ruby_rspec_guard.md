@@ -134,3 +134,102 @@ Thereafter, the walkthrough concerns itself with creating a mechanism that first
 > 4. The output should be the input if it is divisible by neither 3 nor 5. (1, 2, 4, 7, 8, 11, 13, 14)
 
 ## 4. Refactoring the Worst, Most Obvious Solution
+
+### Reducing the Outputs from Four to Two
+
+There are two problems with this method's output:
+1. It does not always return the same type of object -- either a String or an Integer.
+2. It returns four different results based on four different conditions.
+
+Ideally, the method's output should always be either a String or an Integer, and the values should ultimately be the result of the same operation.
+
+Given that this method has to return either a String or Integer according the specifications, it should have only two kinds of return value: a String if at least one of the conditions is satisfied, or an Integer if no condition is satisfied; and the String should be the result of an operation that returns 'Fizz', 'Buzz', 'FizzBuzz', or nothing if none of the conditions is satisfied.
+
+### Joining an Array of Strings
+
+The key to the required String operation is the following set of observations:
+- 'FizzBuzz' is a concatenation of both 'Fizz' and 'Buzz',
+- 'Fizz' is the same concatenation without 'Buzz',
+- and the inverse is true of 'Buzz'.
+
+To express this in Ruby, call the `join` method on an Array containing two variables, `fizz` and `buzz`, which can be either its namesake or **nil**:
+
+```rb
+[fizz, buzz].join
+```
+
+Thus:
+- if the variable `fizz` returns the String 'Fizz' and `buzz` 'Buzz', the return value of the joined Array is 'FizzBuzz';
+- if the variable `fizz` returns the String 'Fizz' and `buzz` is **nil**, the return value of the joined Array is 'Fizz';
+- if the variable `buzz` returns the String 'Buzz' and `fizz` is **nil**, the return value of the joined Array is 'Buzz';
+- if both `fizz` and `buzz` are **nil**, the joined Array returns nothing.
+
+Apply this insight to the `fizz_buzz` method.
+
+### Declaring variables
+
+In each of the positive conditions, declare the variables `fizz` and `buzz` assign the values accordingly:
+
+- If divisible by 3 and 5, `fizz` is 'Fizz' and `buzz` is 'Buzz'
+- If divisible by 3, `fizz` is 'Fizz' and `buzz` is **nil**.
+- If divisible by 5, `buzz` is 'Buzz' and `fizz` is **nil**.
+
+In order to satisfy the tests, return the joined Array of `fizz` and `buzz` for each satisified condition, otherwise return the dividend.
+
+### IF-ELSE
+
+At the end of the method, declare a variable `result` which gives the return value of a joined Array of `fizz` and `buzz`.
+
+Write an IF-ELSE statement, which returns the original dividend if the `result` is **nil** -- that is to say, if the number is divisible by neither 3 nor 5 -- or returns the `result`, i.e. if the number is divisible by either 3 or 5, or both.
+
+This fails the test because the return value of a joined Array of two **nil** values in Ruby is not **nil**, but it is empty.
+
+Change the `.nil?` method to `.empty?`.  The test now passes.
+
+### Ternary Conditional
+
+A more elegant way of expressing an IF-ELSE statement is a *ternary conditional*, which is composed of the following elements:
+- condition
+- question mark
+- return value if true
+- colon
+- return value if false
+
+A simple example is to return "TRUE" if 100 is greater than 1, otherwise to return false.
+
+```rb
+100 > 1 ? 'TRUE' : 'FALSE'
+```
+
+This obviously returns 'TRUE'.
+
+Change the condition to something obviously false, e.g. 100 is less than 1, and it returns 'FALSE'.
+
+Thus, wherever the condition is **boolean**, the IF-ELSE statement can be expressed on a single line as a ternary conditional.
+
+Apply this insight to the IF-ELSE statement at the end of the method, by expressing it as follows:
+
+- `result.empty?`
+- question mark
+- `dividend`
+- colon
+- `result`
+
+Delete the redundant IF-ELSE statement.  The tests pass.
+
+## Remove Superfluous Conditions
+
+Because the method returns the joined Array if one of the conditions is satisfied, it is no longer necessary to return the joined Array for each positive condition.  Delete all the joined arrays except the one at the end.  The tests still pass.
+
+By the same token, because the variables `fizz` and `buzz` are defined at some point in the method, it is not necessary to define either of them as `nil`: the joined Array at the end of the method will return the same concatenation.  Delete the **nil** declarations of `fizz` and `buzz`.  The tests still pass.
+
+Similarly, the ELSE condition is redundant, thanks to the ternary conditional.  Delete the ELSE condition.  The tests still pass.
+
+Finally, the same principle applies to the rest of the original IF statement.  Write the following two lines, and comment out the original IF statement, and re-run the tests.
+
+1. `fizz` returns 'Fizz' if the dividend is divisible by 3.
+2. `buzz` returns 'Buzz' if the dividend is divisible by 5.
+
+The tests still pass.  Delete the commented code.
+
+The new method retains all of the original functionality in three lines of Ruby code rather than eleven.
