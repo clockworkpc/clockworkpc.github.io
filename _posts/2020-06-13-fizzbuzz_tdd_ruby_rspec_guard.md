@@ -233,3 +233,19 @@ Finally, the same principle applies to the rest of the original IF statement.  W
 The tests still pass.  Delete the commented code.
 
 The new method retains all of the original functionality in three lines of Ruby code rather than eleven.
+
+# 5. Reconceptualisation
+
+Until now, the specification has been very narrow: a method that returns the correct output.
+However, a more realistic specification would be to create a **mathematics game engine**, which could be used to create not only a FizzBuzz game, but many similar games too.
+
+## Rename the Project
+
+Change the name of the project from `fizzbuzz` to `math_games`.
+
+Throughout the project, change the module name from FizzBuzz to MathGames (in Pascal case), all spec names from `fizz_buzz` to `math_games`.
+Apply this change to file names, and all matching strings within the files.
+
+Make sure that all the specs still pass; if they do, the changes are probably sufficient.
+
+## MathGames::Rules
