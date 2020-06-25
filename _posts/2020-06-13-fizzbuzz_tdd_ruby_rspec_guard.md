@@ -249,3 +249,44 @@ Apply this change to file names, and all matching strings within the files.
 Make sure that all the specs still pass; if they do, the changes are probably sufficient.
 
 ## MathGames::Rules
+
+Create a Spec for a yet-to-be-created module `MathGames::Rules`.
+
+Write a 'hello_world' Spec to get started.
+
+Create the file `lib/math_games/rules.rb`, define it as a submodule `MathGames::Rules`, and write a `hello_world` method to satisfy the Spec.
+
+The Spec initially fails because the library file is not included in `spec_helper`.
+
+Require it in the `spec_helper`.  The test now passes.
+
+Write a Spec for a class method `MathGames::Rules.hello_self`.
+
+Write a method called `#hello_self`.
+
+The test fails because it is not a class method, but still an instance method.
+
+Prepend the keyword `self` to the method definition, so that the method headers reads `def self.hello_self`.  The test now passes.
+
+As the tests have established that both instance and class methods can be tested in this spec, they are no longer necessary.
+
+In a `before(:all)` block, declare a variable called `@rule`, which is a `modulo` class method with the arguments *Integer* 3 and *String* 'Fizz'.  This will return a *Hash* containing two key-value pairs: `:result` and `condition`.
+
+Declare two instance variables, which will be available to the `it` blocks of the test:
+- `@result`, which returns the value of the key `result` in the variable `rule`.
+- `condition`, which returns the value of the key `condition` in the variable `rule`.
+
+
+Write a test that `@result` returns the string input *String* 'Fizz'.
+
+In `math_games/rules.rb`, remove the redundant hello methods.
+
+Write a method called `modulo`, which takes two arguments: `divisor` (*Integer*) and (*String*).  In the body, return a Hash composed of two key-value pairs:
+- `condition`: a *lambda* that takes the argument `a` and returns whether *a mod divisor* equals zero, that is, whether `a` is divisible by the divisor.
+- result: the input *String* `string`.
+
+The test fails because `modulo` is not a class method.  Prepend `self` to its definition.  The test now passes.
+
+Write a test that `@condition` returns **TRUE** if the dividend `a` is divisible by the divisor, by passing the *Integer* 9 to the *lambda* in `@condition`.  The test passes.
+
+Write a test that `@condition` returns **FALSE** if the dividend `a` is not divisible by the divisor, by passing the *Integer* 8 to the *lambda* in `@condition`.  The test passes.
