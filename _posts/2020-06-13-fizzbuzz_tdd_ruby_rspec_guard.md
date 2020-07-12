@@ -168,7 +168,7 @@ Apply this insight to the `fizz_buzz` method.
 
 ### Declaring variables
 
-In each of the positive conditions, declare the variables `fizz` and `buzz` assign the values accordingly:
+In each of the positive conditions, declare the variables `fizz` and `buzz`, and assign the values accordingly:
 
 - If divisible by 3 and 5, `fizz` is 'Fizz' and `buzz` is 'Buzz'
 - If divisible by 3, `fizz` is 'Fizz' and `buzz` is **nil**.
