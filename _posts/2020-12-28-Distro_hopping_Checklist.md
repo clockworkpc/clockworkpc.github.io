@@ -35,8 +35,9 @@ chmod +x arch_initial_setup.sh
 - Sync Brave Profile
 - ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 - git clone dotfiles
-- `~/.dotfiles/preinstall.sh`
+- `~/.dotfiles/pre_install.sh`
 - `~/.dotfiles/install.sh`
 - `~/..dotfiles/config/nvim/generate_neovim_init.sh`
 - `nvim` and then `:checkhealth provider`
-- `~/.dotfiles/postinstall.sh`
+- `~/.dotfiles/post_install.sh`
+- `~/.dotfiles/post_fish_install.sh`
