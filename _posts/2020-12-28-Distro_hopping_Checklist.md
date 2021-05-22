@@ -8,6 +8,7 @@ tags: [linux, arch, manjaro]
 - Multi-monitor support
 - Multiple desktop
 - Easy to jump between previous and next windows
+- Easy to switch between multiple languages
 
 ## Required Applications and Packages
 - git
@@ -17,6 +18,8 @@ tags: [linux, arch, manjaro]
 - zoom
 - slack
 - brave
+- clickup
+- some sort of world clock
 
 ## Steps
 
