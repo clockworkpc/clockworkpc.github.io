@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/Development/publish/clockworkpc.github.io
+cd ~/Development/clockworkpc.github.io
 ymlTemplate=$(cat _front_matter_template.yml)
 currentDate=`date`
 dateStamp=`date +"%Y"-%m-%d-`

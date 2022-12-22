@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="direction--ltr"lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Extract Rails Routes with egrep and sort | CPC Blog</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Extract Rails Routes with egrep and sort" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Let’s say you have the following Rails routes:" />
+<meta property="og:description" content="Let’s say you have the following Rails routes:" />
+<link rel="canonical" href="http://localhost:4000/2020/04/10/extract_rails_routes_with_egrep_and_sort.html" />
+<meta property="og:url" content="http://localhost:4000/2020/04/10/extract_rails_routes_with_egrep_and_sort.html" />
+<meta property="og:site_name" content="CPC Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-10T07:53:33-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Extract Rails Routes with egrep and sort" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-04-10T07:53:33-04:00","datePublished":"2020-04-10T07:53:33-04:00","description":"Let’s say you have the following Rails routes:","headline":"Extract Rails Routes with egrep and sort","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/04/10/extract_rails_routes_with_egrep_and_sort.html"},"url":"http://localhost:4000/2020/04/10/extract_rails_routes_with_egrep_and_sort.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="stylesheet" href="/assets/css/magnific-popup.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="CPC Blog" /><script src="https://code.jquery.com/jquery-3.2.0.min.js"></script> 
+  <script src="/assets/js/jquery.magnific-popup.js"></script>
+</head>
+<body><div class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">CPC Blog<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
+    <span class="social_links">
+        
+        
+        <a class="color-cyan-hover" href="https://twitter.com/alexandergarber"><i class="fab fa-twitter-square"></i></a>
+        
+        
+        
+        <a class="color-red-hover" href="http://clockworkpc.com.au"><i class="fab fa-itch-io"></i></a>
+        
+        
+        
+        <a class="color-purple-hover" href="https://github.com/clockworkpc"><i class="fab fa-github-square"></i></a>
+        
+        
+    </span>
+  </div>
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+  <div class="author-box">
+
+<div class="description">A blog about software by Alexander JK Garber.</div>
+
+</div>
+
+
+<div class="post">
+  <h1 class="post-title">Extract Rails Routes with egrep and sort</h1>
+  
+  <div class="post-tags">
+      
+      <a class="tag" href="bash">bash</a>
+      
+      <a class="tag" href="grep">grep</a>
+      
+      <a class="tag" href="scripting">scripting</a>
+      
+  </div>
+  
+  <div class="post-date">
+    Published on 10 Apr 2020
+    
+  </div>
+  
+  <p>Let’s say you have the following Rails routes:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Prefix Verb   URI Pattern                                                                              Controller#Action
+                              authors GET    /authors<span class="o">(</span>.:format<span class="o">)</span>                                                                       authors#index
+                                      POST   /authors<span class="o">(</span>.:format<span class="o">)</span>                                                                       authors#create
+                           new_author GET    /authors/new<span class="o">(</span>.:format<span class="o">)</span>                                                                   authors#new
+                          edit_author GET    /authors/:id/edit<span class="o">(</span>.:format<span class="o">)</span>                                                              authors#edit
+                               author GET    /authors/:id<span class="o">(</span>.:format<span class="o">)</span>                                                                   authors#show
+                                      PATCH  /authors/:id<span class="o">(</span>.:format<span class="o">)</span>                                                                   authors#update
+                                      PUT    /authors/:id<span class="o">(</span>.:format<span class="o">)</span>                                                                   authors#update
+                                      DELETE /authors/:id<span class="o">(</span>.:format<span class="o">)</span>                                                                   authors#destroy
+                       delete_subject GET    /subjects/:id/delete<span class="o">(</span>.:format<span class="o">)</span>                                                           subjects#delete
+                             subjects GET    /subjects<span class="o">(</span>.:format<span class="o">)</span>                                                                      subjects#index
+                                      POST   /subjects<span class="o">(</span>.:format<span class="o">)</span>                                                                      subjects#create
+                          new_subject GET    /subjects/new<span class="o">(</span>.:format<span class="o">)</span>                                                                  subjects#new
+                         edit_subject GET    /subjects/:id/edit<span class="o">(</span>.:format<span class="o">)</span>                                                             subjects#edit
+                              subject GET    /subjects/:id<span class="o">(</span>.:format<span class="o">)</span>                                                                  subjects#show
+                                      PATCH  /subjects/:id<span class="o">(</span>.:format<span class="o">)</span>                                                                  subjects#update
+                                      PUT    /subjects/:id<span class="o">(</span>.:format<span class="o">)</span>                                                                  subjects#update
+                                      DELETE /subjects/:id<span class="o">(</span>.:format<span class="o">)</span>                                                                  subjects#destroy
+        rails_mandrill_inbound_emails POST   /rails/action_mailbox/mandrill/inbound_emails<span class="o">(</span>.:format<span class="o">)</span>                                  action_mailbox/ingresses/mandrill/inbound_emails#create
+        rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails<span class="o">(</span>.:format<span class="o">)</span>                                  action_mailbox/ingresses/postmark/inbound_emails#create
+           rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails<span class="o">(</span>.:format<span class="o">)</span>                                     action_mailbox/ingresses/relay/inbound_emails#create
+        rails_sendgrid_inbound_emails POST   /rails/action_mailbox/sendgrid/inbound_emails<span class="o">(</span>.:format<span class="o">)</span>                                  action_mailbox/ingresses/sendgrid/inbound_emails#create
+         rails_mailgun_inbound_emails POST   /rails/action_mailbox/mailgun/inbound_emails/mime<span class="o">(</span>.:format<span class="o">)</span>                              action_mailbox/ingresses/mailgun/inbound_emails#create
+       rails_conductor_inbound_emails GET    /rails/conductor/action_mailbox/inbound_emails<span class="o">(</span>.:format<span class="o">)</span>                                 rails/conductor/action_mailbox/inbound_emails#index
+                                      POST   /rails/conductor/action_mailbox/inbound_emails<span class="o">(</span>.:format<span class="o">)</span>                                 rails/conductor/action_mailbox/inbound_emails#create
+    new_rails_conductor_inbound_email GET    /rails/conductor/action_mailbox/inbound_emails/new<span class="o">(</span>.:format<span class="o">)</span>                             rails/conductor/action_mailbox/inbound_emails#new
+   edit_rails_conductor_inbound_email GET    /rails/conductor/action_mailbox/inbound_emails/:id/edit<span class="o">(</span>.:format<span class="o">)</span>                        rails/conductor/action_mailbox/inbound_emails#edit
+        rails_conductor_inbound_email GET    /rails/conductor/action_mailbox/inbound_emails/:id<span class="o">(</span>.:format<span class="o">)</span>                             rails/conductor/action_mailbox/inbound_emails#show
+                                      PATCH  /rails/conductor/action_mailbox/inbound_emails/:id<span class="o">(</span>.:format<span class="o">)</span>                             rails/conductor/action_mailbox/inbound_emails#update
+                                      PUT    /rails/conductor/action_mailbox/inbound_emails/:id<span class="o">(</span>.:format<span class="o">)</span>                             rails/conductor/action_mailbox/inbound_emails#update
+                                      DELETE /rails/conductor/action_mailbox/inbound_emails/:id<span class="o">(</span>.:format<span class="o">)</span>                             rails/conductor/action_mailbox/inbound_emails#destroy
+rails_conductor_inbound_email_reroute POST   /rails/conductor/action_mailbox/:inbound_email_id/reroute<span class="o">(</span>.:format<span class="o">)</span>                      rails/conductor/action_mailbox/reroutes#create
+                   rails_service_blob GET    /rails/active_storage/blobs/:signed_id/<span class="k">*</span>filename<span class="o">(</span>.:format<span class="o">)</span>                               active_storage/blobs#show
+            rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/<span class="k">*</span>filename<span class="o">(</span>.:format<span class="o">)</span> active_storage/representations#show
+                   rails_disk_service GET    /rails/active_storage/disk/:encoded_key/<span class="k">*</span>filename<span class="o">(</span>.:format<span class="o">)</span>                              active_storage/disk#show
+            update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token<span class="o">(</span>.:format<span class="o">)</span>                                      active_storage/disk#update
+                 rails_direct_uploads POST   /rails/active_storage/direct_uploads<span class="o">(</span>.:format<span class="o">)</span>                                           active_storage/direct_uploads#create
+
+</code></pre></div></div>
+
+<p>And you want to extract the <strong>Verb</strong> and <strong>URI Pattern</strong> for <code class="language-plaintext highlighter-rouge">subjects</code> and <code class="language-plaintext highlighter-rouge">authors</code>, and then sort the results by Verb.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rails routes <span class="se">\</span>
+| egrep <span class="nt">-o</span> <span class="s1">'([A-Z]+)\s+\/(subjects|authors).*\s'</span> <span class="se">\</span>
+| <span class="nb">sed</span> <span class="s1">'s/\s*$//'</span> <span class="se">\</span>
+| <span class="nb">sort</span> <span class="se">\</span>
+| xclip <span class="nt">-selection</span> c
+
+DELETE /authors/:id<span class="o">(</span>.:format<span class="o">)</span>
+DELETE /subjects/:id<span class="o">(</span>.:format<span class="o">)</span>
+GET    /authors<span class="o">(</span>.:format<span class="o">)</span>
+GET    /authors/:id/edit<span class="o">(</span>.:format<span class="o">)</span>
+GET    /authors/:id<span class="o">(</span>.:format<span class="o">)</span>
+GET    /authors/new<span class="o">(</span>.:format<span class="o">)</span>
+GET    /subjects<span class="o">(</span>.:format<span class="o">)</span>
+GET    /subjects/:id/delete<span class="o">(</span>.:format<span class="o">)</span>
+GET    /subjects/:id/edit<span class="o">(</span>.:format<span class="o">)</span>
+GET    /subjects/:id<span class="o">(</span>.:format<span class="o">)</span>
+GET    /subjects/new<span class="o">(</span>.:format<span class="o">)</span>
+PATCH  /authors/:id<span class="o">(</span>.:format<span class="o">)</span>
+PATCH  /subjects/:id<span class="o">(</span>.:format<span class="o">)</span>
+POST   /authors<span class="o">(</span>.:format<span class="o">)</span>
+POST   /subjects<span class="o">(</span>.:format<span class="o">)</span>
+PUT    /authors/:id<span class="o">(</span>.:format<span class="o">)</span>
+PUT    /subjects/:id<span class="o">(</span>.:format<span class="o">)</span>
+
+
+</code></pre></div></div>
+
+<h2 id="explanation">Explanation</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">rails routes</code></td>
+      <td>return all the routes in the Rails project</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">egrep</code></td>
+      <td>grep with extended regex</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-o</code></td>
+      <td>only matching</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">([A-Z]+)</code></td>
+      <td>a string of capital letters, e.g. <strong>POST</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\s+</code></td>
+      <td>any number of whitespaces</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\/(subjects\|authors)</code></td>
+      <td>either <strong>/subjects</strong> or <strong>/authors</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.*\s</code></td>
+      <td>any characters followed by whitespace</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sed 's/\s*$//'</code></td>
+      <td>remove trailing whitespaces</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sort</code></td>
+      <td>sort by alphabetical order</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">xclip -selection c</code></td>
+      <td>copy to the clipboard</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>NOTE</em>: In the grep it is <code class="language-plaintext highlighter-rouge">subjects|authors</code>, not <code class="language-plaintext highlighter-rouge">subjects\|authors</code>.  My markdown table formatter was reading <code class="language-plaintext highlighter-rouge">|</code> as a column delimiter.</p>
+
+</div>
+
+
+<div class="comments">
+<div id="disqus_thread"></div>
+<script>
+ var disqus_config = function () {
+     this.page.url = 'http://localhost:4000/2020/04/10/extract_rails_routes_with_egrep_and_sort.html';
+     this.page.identifier = '/2020/04/10/extract_rails_routes_with_egrep_and_sort';
+     this.page.title = 'Extract Rails Routes with egrep and sort';
+ };
+
+ (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+     var d = document, s = d.createElement('script');
+
+     s.src = '//<your-discuss-shortname>.disqus.com/embed.js';
+
+     s.setAttribute('data-timestamp', +new Date());
+     (d.head || d.body).appendChild(s);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+
+
+<div class="related">
+  <h2>related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2022/12/22/Javascript_Calculator.html">
+            Javascript_calculator
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2021/05/04/Check_Method_Definition_in_Ruby.html">
+            Check Method Definition in Ruby
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2021/04/19/open_multiple_tabs_in_vim_from_string_input.html">
+            open multiple tabs in vim from string input
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+  
+
+
+
+
+<script>
+  let i = 0;
+  const text = '';
+  const speed = parseInt('50');
+  
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById('animated-post-description').innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  document.getElementById('animated-post-description').style.display = 'initial';
+  typeWriter();
+
+  // Image modal
+  var $imgs = [];
+  $('img').each(function(idx) {
+    var obj = {
+      src: $(this).attr('src')
+    }
+    $imgs.push(obj);
+    var elem = $(this);
+    $(this).click(function() {
+      $('.modal').magnificPopup('open', idx);
+    });
+  });
+
+  $('.modal').magnificPopup({
+    items: $imgs,
+    type: 'image',
+    closeOnContentClick: true,
+    mainClass: 'mfp-img-mobile',
+    image: {
+      verticalFit: true
+    }
+    
+  });
+</script>
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits"><a href="https://github.com/bitbrain/jekyll-dash">dash</a> theme for Jekyll by <a href="https://github.com/bitbrain">bitbrain</a> made with <i class="fas fa-heart"></i><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+
+if (theme === "light") {
+    document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>

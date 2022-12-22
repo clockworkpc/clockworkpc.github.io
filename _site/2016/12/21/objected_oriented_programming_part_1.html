@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html class="direction--ltr"lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Objected-oriented Programming, Part 1 | CPC Blog</title>
-<meta name="generator" content="Jekyll v3.8.6" />
+<meta name="generator" content="Jekyll v3.9.2" />
 <meta property="og:title" content="Objected-oriented Programming, Part 1" />
 <meta name="author" content="Alexander Garber" />
 <meta property="og:locale" content="en_US" />
@@ -14,26 +14,46 @@
 <meta property="og:url" content="http://localhost:4000/2016/12/21/objected_oriented_programming_part_1.html" />
 <meta property="og:site_name" content="CPC Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-12-21T00:00:00+11:00" />
+<meta property="article:published_time" content="2016-12-21T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Objected-oriented Programming, Part 1" />
 <script type="application/ld+json">
-{"description":"I am working on my first text-adventure game as part of Exercise 43 of Learn Ruby the Hard Way.  I have defined a simple class called Scene: class Scene def enter() puts &quot;This scene is not yet configured. Subclass it and implement enter().&quot; exit(1) endend In other words, the only thing that &quot;Scenes&quot; have in common is that the player &quot;enters&quot; them.  What she does and whither she goes thereafter has to be defined.  Within the game there are broadly speaking two kinds of scenes: Scenes outside the house Scenes inside the house Scenes Outside the House   The very limited movements afforded at the start of the game serve to illustrate the point that not a lot of thought went into (or had to go into) defining how you navigate the first part of the map.  Meadow =&gt; RiverMeadow =&gt; Front doorRiver =&gt; Front door Front door =&gt; riddle =&gt; Ground floor of the house. Scenes Inside the House This is where things get tricky.  All the rooms in the house are connected by a staircase, which means that when you leave one room, you have access to all the others by means of the staircase. At first I defined the method for getting up the stairs from the ground floor entrance composed of the following elements: Text for the player Declared value for floorNumber While loop Case conditional that calls the engine. def enter()&quot;&quot;&quot; You are at a spiral staircase. There is a sign on the landing: 0. Ground Floor: Entrance to the castle 1. First Floor: Machine room 2. Second Floor: Kitchen 3. Third Floor: Library 4. Fourth Floor: Royal Bedroom 5. Penthouse: Study 6. Exit the castle and go back to the meadow. Where would you like to go to? &quot;&quot;&quot; currentFloor = 0 while currentFloor == 0 print &quot;&gt; &quot; floorSelection = $stdin.gets.chomp.downcase() case floorSelection when /0/, /ground/, /entrance/ if currentFloor == 0 puts &quot;You are already here. Try another floor.&quot; elsif currentFloor != 0 puts &quot;You descend the stairs to the ground floor.&quot; return &#39;spiral_staircase&#39; else puts &quot;Something has clearly gone wrong.&quot; end when /1/, /first/, /machine/ if currentFloor &lt; 1 puts &quot;You ascend the stairs to the machine room.&quot; currentFloor == 1 return &#39;machine_room&#39; elsif currentFloor &gt; 1 puts &quot;You descend the stairs to the machine room.&quot; currentFloor == 1 return &#39;machine_room&#39; elsif currentFloor == 1 puts &quot;You are already here. Try another floor.&quot; else puts &quot;There has clearly been a mistake somewhere.&quot; end when /2/, /second/, /kitchen/ if currentFloor &lt; 2 puts &quot;You ascend the stairs to the kitchen.&quot; currentFloor == 2 return &#39;kitchen&#39; elsif currentFloor &gt; 2 puts &quot;You descend the stairs to the kitchen.&quot; currentFloor == 2 return &#39;kitchen&#39; elsif currentFloor == 2 puts &quot;You are already here. Try another floor.&quot; else puts &quot;There has clearly been a mistake somewhere.&quot; end when /3/, /third/, /library/ if currentFloor &lt; 3 puts &quot;You ascend the stairs to the library.&quot; currentFloor == 3 return &#39;library&#39; elsif currentFloor &gt; 3 puts &quot;You descend the stairs to the library.&quot; currentFloor == 3 return &#39;library&#39; elsif currentFloor == 3 puts &quot;You are already here. Try another floor.&quot; else puts &quot;There has clearly been a mistake somewhere.&quot; end when /4/, /fourth/, /bedroom/ if currentFloor &lt; 4 puts &quot;You ascend the stairs to the bedroom.&quot; currentFloor == 4 return &#39;bedroom&#39; elsif currentFloor &gt; 4 puts &quot;You descend the stairs to the bedroom.&quot; currentFloor == 4 return &#39;bedroom&#39; elsif currentFloor == 4 puts &quot;You are already here. Try another floor.&quot; else puts &quot;There has clearly been a mistake somewhere.&quot; end when /5/, /fifth/, /study/, /penthouse/ if currentFloor &lt; 5 puts &quot;You ascend the stairs to the study.&quot; currentFloor == 5 return &#39;study&#39; elsif currentFloor &gt; 5 puts &quot;You descend the stairs to the study.&quot; currentFloor == 5 return &#39;study&#39; elsif currentFloor == 5 puts &quot;You are already here. Try another floor.&quot; else puts &quot;There has clearly been a mistake somewhere.&quot; end when /6/, /leave/, /exit/, /back/, /meadow/ if currentFloor != 0 puts WordWrap.ww &quot;You descend the stairs, walk out the door, and keep going until the you reach the edge of the meadow.&quot; currentFloor == 0 return &#39;meadow&#39; elsif currentFloor == 0 puts &quot;You walk out the door, and keep going until the you reach the edge of the meadow.&quot; return &#39;meadow&#39; else puts &quot;There has clearly been a mistake somewhere.&quot; end else puts &quot;I don&#39;t understand your request&quot; end endend But copy-pasting all of this would violate the DRY principle, so I thought about how to write it better: All &#39;Scenes&#39; use the enter() function. All the rooms are &#39;Scenes&#39;. All the rooms are &#39;Scenes&#39; that require the same function for selecting a floor. Ergo, all the rooms are &#39;Scenes&#39; use a function that could be defined as &#39;selectFloor()&#39;. However, every room is located on a particular floor, which changes whether the player goes up or down the stairs, or is already at that floor. Ergo, every &#39;House Scene&#39; needs to inherit the function &#39;selectFloor()&#39; but with a variable for its floor, i.e. &#39;selectFloor(floorNumber)&#39;  First, I created a sub-class of &#39;Scene&#39; called &#39;HouseScene&#39;: class HouseScene &lt; Scene def floorSelection() puts &quot;This scene is not yet configured. Subclass it and implement floorSelection().&quot; exit(1) endend But remember that the floorSelection function is a while loop, so it needs a constant to hold true while it runs.  The obvious candidate is the floor number, so the function takes an argument and starts like this: def floorSelection(floorNumber) puts &quot;Filler text for the moment&quot; currentFloor = floorNumber while currentFloor == floorNumber From there it&#39;s simply a matter of pasting the rest of the floorSelection(floorNumber) function into the sub-class &#39;HouseScene&#39;.Then, for each room, call the functions: enter() floorSelection() If the player leaves the room, she will go back to the landing of the staircase and choose again whither she wants to go.This slightly more complex code brings me finally to the point where testing my program becomes a drag.  Until now, I could effortlessly run a straightforward program from start to finish; now, I have many potential routes to follow, and testing them all will take exponentially more time as I add games and puzzles to each room.In my next post I will share my first experience of testing and Rake files in Ruby.","@type":"BlogPosting","url":"http://localhost:4000/2016/12/21/objected_oriented_programming_part_1.html","headline":"Objected-oriented Programming, Part 1","dateModified":"2016-12-21T00:00:00+11:00","datePublished":"2016-12-21T00:00:00+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/12/21/objected_oriented_programming_part_1.html"},"author":{"@type":"Person","name":"Alexander Garber"},"@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexander Garber"},"dateModified":"2016-12-21T00:00:00-05:00","datePublished":"2016-12-21T00:00:00-05:00","description":"I am working on my first text-adventure game as part of Exercise 43 of Learn Ruby the Hard Way.  I have defined a simple class called Scene: class Scene def enter() puts &quot;This scene is not yet configured. Subclass it and implement enter().&quot; exit(1) endend In other words, the only thing that &quot;Scenes&quot; have in common is that the player &quot;enters&quot; them.  What she does and whither she goes thereafter has to be defined.  Within the game there are broadly speaking two kinds of scenes: Scenes outside the house Scenes inside the house Scenes Outside the House   The very limited movements afforded at the start of the game serve to illustrate the point that not a lot of thought went into (or had to go into) defining how you navigate the first part of the map.  Meadow =&gt; RiverMeadow =&gt; Front doorRiver =&gt; Front door Front door =&gt; riddle =&gt; Ground floor of the house. Scenes Inside the House This is where things get tricky.  All the rooms in the house are connected by a staircase, which means that when you leave one room, you have access to all the others by means of the staircase. At first I defined the method for getting up the stairs from the ground floor entrance composed of the following elements: Text for the player Declared value for floorNumber While loop Case conditional that calls the engine. def enter()&quot;&quot;&quot; You are at a spiral staircase. There is a sign on the landing: 0. Ground Floor: Entrance to the castle 1. First Floor: Machine room 2. Second Floor: Kitchen 3. Third Floor: Library 4. Fourth Floor: Royal Bedroom 5. Penthouse: Study 6. Exit the castle and go back to the meadow. Where would you like to go to? &quot;&quot;&quot; currentFloor = 0 while currentFloor == 0 print &quot;&gt; &quot; floorSelection = $stdin.gets.chomp.downcase() case floorSelection when /0/, /ground/, /entrance/ if currentFloor == 0 puts &quot;You are already here. Try another floor.&quot; elsif currentFloor != 0 puts &quot;You descend the stairs to the ground floor.&quot; return &#39;spiral_staircase&#39; else puts &quot;Something has clearly gone wrong.&quot; end when /1/, /first/, /machine/ if currentFloor &lt; 1 puts &quot;You ascend the stairs to the machine room.&quot; currentFloor == 1 return &#39;machine_room&#39; elsif currentFloor &gt; 1 puts &quot;You descend the stairs to the machine room.&quot; currentFloor == 1 return &#39;machine_room&#39; elsif currentFloor == 1 puts &quot;You are already here. Try another floor.&quot; else puts &quot;There has clearly been a mistake somewhere.&quot; end when /2/, /second/, /kitchen/ if currentFloor &lt; 2 puts &quot;You ascend the stairs to the kitchen.&quot; currentFloor == 2 return &#39;kitchen&#39; elsif currentFloor &gt; 2 puts &quot;You descend the stairs to the kitchen.&quot; currentFloor == 2 return &#39;kitchen&#39; elsif currentFloor == 2 puts &quot;You are already here. Try another floor.&quot; else puts &quot;There has clearly been a mistake somewhere.&quot; end when /3/, /third/, /library/ if currentFloor &lt; 3 puts &quot;You ascend the stairs to the library.&quot; currentFloor == 3 return &#39;library&#39; elsif currentFloor &gt; 3 puts &quot;You descend the stairs to the library.&quot; currentFloor == 3 return &#39;library&#39; elsif currentFloor == 3 puts &quot;You are already here. Try another floor.&quot; else puts &quot;There has clearly been a mistake somewhere.&quot; end when /4/, /fourth/, /bedroom/ if currentFloor &lt; 4 puts &quot;You ascend the stairs to the bedroom.&quot; currentFloor == 4 return &#39;bedroom&#39; elsif currentFloor &gt; 4 puts &quot;You descend the stairs to the bedroom.&quot; currentFloor == 4 return &#39;bedroom&#39; elsif currentFloor == 4 puts &quot;You are already here. Try another floor.&quot; else puts &quot;There has clearly been a mistake somewhere.&quot; end when /5/, /fifth/, /study/, /penthouse/ if currentFloor &lt; 5 puts &quot;You ascend the stairs to the study.&quot; currentFloor == 5 return &#39;study&#39; elsif currentFloor &gt; 5 puts &quot;You descend the stairs to the study.&quot; currentFloor == 5 return &#39;study&#39; elsif currentFloor == 5 puts &quot;You are already here. Try another floor.&quot; else puts &quot;There has clearly been a mistake somewhere.&quot; end when /6/, /leave/, /exit/, /back/, /meadow/ if currentFloor != 0 puts WordWrap.ww &quot;You descend the stairs, walk out the door, and keep going until the you reach the edge of the meadow.&quot; currentFloor == 0 return &#39;meadow&#39; elsif currentFloor == 0 puts &quot;You walk out the door, and keep going until the you reach the edge of the meadow.&quot; return &#39;meadow&#39; else puts &quot;There has clearly been a mistake somewhere.&quot; end else puts &quot;I don&#39;t understand your request&quot; end endend But copy-pasting all of this would violate the DRY principle, so I thought about how to write it better: All &#39;Scenes&#39; use the enter() function. All the rooms are &#39;Scenes&#39;. All the rooms are &#39;Scenes&#39; that require the same function for selecting a floor. Ergo, all the rooms are &#39;Scenes&#39; use a function that could be defined as &#39;selectFloor()&#39;. However, every room is located on a particular floor, which changes whether the player goes up or down the stairs, or is already at that floor. Ergo, every &#39;House Scene&#39; needs to inherit the function &#39;selectFloor()&#39; but with a variable for its floor, i.e. &#39;selectFloor(floorNumber)&#39;  First, I created a sub-class of &#39;Scene&#39; called &#39;HouseScene&#39;: class HouseScene &lt; Scene def floorSelection() puts &quot;This scene is not yet configured. Subclass it and implement floorSelection().&quot; exit(1) endend But remember that the floorSelection function is a while loop, so it needs a constant to hold true while it runs.  The obvious candidate is the floor number, so the function takes an argument and starts like this: def floorSelection(floorNumber) puts &quot;Filler text for the moment&quot; currentFloor = floorNumber while currentFloor == floorNumber From there it&#39;s simply a matter of pasting the rest of the floorSelection(floorNumber) function into the sub-class &#39;HouseScene&#39;.Then, for each room, call the functions: enter() floorSelection() If the player leaves the room, she will go back to the landing of the staircase and choose again whither she wants to go.This slightly more complex code brings me finally to the point where testing my program becomes a drag.  Until now, I could effortlessly run a straightforward program from start to finish; now, I have many potential routes to follow, and testing them all will take exponentially more time as I add games and puzzles to each room.In my next post I will share my first experience of testing and Rake files in Ruby.","headline":"Objected-oriented Programming, Part 1","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/12/21/objected_oriented_programming_part_1.html"},"url":"http://localhost:4000/2016/12/21/objected_oriented_programming_part_1.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="icon" type="image/png" href="/assets/favicon.png" /><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="CPC Blog" /></head>
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="stylesheet" href="/assets/css/magnific-popup.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="CPC Blog" /><script src="https://code.jquery.com/jquery-3.2.0.min.js"></script> 
+  <script src="/assets/js/jquery.magnific-popup.js"></script>
+</head>
 <body><div class="site-header">
   <div class="wrapper">
     <a class="site-title" rel="author" href="/">CPC Blog<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
     <span class="social_links">
-        <a class="color-cyan-hover" href="https://twitter.com/alexandergarber"><i class="fab fa-twitter-square"></i></a><a class="color-red-hover" href="http://clockworkpc.com.au"><i class="fab fa-itch-io"></i></a><a class="color-purple-hover" href="https://github.com/clockworkpc"><i class="fab fa-github-square"></i></a>
+        
+        
+        <a class="color-cyan-hover" href="https://twitter.com/alexandergarber"><i class="fab fa-twitter-square"></i></a>
+        
+        
+        
+        <a class="color-red-hover" href="http://clockworkpc.com.au"><i class="fab fa-itch-io"></i></a>
+        
+        
+        
+        <a class="color-purple-hover" href="https://github.com/clockworkpc"><i class="fab fa-github-square"></i></a>
+        
+        
     </span>
   </div>
 </div>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="author-box">
+        
+  <div class="author-box">
 
-A blog about software by Alexander JK Garber.
+<div class="description">A blog about software by Alexander JK Garber.</div>
+
 </div>
+
 
 <div class="post">
   <h1 class="post-title">Objected-oriented Programming, Part 1</h1>
@@ -42,7 +62,12 @@ A blog about software by Alexander JK Garber.
       
   </div>
   
-  <div class="post-date">Published on 21 Dec 2016</div>
+  <div class="post-date">
+    Published on 21 Dec 2016
+    
+    by Alexander Garber
+    
+  </div>
   
   <div dir="ltr" style="text-align: left;" trbidi="on">
         <div dir="ltr" style="text-align: left;" trbidi="on">
@@ -143,24 +168,24 @@ A blog about software by Alexander JK Garber.
     
       <li>
         <h3>
-          <a href="/2020/02/25/2017-01-30-finished_learn_ruby_the_hard_way.html">
-            
+          <a href="/2022/12/22/Javascript_Calculator.html">
+            Javascript_calculator
           </a>
         </h3>
       </li>
     
       <li>
         <h3>
-          <a href="/2020/02/20/a_little_note_on_git.html">
-            A Little Note on Git
+          <a href="/2021/05/04/Check_Method_Definition_in_Ruby.html">
+            Check Method Definition in Ruby
           </a>
         </h3>
       </li>
     
       <li>
         <h3>
-          <a href="/2020/01/06/how-i-learned-to-stop-worrying-and-love-apis.html">
-            How I Learned To Stop Worrying And Love APIs
+          <a href="/2021/04/19/open_multiple_tabs_in_vim_from_string_input.html">
+            open multiple tabs in vim from string input
           </a>
         </h3>
       </li>
@@ -172,11 +197,50 @@ A blog about software by Alexander JK Garber.
 
 
   
-  <h2>all tags</h2>
-  <div class="tag-cloud"><a href="/tag/api/" class="set-1">api</a> <a href="/tag/atom/" class="set-1">atom</a> <a href="/tag/bash/" class="set-1">bash</a> <a href="/tag/career/" class="set-2">career</a> <a href="/tag/code/" class="set-3">code</a> <a href="/tag/css/" class="set-1">css</a> <a href="/tag/devops/" class="set-1">devops</a> <a href="/tag/gist/" class="set-1">gist</a> <a href="/tag/ide/" class="set-1">ide</a> <a href="/tag/isbn-fetcher/" class="set-1">isbn-fetcher</a> <a href="/tag/javascript/" class="set-1">javascript</a> <a href="/tag/job-search/" class="set-1">job search</a> <a href="/tag/kanban/" class="set-1">kanban</a> <a href="/tag/kanban%5C/" class="set-1">kanban\</a> <a href="/tag/pastbin/" class="set-1">pastbin</a> <a href="/tag/python/" class="set-1">python</a> <a href="/tag/rails/" class="set-1">rails</a> <a href="/tag/refactoring/" class="set-1">refactoring</a> <a href="/tag/ruby/" class="set-4">ruby</a> <a href="/tag/study/" class="set-5">study</a> <a href="/tag/tdd/" class="set-1">tdd</a> <a href="/tag/testing/" class="set-1">testing</a> <a href="/tag/walkthrough/" class="set-1">walkthrough</a> <a href="/tag/workflow/" class="set-3">workflow</a></div>
+
+
+
+
+<script>
+  let i = 0;
+  const text = '';
+  const speed = parseInt('50');
   
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById('animated-post-description').innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
 
+  document.getElementById('animated-post-description').style.display = 'initial';
+  typeWriter();
 
+  // Image modal
+  var $imgs = [];
+  $('img').each(function(idx) {
+    var obj = {
+      src: $(this).attr('src')
+    }
+    $imgs.push(obj);
+    var elem = $(this);
+    $(this).click(function() {
+      $('.modal').magnificPopup('open', idx);
+    });
+  });
+
+  $('.modal').magnificPopup({
+    items: $imgs,
+    type: 'image',
+    closeOnContentClick: true,
+    mainClass: 'mfp-img-mobile',
+    image: {
+      verticalFit: true
+    }
+    
+  });
+</script>
 
       </div>
     </main><footer class="site-footer">
@@ -199,13 +263,11 @@ A blog about software by Alexander JK Garber.
 </div>
 <script type="text/javascript">
 const theme = localStorage.getItem('theme');
-if (theme === 'undefined') {
-   theme = "dark";
-}
-if (theme === "dark") {
-	document.documentElement.setAttribute('data-theme', 'dark');
-} else {
+
+if (theme === "light") {
     document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
 }
 const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
 

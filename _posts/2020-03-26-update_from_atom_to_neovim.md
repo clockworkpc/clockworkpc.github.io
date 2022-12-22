@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Update: From Atom to Neovim
+title: From Atom to Neovim
 date:   Thu 26 Mar 10:53:52 AEDT 2020
 tags: [atom, ide, workflow, vim]
 ---

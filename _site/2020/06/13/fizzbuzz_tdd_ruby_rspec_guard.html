@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html class="direction--ltr"lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>FizzBuzz: TDD, Ruby, RSpec, Guard | CPC Blog</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="FizzBuzz: TDD, Ruby, RSpec, Guard" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="FizzBuzz Rock Soup *A FizzBuzz Solution in Test-driven Development With Ruby, RSpec, Guard, and VIM" />
+<meta property="og:description" content="FizzBuzz Rock Soup *A FizzBuzz Solution in Test-driven Development With Ruby, RSpec, Guard, and VIM" />
+<link rel="canonical" href="http://localhost:4000/2020/06/13/fizzbuzz_tdd_ruby_rspec_guard.html" />
+<meta property="og:url" content="http://localhost:4000/2020/06/13/fizzbuzz_tdd_ruby_rspec_guard.html" />
+<meta property="og:site_name" content="CPC Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-13T08:38:42-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="FizzBuzz: TDD, Ruby, RSpec, Guard" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-06-13T08:38:42-04:00","datePublished":"2020-06-13T08:38:42-04:00","description":"FizzBuzz Rock Soup *A FizzBuzz Solution in Test-driven Development With Ruby, RSpec, Guard, and VIM","headline":"FizzBuzz: TDD, Ruby, RSpec, Guard","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/06/13/fizzbuzz_tdd_ruby_rspec_guard.html"},"url":"http://localhost:4000/2020/06/13/fizzbuzz_tdd_ruby_rspec_guard.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="stylesheet" href="/assets/css/magnific-popup.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="CPC Blog" /><script src="https://code.jquery.com/jquery-3.2.0.min.js"></script> 
+  <script src="/assets/js/jquery.magnific-popup.js"></script>
+</head>
+<body><div class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">CPC Blog<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
+    <span class="social_links">
+        
+        
+        <a class="color-cyan-hover" href="https://twitter.com/alexandergarber"><i class="fab fa-twitter-square"></i></a>
+        
+        
+        
+        <a class="color-red-hover" href="http://clockworkpc.com.au"><i class="fab fa-itch-io"></i></a>
+        
+        
+        
+        <a class="color-purple-hover" href="https://github.com/clockworkpc"><i class="fab fa-github-square"></i></a>
+        
+        
+    </span>
+  </div>
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+  <div class="author-box">
+
+<div class="description">A blog about software by Alexander JK Garber.</div>
+
+</div>
+
+
+<div class="post">
+  <h1 class="post-title">FizzBuzz: TDD, Ruby, RSpec, Guard</h1>
+  
+  <div class="post-tags">
+      
+      <a class="tag" href="ruby">ruby</a>
+      
+      <a class="tag" href="rspec">rspec</a>
+      
+      <a class="tag" href="code">code</a>
+      
+  </div>
+  
+  <div class="post-date">
+    Published on 13 Jun 2020
+    
+  </div>
+  
+  <h1 id="fizzbuzz-rock-soup">FizzBuzz Rock Soup</h1>
+<h2 id="a-fizzbuzz-solution-in-test-driven-development-with-ruby-rspec-guard-and-vim">*A FizzBuzz Solution in Test-driven Development With Ruby, RSpec, Guard, and VIM</h2>
+
+<p>This walkthrough of a FizzBuzz solution demonstrates the following:</p>
+<ul>
+  <li>behaviour-driven development and sound English</li>
+  <li>certain features of the Ruby language that lend themselves to DRY code</li>
+  <li>test-driven development with RSpec and Guard</li>
+  <li>Neovim as an integrated development environment</li>
+  <li>my personal <code class="language-plaintext highlighter-rouge">ruby-template</code> gem for cutting through the setup boilerplate</li>
+</ul>
+
+<p>For the sake of brevity, the walkthrough is expressed as step-by-step instructions, rather than as a description in the first person.</p>
+
+<h2 id="notes-on-presentation">Notes on Presentation</h2>
+
+<p>This walkthrough is not intended to be viewed on a small screen, but rather in full screen on a desktop computer.  The reason for this is that the presentation captures precisely the sort of things that I see in my daily work.</p>
+
+<h2 id="contents">Contents</h2>
+
+<p>The demonstration runs as follows:</p>
+<ol>
+  <li>Clone the <code class="language-plaintext highlighter-rouge">ruby-template</code> gem from my public repository on Github and set up the project for test-driven development.</li>
+  <li>Specify the required outputs of a FizzBuzz solution in an RSpec test. (‘Spec’)</li>
+  <li>Provide the most obvious, facile solution. (IF-ELSE statement)</li>
+  <li>Refactor the facile solution without extending its functionality.</li>
+  <li>Define the solution more expansively using a behaviour-driven approach, and reconfigure the project so as to facilitate better namespacing.</li>
+  <li>Abstract the rules of the FizzBuzz game into a Module called <strong>Rules</strong>.</li>
+  <li>Abstract the mechanics of the FizzBuzz game into a Class called <strong>Engine</strong>.</li>
+  <li>Add a Spec that provides batch input to and checks the batch output of <strong>FizzBuzz</strong>.</li>
+  <li>Write a Spec for <strong>FizzBashBang</strong>, a new game which builds on <strong>FizzBuzz</strong>.</li>
+  <li>Add new rules – <strong>Bash</strong> and <strong>Bang</strong> and satisfy the <strong>FizzBashBang</strong> Spec.</li>
+  <li>Write a Spec for <strong>FizzBuzzBashBoom</strong>, which builds on both <strong>FizzBuzz</strong> and <strong>FizzBashBang</strong>.</li>
+  <li>Add a new rule called <strong>Boom</strong>, and satisfy the <strong>FizzBuzzBashBoom</strong> Spec.</li>
+  <li>Extract the games to a separate Module called <strong>Games</strong>.</li>
+  <li>Create a <strong>Util</strong> Module with a <code class="language-plaintext highlighter-rouge">#fibonacci</code> method, used by both a Spec and the <strong>Rules</strong> Module.</li>
+  <li>Refactor the codebase and mix the Util methods into a Class and another Module.</li>
+</ol>
+
+<h2 id="1-project-setup">1. Project setup</h2>
+
+<ul>
+  <li>Clone the github repository <a href="https://github.com/clockworkpc/ruby-template">ruby-template</a>.</li>
+  <li>Make sure the following gems are in the Gemfile:</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>
+<span class="n">gemspec</span>
+
+<span class="n">group</span> <span class="ss">:development</span> <span class="k">do</span>
+  <span class="n">gem</span> <span class="s1">'did_you_mean'</span> <span class="c1"># Useful for terminal output</span>
+  <span class="n">gem</span> <span class="s1">'guard-rspec'</span> <span class="c1"># Both Guard and RSpec</span>
+  <span class="n">gem</span> <span class="s1">'rubocop'</span><span class="p">,</span> <span class="ss">require: </span><span class="kp">false</span> <span class="c1"># Rubocop</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>I recommend putting them all in the <code class="language-plaintext highlighter-rouge">development</code> group unless you have a particular reason to do otherwise.</p>
+<ul>
+  <li>Open <code class="language-plaintext highlighter-rouge">bin/project_details.json</code> and change the <code class="language-plaintext highlighter-rouge">new</code> keys to <code class="language-plaintext highlighter-rouge">FizzBuzz</code> in Pascal case for the Module name and <code class="language-plaintext highlighter-rouge">fizz_buzz</code> in snake case for the spec name.</li>
+  <li>Execute <code class="language-plaintext highlighter-rouge">/bin/setup</code>, which installs the gems and then runs <code class="language-plaintext highlighter-rouge">setup.rb</code>, which performs a project-wide string replacement of the current name (“Ruby Template”) to “Fizz Buzz”, and the runs the full <code class="language-plaintext highlighter-rouge">rspec</code> test suite.</li>
+  <li>Make sure all the Specs pass before proceeding.  If they do not, there is a good chance that something has been misnamed.</li>
+</ul>
+
+<h2 id="2-fizzbuzz-specification">2. FizzBuzz Specification</h2>
+
+<ul>
+  <li>The project should provide the Spec file <code class="language-plaintext highlighter-rouge">spec/fizz_buzz_spec.rb</code> and start Spec using the method <code class="language-plaintext highlighter-rouge">RSpec.describe</code>, to which all the Specs are passed as a block.  If not, create one.</li>
+  <li>Require <code class="language-plaintext highlighter-rouge">spec_helper</code>.  In a Ruby gem, I recommend loading the bare minimum of files <code class="language-plaintext highlighter-rouge">spec_helper</code>, because as the project grows, the test suite will take longer to start up.  However, it is very convenient to “eagerly” load all of the requisite files, so work out an acceptable trade-off between performance and convenience.  In this walkthrough the difference is negligible.</li>
+  <li>Open a terminal at the project root and run <code class="language-plaintext highlighter-rouge">bundle exec guard</code>.  A common Ruby practice is to alias <code class="language-plaintext highlighter-rouge">be</code> to <code class="language-plaintext highlighter-rouge">bundle exec</code>.</li>
+  <li>Confirm that the Guardfile is configured to watch both the <code class="language-plaintext highlighter-rouge">lib</code> and <code class="language-plaintext highlighter-rouge">spec</code> directories.  In <code class="language-plaintext highlighter-rouge">ruby-template</code>, the <code class="language-plaintext highlighter-rouge">Guardfile</code> has a custom method called <code class="language-plaintext highlighter-rouge">#watch_spec_and_lib_files</code>.  If it only watches the <code class="language-plaintext highlighter-rouge">spec</code> folder, you will have to continually re-save the Spec files in order to trigger <code class="language-plaintext highlighter-rouge">rspec</code>, which is tiresome.</li>
+  <li>
+    <p>Save the file.  Note that Guard triggers RSpec to execute the saved file.  As there are no tests, there are no failures either, yet.</p>
+  </li>
+  <li>Write a simple <code class="language-plaintext highlighter-rouge">hello_world</code> test, to ascertain whether the Spec has access to its test target.  As the methods will be mixed in, do not prepend the method name by <code class="language-plaintext highlighter-rouge">subject.</code></li>
+</ul>
+
+<h3 id="note-about-class-vs-module">NOTE ABOUT CLASS vs MODULE</h3>
+
+<p>This step deviates from the standard practice of creating a Class with an instance method in order to demonstrate the advantages and disadvantages of Modules and Mixins.  Later in this walkthrough, the primary object of the program will be a Class.</p>
+
+<ul>
+  <li>Note the error: There is no method called <code class="language-plaintext highlighter-rouge">hello_world</code> available to the Spec, because the Spec does not have any methods mixed into it.</li>
+  <li><code class="language-plaintext highlighter-rouge">include</code> the Module <code class="language-plaintext highlighter-rouge">FizzBuzz</code>.</li>
+  <li>Note the error: This time there is such method for <code class="language-plaintext highlighter-rouge">FizzBuzz</code>.</li>
+  <li>In <code class="language-plaintext highlighter-rouge">fizz_buzz.rb</code>, write an instance method called <code class="language-plaintext highlighter-rouge">hello_world</code> that returns the wrong output.  Save the file and note that it too triggers Guard to run <code class="language-plaintext highlighter-rouge">fizz_buzz_spec.rb</code>.  This is because Guard associates <code class="language-plaintext highlighter-rouge">fizz_buzz.rb</code> and <code class="language-plaintext highlighter-rouge">fizz_buzz_spec.rb</code> by their corresponding locations and matching file names.</li>
+  <li>Note the error: the correct method was invoked, but the return value was wrong – as intended.</li>
+  <li>Correct the method to return <code class="language-plaintext highlighter-rouge">hello world</code>.  The Spec now passes.</li>
+  <li>Delete both the “hello world” test and method.  They have served their purpose, for we now know that the Spec can invoke the instance methods in the Module.</li>
+</ul>
+
+<h2 id="3-the-worst-most-obvious-solution">3. The Worst, Most Obvious Solution</h2>
+
+<p><strong>IF</strong> the work specification is nothing more than to write code that returns the correct value, an IF statement is fine: it arguably satisfies three out of <a href="https://thoughtbot.com/blog/what-is-good-code">thoughtbot’s four attributes of good code</a>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Principle</th>
+      <th>Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>The code works.</em></td>
+      <td>TRUE</td>
+    </tr>
+    <tr>
+      <td><em>The code is easy to understand.</em></td>
+      <td>TRUE</td>
+    </tr>
+    <tr>
+      <td><em>The code is easy to change.</em></td>
+      <td>TRUE</td>
+    </tr>
+    <tr>
+      <td><em>The code is fun to work with</em></td>
+      <td>FALSE</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>HOWEVER</strong>, in the real world of commercial software, we are not paid to practice isolated coding katas (even though that is my idea of a good time), but rather to balance competing, equally important considerations as we solve complex problems.</p>
+
+<p>I ask myself these and other questions every day:</p>
+
+<blockquote>
+  <p>Does the code make it easier to solve harder problems, or harder to solve easier problems?</p>
+</blockquote>
+
+<blockquote>
+  <p>Does it take more or less time to track down a bug?</p>
+</blockquote>
+
+<blockquote>
+  <p>Do I look forward to adding a new feature or extending existing functionality, or do I dread doing so for fear of breaking something?</p>
+</blockquote>
+
+<p>Implicit in these questions are considerations of <a href="https://developerzen.com/how-do-you-define-good-code-c8a383c207a4">comprehensibility, reviewability, error rate, debugging, modifiability, development time, and external quality</a>.</p>
+
+<p>To return to the task at hand:</p>
+
+<p>First the “FizzBuzz” solution will be delivered according to this facile specification, and then refactored.</p>
+
+<p>Thereafter, the walkthrough concerns itself with creating a mechanism that first and foremost delivers the same functionality, but which, more importantly, makes it <em>easier</em> to solve <em>harder</em> problems.</p>
+
+<ul>
+  <li>In <code class="language-plaintext highlighter-rouge">fizz_buzz.rb</code>, create an <strong>empty</strong> method called <code class="language-plaintext highlighter-rouge">fizz_buzz</code>, which takes a single argument called <strong>dividend</strong>.  This is the correct mathematical term for a variable in a <strong>modulo</strong> operation, which is the core of the FizzBuzz game.</li>
+  <li>Write a test to check the return value when the input is divisible by 3.</li>
+  <li>Note the error: expected “Fizz”, got <strong>nil</strong>.</li>
+  <li>Write a simple <strong>IF</strong> statement that satisfies the test.</li>
+  <li>Write a test to check the return value when the input is divisible by 5.</li>
+  <li>Expand the if statement to satisfy both tests.</li>
+  <li>Because my IDE runs <strong>Rubocop</strong> asynchronously, it indicates to me that the recommended syntax for a modulo operation that checks for divisibility is the <code class="language-plaintext highlighter-rouge">#zero?</code> method.  Satisfy Rubocop by amending those lines.</li>
+  <li>Write a test to check the return value when the input is divisible by both 3 and 5.</li>
+  <li>Expand the if statement again to satisfy the tests.</li>
+  <li>Note the error: putting the combined condition last fails the test, because a Ruby IF statement does not fall through.  (This is achieved by declaring a null value, which I will use when refactoring this code)</li>
+  <li>Put the combined condition first and confirm that the tests pass.</li>
+  <li>Write a test to check the return value when the input is divisible by neither 3 nor 5.</li>
+  <li>Return the <em>dividend</em> in the <code class="language-plaintext highlighter-rouge">else</code> condition.</li>
+  <li>When all the tests from 1 to 15 pass, the solution is complete.</li>
+</ul>
+
+<blockquote>
+  <ol>
+    <li>The output should be “Fizz” when the input is divisible by 3. (3, 6, 9, 12)</li>
+    <li>The output should be “Buzz” when the input is divisible by 5. (5, 10)</li>
+    <li>The output should be “FizzBuzz” when the input is divisible by both 3 and 5. (15)</li>
+    <li>The output should be the input if it is divisible by neither 3 nor 5. (1, 2, 4, 7, 8, 11, 13, 14)</li>
+  </ol>
+</blockquote>
+
+<h2 id="4-refactoring-the-worst-most-obvious-solution">4. Refactoring the Worst, Most Obvious Solution</h2>
+
+<h3 id="reducing-the-outputs-from-four-to-two">Reducing the Outputs from Four to Two</h3>
+
+<p>There are two problems with this method’s output:</p>
+<ol>
+  <li>It does not always return the same type of object – either a String or an Integer.</li>
+  <li>It returns four different results based on four different conditions.</li>
+</ol>
+
+<p>Ideally, the method’s output should always be either a String or an Integer, and the values should ultimately be the result of the same operation.</p>
+
+<p>Given that this method has to return either a String or Integer according the specifications, it should have only two kinds of return value: a String if at least one of the conditions is satisfied, or an Integer if no condition is satisfied; and the String should be the result of an operation that returns ‘Fizz’, ‘Buzz’, ‘FizzBuzz’, or nothing if none of the conditions is satisfied.</p>
+
+<h3 id="joining-an-array-of-strings">Joining an Array of Strings</h3>
+
+<p>The key to the required String operation is the following set of observations:</p>
+<ul>
+  <li>‘FizzBuzz’ is a concatenation of both ‘Fizz’ and ‘Buzz’,</li>
+  <li>‘Fizz’ is the same concatenation without ‘Buzz’,</li>
+  <li>and the inverse is true of ‘Buzz’.</li>
+</ul>
+
+<p>To express this in Ruby, call the <code class="language-plaintext highlighter-rouge">join</code> method on an Array containing two variables, <code class="language-plaintext highlighter-rouge">fizz</code> and <code class="language-plaintext highlighter-rouge">buzz</code>, which can be either its namesake or <strong>nil</strong>:</p>
+
+<div class="language-rb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">fizz</span><span class="p">,</span> <span class="n">buzz</span><span class="p">].</span><span class="nf">join</span>
+</code></pre></div></div>
+
+<p>Thus:</p>
+<ul>
+  <li>if the variable <code class="language-plaintext highlighter-rouge">fizz</code> returns the String ‘Fizz’ and <code class="language-plaintext highlighter-rouge">buzz</code> ‘Buzz’, the return value of the joined Array is ‘FizzBuzz’;</li>
+  <li>if the variable <code class="language-plaintext highlighter-rouge">fizz</code> returns the String ‘Fizz’ and <code class="language-plaintext highlighter-rouge">buzz</code> is <strong>nil</strong>, the return value of the joined Array is ‘Fizz’;</li>
+  <li>if the variable <code class="language-plaintext highlighter-rouge">buzz</code> returns the String ‘Buzz’ and <code class="language-plaintext highlighter-rouge">fizz</code> is <strong>nil</strong>, the return value of the joined Array is ‘Buzz’;</li>
+  <li>if both <code class="language-plaintext highlighter-rouge">fizz</code> and <code class="language-plaintext highlighter-rouge">buzz</code> are <strong>nil</strong>, the joined Array returns nothing.</li>
+</ul>
+
+<p>Apply this insight to the <code class="language-plaintext highlighter-rouge">fizz_buzz</code> method.</p>
+
+<h3 id="declaring-variables">Declaring variables</h3>
+
+<p>In each of the positive conditions, declare the variables <code class="language-plaintext highlighter-rouge">fizz</code> and <code class="language-plaintext highlighter-rouge">buzz</code>, and assign the values accordingly:</p>
+
+<ul>
+  <li>If divisible by 3 and 5, <code class="language-plaintext highlighter-rouge">fizz</code> is ‘Fizz’ and <code class="language-plaintext highlighter-rouge">buzz</code> is ‘Buzz’</li>
+  <li>If divisible by 3, <code class="language-plaintext highlighter-rouge">fizz</code> is ‘Fizz’ and <code class="language-plaintext highlighter-rouge">buzz</code> is <strong>nil</strong>.</li>
+  <li>If divisible by 5, <code class="language-plaintext highlighter-rouge">buzz</code> is ‘Buzz’ and <code class="language-plaintext highlighter-rouge">fizz</code> is <strong>nil</strong>.</li>
+</ul>
+
+<p>In order to satisfy the tests, return the joined Array of <code class="language-plaintext highlighter-rouge">fizz</code> and <code class="language-plaintext highlighter-rouge">buzz</code> for each satisified condition, otherwise return the dividend.</p>
+
+<h3 id="if-else">IF-ELSE</h3>
+
+<p>At the end of the method, declare a variable <code class="language-plaintext highlighter-rouge">result</code> which gives the return value of a joined Array of <code class="language-plaintext highlighter-rouge">fizz</code> and <code class="language-plaintext highlighter-rouge">buzz</code>.</p>
+
+<p>Write an IF-ELSE statement, which returns the original dividend if the <code class="language-plaintext highlighter-rouge">result</code> is <strong>nil</strong> – that is to say, if the number is divisible by neither 3 nor 5 – or returns the <code class="language-plaintext highlighter-rouge">result</code>, i.e. if the number is divisible by either 3 or 5, or both.</p>
+
+<p>This fails the test because the return value of a joined Array of two <strong>nil</strong> values in Ruby is not <strong>nil</strong>, but it is empty.</p>
+
+<p>Change the <code class="language-plaintext highlighter-rouge">.nil?</code> method to <code class="language-plaintext highlighter-rouge">.empty?</code>.  The test now passes.</p>
+
+<h3 id="ternary-conditional">Ternary Conditional</h3>
+
+<p>A more elegant way of expressing an IF-ELSE statement is a <em>ternary conditional</em>, which is composed of the following elements:</p>
+<ul>
+  <li>condition</li>
+  <li>question mark</li>
+  <li>return value if true</li>
+  <li>colon</li>
+  <li>return value if false</li>
+</ul>
+
+<p>A simple example is to return “TRUE” if 100 is greater than 1, otherwise to return false.</p>
+
+<div class="language-rb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">100</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">?</span> <span class="s1">'TRUE'</span> <span class="p">:</span> <span class="s1">'FALSE'</span>
+</code></pre></div></div>
+
+<p>This obviously returns ‘TRUE’.</p>
+
+<p>Change the condition to something obviously false, e.g. 100 is less than 1, and it returns ‘FALSE’.</p>
+
+<p>Thus, wherever the condition is <strong>boolean</strong>, the IF-ELSE statement can be expressed on a single line as a ternary conditional.</p>
+
+<p>Apply this insight to the IF-ELSE statement at the end of the method, by expressing it as follows:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">result.empty?</code></li>
+  <li>question mark</li>
+  <li><code class="language-plaintext highlighter-rouge">dividend</code></li>
+  <li>colon</li>
+  <li><code class="language-plaintext highlighter-rouge">result</code></li>
+</ul>
+
+<p>Delete the redundant IF-ELSE statement.  The tests pass.</p>
+
+<h2 id="remove-superfluous-conditions">Remove Superfluous Conditions</h2>
+
+<p>Because the method returns the joined Array if one of the conditions is satisfied, it is no longer necessary to return the joined Array for each positive condition.  Delete all the joined arrays except the one at the end.  The tests still pass.</p>
+
+<p>By the same token, because the variables <code class="language-plaintext highlighter-rouge">fizz</code> and <code class="language-plaintext highlighter-rouge">buzz</code> are defined at some point in the method, it is not necessary to define either of them as <code class="language-plaintext highlighter-rouge">nil</code>: the joined Array at the end of the method will return the same concatenation.  Delete the <strong>nil</strong> declarations of <code class="language-plaintext highlighter-rouge">fizz</code> and <code class="language-plaintext highlighter-rouge">buzz</code>.  The tests still pass.</p>
+
+<p>Similarly, the ELSE condition is redundant, thanks to the ternary conditional.  Delete the ELSE condition.  The tests still pass.</p>
+
+<p>Finally, the same principle applies to the rest of the original IF statement.  Write the following two lines, and comment out the original IF statement, and re-run the tests.</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">fizz</code> returns ‘Fizz’ if the dividend is divisible by 3.</li>
+  <li><code class="language-plaintext highlighter-rouge">buzz</code> returns ‘Buzz’ if the dividend is divisible by 5.</li>
+</ol>
+
+<p>The tests still pass.  Delete the commented code.</p>
+
+<p>The new method retains all of the original functionality in three lines of Ruby code rather than eleven.</p>
+
+<h1 id="5-reconceptualisation">5. Reconceptualisation</h1>
+
+<p>Until now, the specification has been very narrow: a method that returns the correct output.
+However, a more realistic specification would be to create a <strong>mathematics game engine</strong>, which could be used to create not only a FizzBuzz game, but many similar games too.</p>
+
+<h2 id="rename-the-project">Rename the Project</h2>
+
+<p>Change the name of the project from <code class="language-plaintext highlighter-rouge">fizzbuzz</code> to <code class="language-plaintext highlighter-rouge">math_games</code>.</p>
+
+<p>Throughout the project, change the module name from FizzBuzz to MathGames (in Pascal case), all spec names from <code class="language-plaintext highlighter-rouge">fizz_buzz</code> to <code class="language-plaintext highlighter-rouge">math_games</code>.
+Apply this change to file names, and all matching strings within the files.</p>
+
+<p>Make sure that all the specs still pass; if they do, the changes are probably sufficient.</p>
+
+<h2 id="mathgamesrules">MathGames::Rules</h2>
+
+<p>Create a Spec for a yet-to-be-created module <code class="language-plaintext highlighter-rouge">MathGames::Rules</code>.</p>
+
+<p>Write a ‘hello_world’ Spec to get started.</p>
+
+<p>Create the file <code class="language-plaintext highlighter-rouge">lib/math_games/rules.rb</code>, define it as a submodule <code class="language-plaintext highlighter-rouge">MathGames::Rules</code>, and write a <code class="language-plaintext highlighter-rouge">hello_world</code> method to satisfy the Spec.</p>
+
+<p>The Spec initially fails because the library file is not included in <code class="language-plaintext highlighter-rouge">spec_helper</code>.</p>
+
+<p>Require it in the <code class="language-plaintext highlighter-rouge">spec_helper</code>.  The test now passes.</p>
+
+<p>Write a Spec for a class method <code class="language-plaintext highlighter-rouge">MathGames::Rules.hello_self</code>.</p>
+
+<p>Write a method called <code class="language-plaintext highlighter-rouge">#hello_self</code>.</p>
+
+<p>The test fails because it is not a class method, but still an instance method.</p>
+
+<p>Prepend the keyword <code class="language-plaintext highlighter-rouge">self</code> to the method definition, so that the method headers reads <code class="language-plaintext highlighter-rouge">def self.hello_self</code>.  The test now passes.</p>
+
+<p>As the tests have established that both instance and class methods can be tested in this spec, they are no longer necessary.</p>
+
+<p>In a <code class="language-plaintext highlighter-rouge">before(:all)</code> block, declare a variable called <code class="language-plaintext highlighter-rouge">@rule</code>, which is a <code class="language-plaintext highlighter-rouge">modulo</code> class method with the arguments <em>Integer</em> 3 and <em>String</em> ‘Fizz’.  This will return a <em>Hash</em> containing two key-value pairs: <code class="language-plaintext highlighter-rouge">:result</code> and <code class="language-plaintext highlighter-rouge">condition</code>.</p>
+
+<p>Declare two instance variables, which will be available to the <code class="language-plaintext highlighter-rouge">it</code> blocks of the test:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">@result</code>, which returns the value of the key <code class="language-plaintext highlighter-rouge">result</code> in the variable <code class="language-plaintext highlighter-rouge">rule</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">condition</code>, which returns the value of the key <code class="language-plaintext highlighter-rouge">condition</code> in the variable <code class="language-plaintext highlighter-rouge">rule</code>.</li>
+</ul>
+
+<p>Write a test that <code class="language-plaintext highlighter-rouge">@result</code> returns the string input <em>String</em> ‘Fizz’.</p>
+
+<p>In <code class="language-plaintext highlighter-rouge">math_games/rules.rb</code>, remove the redundant hello methods.</p>
+
+<p>Write a method called <code class="language-plaintext highlighter-rouge">modulo</code>, which takes two arguments: <code class="language-plaintext highlighter-rouge">divisor</code> (<em>Integer</em>) and (<em>String</em>).  In the body, return a Hash composed of two key-value pairs:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">condition</code>: a <em>lambda</em> that takes the argument <code class="language-plaintext highlighter-rouge">a</code> and returns whether <em>a mod divisor</em> equals zero, that is, whether <code class="language-plaintext highlighter-rouge">a</code> is divisible by the divisor.</li>
+  <li>result: the input <em>String</em> <code class="language-plaintext highlighter-rouge">string</code>.</li>
+</ul>
+
+<p>The test fails because <code class="language-plaintext highlighter-rouge">modulo</code> is not a class method.  Prepend <code class="language-plaintext highlighter-rouge">self</code> to its definition.  The test now passes.</p>
+
+<p>Write a test that <code class="language-plaintext highlighter-rouge">@condition</code> returns <strong>TRUE</strong> if the dividend <code class="language-plaintext highlighter-rouge">a</code> is divisible by the divisor, by passing the <em>Integer</em> 9 to the <em>lambda</em> in <code class="language-plaintext highlighter-rouge">@condition</code>.  The test passes.</p>
+
+<p>Write a test that <code class="language-plaintext highlighter-rouge">@condition</code> returns <strong>FALSE</strong> if the dividend <code class="language-plaintext highlighter-rouge">a</code> is not divisible by the divisor, by passing the <em>Integer</em> 8 to the <em>lambda</em> in <code class="language-plaintext highlighter-rouge">@condition</code>.  The test passes.</p>
+
+</div>
+
+
+<div class="comments">
+<div id="disqus_thread"></div>
+<script>
+ var disqus_config = function () {
+     this.page.url = 'http://localhost:4000/2020/06/13/fizzbuzz_tdd_ruby_rspec_guard.html';
+     this.page.identifier = '/2020/06/13/fizzbuzz_tdd_ruby_rspec_guard';
+     this.page.title = 'FizzBuzz: TDD, Ruby, RSpec, Guard';
+ };
+
+ (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+     var d = document, s = d.createElement('script');
+
+     s.src = '//<your-discuss-shortname>.disqus.com/embed.js';
+
+     s.setAttribute('data-timestamp', +new Date());
+     (d.head || d.body).appendChild(s);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+
+
+<div class="related">
+  <h2>related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2022/12/22/Javascript_Calculator.html">
+            Javascript_calculator
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2021/05/04/Check_Method_Definition_in_Ruby.html">
+            Check Method Definition in Ruby
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2021/04/19/open_multiple_tabs_in_vim_from_string_input.html">
+            open multiple tabs in vim from string input
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+  
+
+
+
+
+<script>
+  let i = 0;
+  const text = '';
+  const speed = parseInt('50');
+  
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById('animated-post-description').innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  document.getElementById('animated-post-description').style.display = 'initial';
+  typeWriter();
+
+  // Image modal
+  var $imgs = [];
+  $('img').each(function(idx) {
+    var obj = {
+      src: $(this).attr('src')
+    }
+    $imgs.push(obj);
+    var elem = $(this);
+    $(this).click(function() {
+      $('.modal').magnificPopup('open', idx);
+    });
+  });
+
+  $('.modal').magnificPopup({
+    items: $imgs,
+    type: 'image',
+    closeOnContentClick: true,
+    mainClass: 'mfp-img-mobile',
+    image: {
+      verticalFit: true
+    }
+    
+  });
+</script>
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits"><a href="https://github.com/bitbrain/jekyll-dash">dash</a> theme for Jekyll by <a href="https://github.com/bitbrain">bitbrain</a> made with <i class="fas fa-heart"></i><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+
+if (theme === "light") {
+    document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>

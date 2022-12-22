@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  Mental Note: Rails Log Formatting
+title:  Rails Log Formatting
 date:   Wed  1 Apr 10:19:50 AEDT 2020
 tags: [rails, logger, configuration]
 ---
 Not sure where to put this:
 
 ```ruby
-logger.formatter = proc do | severity, time, msg | 
+logger.formatter = proc do | severity, time, msg |
 text = "#{time}, #{severity}: #{msg}
 "
 

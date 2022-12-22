@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html class="direction--ltr"lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>From Atom to Neovim | CPC Blog</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="From Atom to Neovim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I enjoy using Neovim more with every passing day." />
+<meta property="og:description" content="I enjoy using Neovim more with every passing day." />
+<link rel="canonical" href="http://localhost:4000/2020/03/26/update_from_atom_to_neovim.html" />
+<meta property="og:url" content="http://localhost:4000/2020/03/26/update_from_atom_to_neovim.html" />
+<meta property="og:site_name" content="CPC Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-26T10:53:52-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="From Atom to Neovim" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-03-26T10:53:52-04:00","datePublished":"2020-03-26T10:53:52-04:00","description":"I enjoy using Neovim more with every passing day.","headline":"From Atom to Neovim","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/03/26/update_from_atom_to_neovim.html"},"url":"http://localhost:4000/2020/03/26/update_from_atom_to_neovim.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="stylesheet" href="/assets/css/magnific-popup.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="CPC Blog" /><script src="https://code.jquery.com/jquery-3.2.0.min.js"></script> 
+  <script src="/assets/js/jquery.magnific-popup.js"></script>
+</head>
+<body><div class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">CPC Blog<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
+    <span class="social_links">
+        
+        
+        <a class="color-cyan-hover" href="https://twitter.com/alexandergarber"><i class="fab fa-twitter-square"></i></a>
+        
+        
+        
+        <a class="color-red-hover" href="http://clockworkpc.com.au"><i class="fab fa-itch-io"></i></a>
+        
+        
+        
+        <a class="color-purple-hover" href="https://github.com/clockworkpc"><i class="fab fa-github-square"></i></a>
+        
+        
+    </span>
+  </div>
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+  <div class="author-box">
+
+<div class="description">A blog about software by Alexander JK Garber.</div>
+
+</div>
+
+
+<div class="post">
+  <h1 class="post-title">From Atom to Neovim</h1>
+  
+  <div class="post-tags">
+      
+      <a class="tag" href="atom">atom</a>
+      
+      <a class="tag" href="ide">ide</a>
+      
+      <a class="tag" href="workflow">workflow</a>
+      
+      <a class="tag" href="vim">vim</a>
+      
+  </div>
+  
+  <div class="post-date">
+    Published on 26 Mar 2020
+    
+  </div>
+  
+  <p>I enjoy using Neovim more with every passing day.</p>
+
+<p>I availed myself of <a href="https://vim-bootstrap.com/">VIM Bootstrap</a> and have so far added the following customisations:</p>
+
+<h3 id="local_bundlesvim">local_bundles.vim</h3>
+<div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">"*****************************************************************************</span>
+<span class="c">"" Plug install packages (extra)</span>
+<span class="c">"*****************************************************************************</span>
+
+Plug <span class="s1">'amix/vim-zenroom2'</span>
+Plug <span class="s1">'christoomey/vim-sort-motion'</span>
+Plug <span class="s1">'dhruvasagar/vim-table-mode'</span>
+Plug <span class="s1">'felipec/notmuch-vim'</span>
+Plug <span class="s1">'joshdick/onedark.vim'</span>
+Plug <span class="s1">'junegunn/goyo.vim'</span>
+Plug <span class="s1">'suan/vim-instant-markdown'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'for'</span><span class="p">:</span> <span class="s1">'markdown'</span><span class="p">}</span>
+Plug <span class="s1">'tpope/vim-surround'</span>
+
+</code></pre></div></div>
+
+<h3 id="local_initvim">local_init.vim</h3>
+
+<div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">"*****************************************************************************</span>
+<span class="c">"" Custom Bindings</span>
+<span class="c">"*****************************************************************************</span>
+
+<span class="c">"Fix indentation for the whole file</span>
+<span class="nb">map</span> <span class="p">&lt;</span>F7<span class="p">&gt;</span> gg<span class="p">=</span>G<span class="p">&lt;</span>C<span class="p">-</span><span class="k">o</span><span class="p">&gt;&lt;</span>C<span class="p">-</span><span class="k">o</span><span class="p">&gt;</span>
+
+<span class="c">" Bind F8 to fixing problems with ALE</span>
+nmap <span class="p">&lt;</span>F8<span class="p">&gt;</span> <span class="p">&lt;</span>Plug<span class="p">&gt;(</span>ale_fix<span class="p">)</span>
+
+<span class="c">"Force filetype 'yaml' for yml files</span>
+<span class="k">au</span><span class="p">!</span> <span class="nb">BufNewFile</span><span class="p">,</span><span class="nb">BufReadPost</span> *<span class="p">.{</span>yaml<span class="p">,</span>yml<span class="p">}</span> <span class="k">set</span> <span class="k">filetype</span><span class="p">=</span>yaml <span class="nb">foldmethod</span><span class="p">=</span>manual
+autocmd <span class="nb">FileType</span> yaml <span class="k">setlocal</span> <span class="k">ts</span><span class="p">=</span><span class="m">2</span> <span class="k">sts</span><span class="p">=</span><span class="m">2</span> <span class="k">sw</span><span class="p">=</span><span class="m">2</span> <span class="nb">expandtab</span>
+<span class="c">" autocmd BufNewFile,BufRead *.yml set ft=yaml</span>
+
+<span class="c">"Vimroom</span>
+<span class="k">let</span> <span class="nv">g:goyo_width</span><span class="p">=</span><span class="m">80</span>
+<span class="k">let</span> <span class="nv">g:goyo_margin_top</span> <span class="p">=</span> <span class="m">2</span>
+<span class="k">let</span> <span class="nv">g:goyo_margin_bottom</span> <span class="p">=</span> <span class="m">2</span>
+nnoremap <span class="p">&lt;</span><span class="k">silent</span><span class="p">&gt;</span> <span class="p">&lt;</span>leader<span class="p">&gt;</span>z <span class="p">:</span>Goyo<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+
+<span class="c">"Stop line wrap from breaking words</span>
+<span class="k">set</span> <span class="nb">linebreak</span>
+
+<span class="c">"Move text up and down</span>
+nnoremap <span class="p">&lt;</span>A<span class="p">-</span><span class="k">j</span><span class="p">&gt;</span> <span class="p">:</span><span class="k">m</span> <span class="p">.+</span><span class="m">1</span><span class="p">&lt;</span>CR<span class="p">&gt;==</span>
+nnoremap <span class="p">&lt;</span>A<span class="p">-</span><span class="k">k</span><span class="p">&gt;</span> <span class="p">:</span><span class="k">m</span> <span class="p">.</span><span class="m">-2</span><span class="p">&lt;</span>CR<span class="p">&gt;==</span>
+inoremap <span class="p">&lt;</span>A<span class="p">-</span><span class="k">j</span><span class="p">&gt;</span> <span class="p">&lt;</span>Esc<span class="p">&gt;:</span><span class="k">m</span> <span class="p">.+</span><span class="m">1</span><span class="p">&lt;</span>CR<span class="p">&gt;==</span>gi
+inoremap <span class="p">&lt;</span>A<span class="p">-</span><span class="k">k</span><span class="p">&gt;</span> <span class="p">&lt;</span>Esc<span class="p">&gt;:</span><span class="k">m</span> <span class="p">.</span><span class="m">-2</span><span class="p">&lt;</span>CR<span class="p">&gt;==</span>gi
+vnoremap <span class="p">&lt;</span>A<span class="p">-</span><span class="k">j</span><span class="p">&gt;</span> <span class="p">:</span><span class="k">m</span> '<span class="p">&gt;+</span><span class="m">1</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>gv<span class="p">=</span>gv
+vnoremap <span class="p">&lt;</span>A<span class="p">-</span><span class="k">k</span><span class="p">&gt;</span> <span class="p">:</span><span class="k">m</span> '<span class="p">&lt;</span><span class="m">-2</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>gv<span class="p">=</span>gv
+
+<span class="c">"Skip out of brackets</span>
+inoremap <span class="p">&lt;</span>C<span class="p">-</span><span class="k">e</span><span class="p">&gt;</span> <span class="p">&lt;</span>C<span class="p">-</span><span class="k">o</span><span class="p">&gt;</span>A
+
+<span class="c">"*****************************************************************************</span>
+<span class="c">"" NERDTree</span>
+<span class="c">"*****************************************************************************</span>
+
+<span class="c">"Close NERDTree when you open a file</span>
+<span class="k">let</span> NERDTreeQuitOnOpen <span class="p">=</span> <span class="m">1</span>
+
+<span class="c">"Prettify NERDTree</span>
+<span class="k">let</span> NERDTreeMinimalUI <span class="p">=</span> <span class="m">1</span>
+<span class="k">let</span> NERDTreeDirArrows <span class="p">=</span> <span class="m">1</span>
+
+<span class="c">"*****************************************************************************</span>
+<span class="c">"" General Settings</span>
+<span class="c">"*****************************************************************************</span>
+
+<span class="c">"Use `onedark` colour scheme</span>
+<span class="k">colorscheme</span> onedark
+
+<span class="c">"Syntax highlighting from start unless 1000 lines (instead of 200)</span>
+augroup vimrc<span class="p">-</span><span class="k">sync</span><span class="p">-</span>fromstart
+  autocmd<span class="p">!</span>
+  autocmd <span class="nb">BufEnter</span> * <span class="p">:</span><span class="nb">syntax</span> <span class="k">sync</span> maxlines<span class="p">=</span><span class="m">1000</span>
+augroup END
+
+<span class="c">"Assign ALE fixers</span>
+
+<span class="k">let</span> <span class="nv">g:ale_fixers</span> <span class="p">=</span> <span class="p">{</span>
+<span class="se">      \</span>   <span class="s1">'*'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'remove_trailing_lines'</span><span class="p">,</span> <span class="s1">'trim_whitespace'</span><span class="p">],</span>
+<span class="se">      \</span>   <span class="s1">'javascript'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'eslint'</span><span class="p">],</span>
+<span class="se">      \</span>   <span class="s1">'ruby'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'rubocop'</span><span class="p">]</span>
+<span class="se">      \</span><span class="p">}</span>
+
+
+<span class="c">"*****************************************************************************</span>
+<span class="c">"" Markdown</span>
+<span class="c">"*****************************************************************************</span>
+
+<span class="c">"Markdown plugin</span>
+<span class="k">filetype</span> plugin <span class="k">on</span>
+
+<span class="c">"Uncomment to override defaults:</span>
+<span class="c">"let g:instant_markdown_slow = 1</span>
+<span class="c">"let g:instant_markdown_autostart = 0</span>
+<span class="c">"let g:instant_markdown_open_to_the_world = 1</span>
+<span class="c">"let g:instant_markdown_allow_unsafe_content = 1</span>
+<span class="c">"let g:instant_markdown_allow_external_content = 0</span>
+<span class="c">"let g:instant_markdown_mathjax = 1</span>
+<span class="c">"let g:instant_markdown_logfile = '/tmp/instant_markdown.log'</span>
+<span class="c">"let g:instant_markdown_autoscroll = 0</span>
+<span class="c">"let g:instant_markdown_port = 8888</span>
+<span class="c">"let g:instant_markdown_python = 1</span>
+
+</code></pre></div></div>
+
+</div>
+
+
+<div class="comments">
+<div id="disqus_thread"></div>
+<script>
+ var disqus_config = function () {
+     this.page.url = 'http://localhost:4000/2020/03/26/update_from_atom_to_neovim.html';
+     this.page.identifier = '/2020/03/26/update_from_atom_to_neovim';
+     this.page.title = 'From Atom to Neovim';
+ };
+
+ (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+     var d = document, s = d.createElement('script');
+
+     s.src = '//<your-discuss-shortname>.disqus.com/embed.js';
+
+     s.setAttribute('data-timestamp', +new Date());
+     (d.head || d.body).appendChild(s);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+
+
+<div class="related">
+  <h2>related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2022/12/22/Javascript_Calculator.html">
+            Javascript_calculator
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2021/05/04/Check_Method_Definition_in_Ruby.html">
+            Check Method Definition in Ruby
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2021/04/19/open_multiple_tabs_in_vim_from_string_input.html">
+            open multiple tabs in vim from string input
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+  
+
+
+
+
+<script>
+  let i = 0;
+  const text = '';
+  const speed = parseInt('50');
+  
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById('animated-post-description').innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  document.getElementById('animated-post-description').style.display = 'initial';
+  typeWriter();
+
+  // Image modal
+  var $imgs = [];
+  $('img').each(function(idx) {
+    var obj = {
+      src: $(this).attr('src')
+    }
+    $imgs.push(obj);
+    var elem = $(this);
+    $(this).click(function() {
+      $('.modal').magnificPopup('open', idx);
+    });
+  });
+
+  $('.modal').magnificPopup({
+    items: $imgs,
+    type: 'image',
+    closeOnContentClick: true,
+    mainClass: 'mfp-img-mobile',
+    image: {
+      verticalFit: true
+    }
+    
+  });
+</script>
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits"><a href="https://github.com/bitbrain/jekyll-dash">dash</a> theme for Jekyll by <a href="https://github.com/bitbrain">bitbrain</a> made with <i class="fas fa-heart"></i><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+
+if (theme === "light") {
+    document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>
