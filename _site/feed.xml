@@ -1,4 +1,140 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-22T22:03:21-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">CPC Blog</title><subtitle>A blog about software by Alexander JK Garber.</subtitle><entry><title type="html">Arrays in Javascript vs Ruby</title><link href="http://localhost:4000/2022/12/22/Arrays_in_Javascript_vs_Ruby.html" rel="alternate" type="text/html" title="Arrays in Javascript vs Ruby" /><published>2022-12-22T21:42:02-05:00</published><updated>2022-12-22T21:42:02-05:00</updated><id>http://localhost:4000/2022/12/22/Arrays_in_Javascript_vs_Ruby</id><content type="html" xml:base="http://localhost:4000/2022/12/22/Arrays_in_Javascript_vs_Ruby.html">&lt;h2 id=&quot;setup-in-javascript&quot;&gt;Setup in Javascript&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-05T15:36:05-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">CPC Blog</title><subtitle>A blog about software by Alexander JK Garber.</subtitle><entry><title type="html">Woodworking ERP First Thoughts</title><link href="http://localhost:4000/2023/01/05/Woodworking_ERP_First_Thoughts.html" rel="alternate" type="text/html" title="Woodworking ERP First Thoughts" /><published>2023-01-05T08:17:33-05:00</published><updated>2023-01-05T08:17:33-05:00</updated><id>http://localhost:4000/2023/01/05/Woodworking_ERP_First_Thoughts</id><content type="html" xml:base="http://localhost:4000/2023/01/05/Woodworking_ERP_First_Thoughts.html">&lt;p&gt;I want to build a very simple ERP (Enterprise Resource Planning) tool for my home-based woodworking.&lt;/p&gt;
+
+&lt;h2 id=&quot;context&quot;&gt;Context&lt;/h2&gt;
+
+&lt;p&gt;I have a setup at home to work with reclaimed lumber, which suffers from various defects:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Warping&lt;/li&gt;
+  &lt;li&gt;Cupping&lt;/li&gt;
+  &lt;li&gt;Bowing&lt;/li&gt;
+  &lt;li&gt;Rough edges&lt;/li&gt;
+  &lt;li&gt;Rough faces&lt;/li&gt;
+  &lt;li&gt;Embedded metal, i.e. nails or screws&lt;/li&gt;
+  &lt;li&gt;Dirt, concrete, or old finish&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In order to work with this lumber, I need to process each board such that it will satisfy the following conditions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Straight, parallel edges&lt;/li&gt;
+  &lt;li&gt;Planed, parallel faces&lt;/li&gt;
+  &lt;li&gt;Clean surface&lt;/li&gt;
+  &lt;li&gt;No embedded metal&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;specifications&quot;&gt;Specifications&lt;/h2&gt;
+
+&lt;h3 id=&quot;primary-application&quot;&gt;Primary Application&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Keep an inventory of rough, reclaimed lumber.&lt;/li&gt;
+  &lt;li&gt;Record the changes in cleaning up and straightening the rough lumber.&lt;/li&gt;
+  &lt;li&gt;Record the products that are created from the lumber.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;secondary-application&quot;&gt;Secondary Application&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Keep track of machines&lt;/li&gt;
+  &lt;li&gt;Keep track of tools, both hand tools and power tools&lt;/li&gt;
+  &lt;li&gt;Keep track of consumables, e.g. screws&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;initial-development&quot;&gt;Initial Development&lt;/h2&gt;
+
+&lt;p&gt;The central Model is the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lumber&lt;/code&gt;, which contains the following attributes:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Attribute&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;uuid&lt;/td&gt;
+      &lt;td&gt;string&lt;/td&gt;
+      &lt;td&gt;A barcode generated in advance, printed, and applied to each board&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;length&lt;/td&gt;
+      &lt;td&gt;float&lt;/td&gt;
+      &lt;td&gt;Initially the length of the rough board&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;width_start, width_end&lt;/td&gt;
+      &lt;td&gt;float&lt;/td&gt;
+      &lt;td&gt;Width measured at each end,  can differ on a skew board&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;thickness_start, thickness_end&lt;/td&gt;
+      &lt;td&gt;float&lt;/td&gt;
+      &lt;td&gt;Thickness measured at each end, can differ on a tapered board&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;wood_type&lt;/td&gt;
+      &lt;td&gt;reference&lt;/td&gt;
+      &lt;td&gt;Reference to the WoodType model&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;straight_edge&lt;/td&gt;
+      &lt;td&gt;boolean&lt;/td&gt;
+      &lt;td&gt;Whether the straight-edge jig has been used&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;parallel_edges&lt;/td&gt;
+      &lt;td&gt;boolean&lt;/td&gt;
+      &lt;td&gt;Whether the opposite edge has been cut using the straight-edge as a reference&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;planed_face&lt;/td&gt;
+      &lt;td&gt;boolean&lt;/td&gt;
+      &lt;td&gt;Whether the planing jig has been used&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;parallel_faces&lt;/td&gt;
+      &lt;td&gt;boolean&lt;/td&gt;
+      &lt;td&gt;Whether the opposite face has been planed using the planed face as a reference&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;square&lt;/td&gt;
+      &lt;td&gt;boolean&lt;/td&gt;
+      &lt;td&gt;Whether all sides in all directions are square, i.e. whether the board is ready to be used&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;timestamps&lt;/td&gt;
+      &lt;td&gt;datetime&lt;/td&gt;
+      &lt;td&gt;created_at and updated_at&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;changelog&lt;/td&gt;
+      &lt;td&gt;jsonb&lt;/td&gt;
+      &lt;td&gt;A JSON Array of Objects, each one containing all of the above attributes and a timestamp, to allow changes to be tracked&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lumber&lt;/code&gt; model has the following relationships:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;belongs_to :barcode&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;belongs_to :wood_type&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;belongs_to :product, through: :lumber_products&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;workflow&quot;&gt;Workflow&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Generate a mass of Barcode records, where the UUID is translated into a barcode.&lt;/li&gt;
+  &lt;li&gt;Print the barcodes, to have on hand.&lt;/li&gt;
+  &lt;li&gt;Attach a barcode to each board of reclaimed lumber&lt;/li&gt;
+  &lt;li&gt;In the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lumber&lt;/code&gt; create form, enter the board’s attributes along with the barcode&lt;/li&gt;
+  &lt;li&gt;Use the barcode to bring up the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lumber&lt;/code&gt; edit form to update attributes during or after processing.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/woodworking_erp.png&quot; alt=&quot;My helpful screenshot&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="database" /><category term="design" /><summary type="html">I want to build a very simple ERP (Enterprise Resource Planning) tool for my home-based woodworking.</summary></entry><entry><title type="html">Arrays in Javascript vs Ruby</title><link href="http://localhost:4000/2022/12/22/Arrays_in_Javascript_vs_Ruby.html" rel="alternate" type="text/html" title="Arrays in Javascript vs Ruby" /><published>2022-12-22T21:42:02-05:00</published><updated>2022-12-22T21:42:02-05:00</updated><id>http://localhost:4000/2022/12/22/Arrays_in_Javascript_vs_Ruby</id><content type="html" xml:base="http://localhost:4000/2022/12/22/Arrays_in_Javascript_vs_Ruby.html">&lt;h2 id=&quot;setup-in-javascript&quot;&gt;Setup in Javascript&lt;/h2&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
@@ -295,9 +431,4 @@ wget https://gist.githubusercontent.com/clockworkpc/9bfe0777c55935c712b21ef8895a
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nvim&lt;/code&gt; and then &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:checkhealth provider&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.dotfiles/post_install.sh&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.dotfiles/post_fish_install.sh&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="linux" /><category term="arch" /><category term="manjaro" /><summary type="html">Requirements Multi-monitor support Multiple desktop Easy to jump between previous and next windows Easy to switch between multiple languages</summary></entry><entry><title type="html">Hebrew Text on Kindle</title><link href="http://localhost:4000/2020/10/31/Hebrew_Text_on_Kindle.html" rel="alternate" type="text/html" title="Hebrew Text on Kindle" /><published>2020-10-31T23:40:04-04:00</published><updated>2020-10-31T23:40:04-04:00</updated><id>http://localhost:4000/2020/10/31/Hebrew_Text_on_Kindle</id><content type="html" xml:base="http://localhost:4000/2020/10/31/Hebrew_Text_on_Kindle.html">&lt;p&gt;Use this to get the text and punctation to consistently display in Right-to-Left&lt;/p&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;direction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rtl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="css" /><category term="hebrew" /><category term="kindle" /><category term="mobi" /><category term="az3w" /><summary type="html">Use this to get the text and punctation to consistently display in Right-to-Left</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><category term="linux" /><category term="arch" /><category term="manjaro" /><summary type="html">Requirements Multi-monitor support Multiple desktop Easy to jump between previous and next windows Easy to switch between multiple languages</summary></entry></feed>
