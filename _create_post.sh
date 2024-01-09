@@ -2,7 +2,8 @@
 
 cd ~/Development/clockworkpc.github.io
 ymlTemplate=$(cat _front_matter_template.yml)
-currentDate=`date`
+targetTimezone="America/New_York"
+currentDate=`TZ=$targetTimezone date`
 dateStamp=`date +"%Y"-%m-%d-`
 myTitle=$1
 myTags=$2
