@@ -14,11 +14,11 @@
 <meta property="og:url" content="http://localhost:4000/2016/12/08/first_small_step_into_testing.html" />
 <meta property="og:site_name" content="CPC Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-12-08T00:00:00-05:00" />
+<meta property="article:published_time" content="2016-12-08T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="First Small Step Into Testing" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexander Garber"},"dateModified":"2016-12-08T00:00:00-05:00","datePublished":"2016-12-08T00:00:00-05:00","description":"I am working on Exercise 28 of Learn Ruby the Hard Way and this is my first concrete example of using testing in the course of coding.The exercise is a test of boolean logic: I am given a statement e.g. true == trueAnd must work out whether it is &quot;true&quot; or &quot;false&quot;.As you can see, I have organised the statements in a two-dimensional array in which each sub-array is composed of three elements: a string denoting the statement, the statement itself, and my prediction. # List of boolean statements to test my knowledge thereof, organised in a two-dimensional arraybooleanTest = [ [&quot;true &amp;&amp; true&quot;, true &amp;&amp; true, true], [&quot;false &amp;&amp; true&quot;, false &amp;&amp; true, false], [&quot;1 == 1 &amp;&amp; 2 == 1&quot;, 1 == 1 &amp;&amp; 2 == 1, false], [&#39;&quot;test&quot; == &quot;test&quot;&#39;, &quot;test&quot; == &quot;test&quot;, true], [&quot;1 == 1 || 2 != 1&quot;, 1 == 1 || 2 != 1, true], [&quot;true &amp;&amp; 1 == 1&quot;, true &amp;&amp; 1 == 1, true], [&quot;false &amp;&amp; 0 != 0&quot;, false &amp;&amp; 0 != 0, false], [&quot;true || 1 == 1&quot;, true || 1 == 1, true], [&#39;&quot;test&quot; == &quot;testing&quot;&#39;, &quot;test&quot; == &quot;testing&quot;, false], [&quot;1 != 0 &amp;&amp; 2 == 1&quot;, 1 != 0 &amp;&amp; 2 == 1, false], [&#39;&quot;test&quot; != &quot;testing&quot;&#39;, &quot;test&quot; != &quot;testing&quot;, true], [&#39;&quot;test&quot; == 1&#39;, &quot;test&quot; == 1, false], [&quot;!(true &amp;&amp; false)&quot;, !(true &amp;&amp; false), true], [&quot;!(1 == 1 &amp;&amp; 0 != 1)&quot;, !(1 == 1 &amp;&amp; 0 != 1), false], [&quot;!(10 == 1 || 1000 == 1000)&quot;, !(10 == 1 || 1000 == 1000), false], [&quot;!(1 != 10 || 3 == 4)&quot;, !(1 != 10 || 3 == 4), true]]I test my prediction by running the following testing loop, and in keeping with the practice of &quot;green&quot; for good and &quot;red&quot; for error, I installed the colorize gem and applied it to the output of the testing loop. # Required in order to highlight the text in the testing loop green or red.# Colorize gem to mark the result green or red.require &#39;colorize&#39;# Testing loopputs &quot;Here are the results of my test:\\n\\n&quot;booleanTest.each do|description,result,prediction| puts &quot;PREDICTION: #{description} GIVES #{prediction}, RESULT: #{result}&quot; if prediction == result puts &quot;Correct!&quot;.colorize(:green) else puts &quot;Incorrect!&quot;.colorize(:red) endendAnd here are the results:","headline":"First Small Step Into Testing","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/12/08/first_small_step_into_testing.html"},"url":"http://localhost:4000/2016/12/08/first_small_step_into_testing.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexander Garber"},"dateModified":"2016-12-08T00:00:00+02:00","datePublished":"2016-12-08T00:00:00+02:00","description":"I am working on Exercise 28 of Learn Ruby the Hard Way and this is my first concrete example of using testing in the course of coding.The exercise is a test of boolean logic: I am given a statement e.g. true == trueAnd must work out whether it is &quot;true&quot; or &quot;false&quot;.As you can see, I have organised the statements in a two-dimensional array in which each sub-array is composed of three elements: a string denoting the statement, the statement itself, and my prediction. # List of boolean statements to test my knowledge thereof, organised in a two-dimensional arraybooleanTest = [ [&quot;true &amp;&amp; true&quot;, true &amp;&amp; true, true], [&quot;false &amp;&amp; true&quot;, false &amp;&amp; true, false], [&quot;1 == 1 &amp;&amp; 2 == 1&quot;, 1 == 1 &amp;&amp; 2 == 1, false], [&#39;&quot;test&quot; == &quot;test&quot;&#39;, &quot;test&quot; == &quot;test&quot;, true], [&quot;1 == 1 || 2 != 1&quot;, 1 == 1 || 2 != 1, true], [&quot;true &amp;&amp; 1 == 1&quot;, true &amp;&amp; 1 == 1, true], [&quot;false &amp;&amp; 0 != 0&quot;, false &amp;&amp; 0 != 0, false], [&quot;true || 1 == 1&quot;, true || 1 == 1, true], [&#39;&quot;test&quot; == &quot;testing&quot;&#39;, &quot;test&quot; == &quot;testing&quot;, false], [&quot;1 != 0 &amp;&amp; 2 == 1&quot;, 1 != 0 &amp;&amp; 2 == 1, false], [&#39;&quot;test&quot; != &quot;testing&quot;&#39;, &quot;test&quot; != &quot;testing&quot;, true], [&#39;&quot;test&quot; == 1&#39;, &quot;test&quot; == 1, false], [&quot;!(true &amp;&amp; false)&quot;, !(true &amp;&amp; false), true], [&quot;!(1 == 1 &amp;&amp; 0 != 1)&quot;, !(1 == 1 &amp;&amp; 0 != 1), false], [&quot;!(10 == 1 || 1000 == 1000)&quot;, !(10 == 1 || 1000 == 1000), false], [&quot;!(1 != 10 || 3 == 4)&quot;, !(1 != 10 || 3 == 4), true]]I test my prediction by running the following testing loop, and in keeping with the practice of &quot;green&quot; for good and &quot;red&quot; for error, I installed the colorize gem and applied it to the output of the testing loop. # Required in order to highlight the text in the testing loop green or red.# Colorize gem to mark the result green or red.require &#39;colorize&#39;# Testing loopputs &quot;Here are the results of my test:\\n\\n&quot;booleanTest.each do|description,result,prediction| puts &quot;PREDICTION: #{description} GIVES #{prediction}, RESULT: #{result}&quot; if prediction == result puts &quot;Correct!&quot;.colorize(:green) else puts &quot;Incorrect!&quot;.colorize(:red) endendAnd here are the results:","headline":"First Small Step Into Testing","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/12/08/first_small_step_into_testing.html"},"url":"http://localhost:4000/2016/12/08/first_small_step_into_testing.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
@@ -50,7 +50,7 @@
         
   <div class="author-box">
 
-<div class="description">A blog about software by Alexander JK Garber.</div>
+<div class="description">A blog about software by Alexander Yaäkov Garber.</div>
 
 </div>
 
@@ -121,6 +121,14 @@
     
       <li>
         <h3>
+          <a href="/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview.html">
+            Widgets, Gadgets, Gizmos: Factory Simulation Overview
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2023/01/05/Woodworking_ERP_First_Thoughts.html">
             Woodworking ERP First Thoughts
           </a>
@@ -129,16 +137,8 @@
     
       <li>
         <h3>
-          <a href="/2022/12/22/Arrays_in_Javascript_vs_Ruby.html">
+          <a href="/2022/12/23/Arrays_in_Javascript_vs_Ruby.html">
             Arrays in Javascript vs Ruby
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2022/12/22/JS_Event_Listener_Is_A_Callback_Function.html">
-            JS Event Listener Is A Callback Function
           </a>
         </h3>
       </li>

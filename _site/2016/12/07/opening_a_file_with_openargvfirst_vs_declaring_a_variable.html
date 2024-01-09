@@ -14,11 +14,11 @@
 <meta property="og:url" content="http://localhost:4000/2016/12/07/opening_a_file_with_openargvfirst_vs_declaring_a_variable.html" />
 <meta property="og:site_name" content="CPC Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-12-07T00:00:00-05:00" />
+<meta property="article:published_time" content="2016-12-07T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Opening a file with open(ARGV.first) vs declaring a variable" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexander Garber"},"dateModified":"2016-12-07T00:00:00-05:00","datePublished":"2016-12-07T00:00:00-05:00","description":"I am working through Exercise 20 of&nbsp;Learn Ruby the Hard Way, and am trying to make sense of the difference in output between defining the variable &quot;current_file&quot; and simply using open(ARGV.first): Here is the input file test.txt: This is line 1This is line 2This is line 3 Here is the beginning of the script: input_file = ARGV.firstdef print_a_line(f) puts &quot;#{f.gets}&quot;endcurrent_file = open(input_file) When I call the print_a_line with the declared variable: print_a_line(current_file)print_a_line(current_file)print_a_line(current_file) Then f.gets tracks to the new line each time: This is line 1This in line 2This is line 3 However, if I call the function with ARGV.first: print_a_line(open(ARGV.first))print_a_line(open(ARGV.first))print_a_line(open(ARGV.first)) Then f.gets does not track to the new line and remains on line 1: This is line 1This is line 1This is line 1 And the same even with input_file: print_a_line(open(input_file))print_a_line(open(input_file))print_a_line(open(input_file)) f.get still doesn&#39;t track to the next line: This is line 1This is line 1This is line 1 Obviously, I would declare and use variables -- I understand the basics of writing neat, readable code. My question is why does f.get track to the next line when the function is called with a declared variable and not track to the next line when called with the open(ARGV.first) or open(input_file)? Why do I have to declare the variable again? current_file = open(input_file)","headline":"Opening a file with open(ARGV.first) vs declaring a variable","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/12/07/opening_a_file_with_openargvfirst_vs_declaring_a_variable.html"},"url":"http://localhost:4000/2016/12/07/opening_a_file_with_openargvfirst_vs_declaring_a_variable.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexander Garber"},"dateModified":"2016-12-07T00:00:00+02:00","datePublished":"2016-12-07T00:00:00+02:00","description":"I am working through Exercise 20 of&nbsp;Learn Ruby the Hard Way, and am trying to make sense of the difference in output between defining the variable &quot;current_file&quot; and simply using open(ARGV.first): Here is the input file test.txt: This is line 1This is line 2This is line 3 Here is the beginning of the script: input_file = ARGV.firstdef print_a_line(f) puts &quot;#{f.gets}&quot;endcurrent_file = open(input_file) When I call the print_a_line with the declared variable: print_a_line(current_file)print_a_line(current_file)print_a_line(current_file) Then f.gets tracks to the new line each time: This is line 1This in line 2This is line 3 However, if I call the function with ARGV.first: print_a_line(open(ARGV.first))print_a_line(open(ARGV.first))print_a_line(open(ARGV.first)) Then f.gets does not track to the new line and remains on line 1: This is line 1This is line 1This is line 1 And the same even with input_file: print_a_line(open(input_file))print_a_line(open(input_file))print_a_line(open(input_file)) f.get still doesn&#39;t track to the next line: This is line 1This is line 1This is line 1 Obviously, I would declare and use variables -- I understand the basics of writing neat, readable code. My question is why does f.get track to the next line when the function is called with a declared variable and not track to the next line when called with the open(ARGV.first) or open(input_file)? Why do I have to declare the variable again? current_file = open(input_file)","headline":"Opening a file with open(ARGV.first) vs declaring a variable","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/12/07/opening_a_file_with_openargvfirst_vs_declaring_a_variable.html"},"url":"http://localhost:4000/2016/12/07/opening_a_file_with_openargvfirst_vs_declaring_a_variable.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
@@ -50,7 +50,7 @@
         
   <div class="author-box">
 
-<div class="description">A blog about software by Alexander JK Garber.</div>
+<div class="description">A blog about software by Alexander Yaäkov Garber.</div>
 
 </div>
 
@@ -143,6 +143,14 @@
     
       <li>
         <h3>
+          <a href="/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview.html">
+            Widgets, Gadgets, Gizmos: Factory Simulation Overview
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2023/01/05/Woodworking_ERP_First_Thoughts.html">
             Woodworking ERP First Thoughts
           </a>
@@ -151,16 +159,8 @@
     
       <li>
         <h3>
-          <a href="/2022/12/22/Arrays_in_Javascript_vs_Ruby.html">
+          <a href="/2022/12/23/Arrays_in_Javascript_vs_Ruby.html">
             Arrays in Javascript vs Ruby
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2022/12/22/JS_Event_Listener_Is_A_Callback_Function.html">
-            JS Event Listener Is A Callback Function
           </a>
         </h3>
       </li>

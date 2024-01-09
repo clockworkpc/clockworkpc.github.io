@@ -14,11 +14,11 @@
 <meta property="og:url" content="http://localhost:4000/2017/02/02/toy_robot_problem.html" />
 <meta property="og:site_name" content="CPC Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-02-02T00:00:00-05:00" />
+<meta property="article:published_time" content="2017-02-02T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Toy Robot Problem" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexander Garber"},"dateModified":"2017-02-02T00:00:00-05:00","datePublished":"2017-02-02T00:00:00-05:00","description":"Refer to Ryan Bigg&#39;s book: https://leanpub.com/toyrobot Code problem details: Toy Robot Simulator Description:The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units. There are no other obstructions on the table surface. The robot is free to roam around the surface of the table, but must beprevented from falling to destruction. Any movement that would result in the robot falling from the table must be prevented, however further valid movement commands must still be allowed.Create an application that can read in commands of the following form: PLACE X,Y,FMOVELEFTRIGHTREPORT PLACE will put the toy robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST. The origin (0,0) can be considered to be the SOUTH WEST most corner. The first valid command to the robot is a PLACE command, after that, any sequence of commands may be issued, in any order, including another PLACE command. The application should discard all commands in the sequence until a  valid PLACE command has been executed.  MOVE will move the toy robot one unit forward in the direction it is currently facing.  LEFT and RIGHT will rotate the robot 90 degrees in the specified direction without changing the position of the robot.  REPORT will announce the X,Y and F of the robot. This can be in any form, but standard output is sufficient. A robot that is not on the table can choose the ignore the MOVE, LEFT, RIGHT and REPORT commands. Input can be from a file, or from standard input, as the developer chooses. Provide test data to exercise the application. Constraints:The toy robot must not fall off the table during movement. This also includes the initial placement of the toy robot.  Any move that would cause the robot to fall must be ignored. Example Input and Output:a) PLACE 0,0,NORTHMOVEREPORTOutput: 0,1,NORTHb) PLACE 0,0,NORTHLEFTREPORTOutput: 0,0,WESTc) PLACE 1,2,EASTMOVEMOVELEFTMOVEREPORTOutput: 3,3,NORTH Deliverables:The source files, the test data and any test code.It is not required to provide any graphical output showing the movement of thetoy robot.","headline":"Toy Robot Problem","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/02/02/toy_robot_problem.html"},"url":"http://localhost:4000/2017/02/02/toy_robot_problem.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexander Garber"},"dateModified":"2017-02-02T00:00:00+02:00","datePublished":"2017-02-02T00:00:00+02:00","description":"Refer to Ryan Bigg&#39;s book: https://leanpub.com/toyrobot Code problem details: Toy Robot Simulator Description:The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units. There are no other obstructions on the table surface. The robot is free to roam around the surface of the table, but must beprevented from falling to destruction. Any movement that would result in the robot falling from the table must be prevented, however further valid movement commands must still be allowed.Create an application that can read in commands of the following form: PLACE X,Y,FMOVELEFTRIGHTREPORT PLACE will put the toy robot on the table in position X,Y and facing NORTH, SOUTH, EAST or WEST. The origin (0,0) can be considered to be the SOUTH WEST most corner. The first valid command to the robot is a PLACE command, after that, any sequence of commands may be issued, in any order, including another PLACE command. The application should discard all commands in the sequence until a  valid PLACE command has been executed.  MOVE will move the toy robot one unit forward in the direction it is currently facing.  LEFT and RIGHT will rotate the robot 90 degrees in the specified direction without changing the position of the robot.  REPORT will announce the X,Y and F of the robot. This can be in any form, but standard output is sufficient. A robot that is not on the table can choose the ignore the MOVE, LEFT, RIGHT and REPORT commands. Input can be from a file, or from standard input, as the developer chooses. Provide test data to exercise the application. Constraints:The toy robot must not fall off the table during movement. This also includes the initial placement of the toy robot.  Any move that would cause the robot to fall must be ignored. Example Input and Output:a) PLACE 0,0,NORTHMOVEREPORTOutput: 0,1,NORTHb) PLACE 0,0,NORTHLEFTREPORTOutput: 0,0,WESTc) PLACE 1,2,EASTMOVEMOVELEFTMOVEREPORTOutput: 3,3,NORTH Deliverables:The source files, the test data and any test code.It is not required to provide any graphical output showing the movement of thetoy robot.","headline":"Toy Robot Problem","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/02/02/toy_robot_problem.html"},"url":"http://localhost:4000/2017/02/02/toy_robot_problem.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
@@ -50,7 +50,7 @@
         
   <div class="author-box">
 
-<div class="description">A blog about software by Alexander JK Garber.</div>
+<div class="description">A blog about software by Alexander Yaäkov Garber.</div>
 
 </div>
 
@@ -137,6 +137,14 @@
     
       <li>
         <h3>
+          <a href="/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview.html">
+            Widgets, Gadgets, Gizmos: Factory Simulation Overview
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2023/01/05/Woodworking_ERP_First_Thoughts.html">
             Woodworking ERP First Thoughts
           </a>
@@ -145,16 +153,8 @@
     
       <li>
         <h3>
-          <a href="/2022/12/22/Arrays_in_Javascript_vs_Ruby.html">
+          <a href="/2022/12/23/Arrays_in_Javascript_vs_Ruby.html">
             Arrays in Javascript vs Ruby
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2022/12/22/JS_Event_Listener_Is_A_Callback_Function.html">
-            JS Event Listener Is A Callback Function
           </a>
         </h3>
       </li>

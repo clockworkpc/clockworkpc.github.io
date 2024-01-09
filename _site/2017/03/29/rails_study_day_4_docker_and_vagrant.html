@@ -14,11 +14,11 @@
 <meta property="og:url" content="http://localhost:4000/2017/03/29/rails_study_day_4_docker_and_vagrant.html" />
 <meta property="og:site_name" content="CPC Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-03-29T00:00:00-04:00" />
+<meta property="article:published_time" content="2017-03-29T00:00:00+03:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Rails Study, Day 4: Docker and Vagrant" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexander Garber"},"dateModified":"2017-03-29T00:00:00-04:00","datePublished":"2017-03-29T00:00:00-04:00","description":"I came for Rails, I&#39;m working on DevOps.The purpose of this post is to give an account of setting up my development environment in order to study Ruby on Rails.I am already familiar with Vagrant, and initially thought I would spin an Ubuntu 16.04 box and work in that.  However, the obvious and numerous disadvantages of working in a virtual machine on a local hard drive demanded that I find something better.So I decided to finally invest some time on Docker, and I have to say, once I wrapped my head around the concept of containers, getting started seems fairly straightforward. Initial Steps: Install Vagrant on my host Install Docker on my host Spin up an Ubuntu box in Vagrant Install Docker on my VM Create an account on Docker Hub Download the Heroku Cedar 16 image Create a private docker repository on my host Run the Heroku Docker image Push a modified Docker image to my own repository Pull the modified Docker image to my VM And so forth. As I want my development environment to mirror Heroku&#39;s settings as closely as possible, I decided to see what the Heroku website itself has to say on the matter.My inclination was to keep it simple by using Vagrant, but Heroku&#39;s Cedar stack is available as a Docker image, so I will go with Docker instead.  I&#39;ve been meaning to familiarise myself with Docker for a while, so this works for me.Official Notes for Docker are available from Gist.This videos helps to demystify Docker. I&#39;m now looking into simplifying it further and using a Droplet from Digital Ocean.","headline":"Rails Study, Day 4: Docker and Vagrant","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/03/29/rails_study_day_4_docker_and_vagrant.html"},"url":"http://localhost:4000/2017/03/29/rails_study_day_4_docker_and_vagrant.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexander Garber"},"dateModified":"2017-03-29T00:00:00+03:00","datePublished":"2017-03-29T00:00:00+03:00","description":"I came for Rails, I&#39;m working on DevOps.The purpose of this post is to give an account of setting up my development environment in order to study Ruby on Rails.I am already familiar with Vagrant, and initially thought I would spin an Ubuntu 16.04 box and work in that.  However, the obvious and numerous disadvantages of working in a virtual machine on a local hard drive demanded that I find something better.So I decided to finally invest some time on Docker, and I have to say, once I wrapped my head around the concept of containers, getting started seems fairly straightforward. Initial Steps: Install Vagrant on my host Install Docker on my host Spin up an Ubuntu box in Vagrant Install Docker on my VM Create an account on Docker Hub Download the Heroku Cedar 16 image Create a private docker repository on my host Run the Heroku Docker image Push a modified Docker image to my own repository Pull the modified Docker image to my VM And so forth. As I want my development environment to mirror Heroku&#39;s settings as closely as possible, I decided to see what the Heroku website itself has to say on the matter.My inclination was to keep it simple by using Vagrant, but Heroku&#39;s Cedar stack is available as a Docker image, so I will go with Docker instead.  I&#39;ve been meaning to familiarise myself with Docker for a while, so this works for me.Official Notes for Docker are available from Gist.This videos helps to demystify Docker. I&#39;m now looking into simplifying it further and using a Droplet from Digital Ocean.","headline":"Rails Study, Day 4: Docker and Vagrant","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/03/29/rails_study_day_4_docker_and_vagrant.html"},"url":"http://localhost:4000/2017/03/29/rails_study_day_4_docker_and_vagrant.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
@@ -50,7 +50,7 @@
         
   <div class="author-box">
 
-<div class="description">A blog about software by Alexander JK Garber.</div>
+<div class="description">A blog about software by Alexander Yaäkov Garber.</div>
 
 </div>
 
@@ -132,6 +132,14 @@
     
       <li>
         <h3>
+          <a href="/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview.html">
+            Widgets, Gadgets, Gizmos: Factory Simulation Overview
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2023/01/05/Woodworking_ERP_First_Thoughts.html">
             Woodworking ERP First Thoughts
           </a>
@@ -140,16 +148,8 @@
     
       <li>
         <h3>
-          <a href="/2022/12/22/Arrays_in_Javascript_vs_Ruby.html">
+          <a href="/2022/12/23/Arrays_in_Javascript_vs_Ruby.html">
             Arrays in Javascript vs Ruby
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2022/12/22/JS_Event_Listener_Is_A_Callback_Function.html">
-            JS Event Listener Is A Callback Function
           </a>
         </h3>
       </li>

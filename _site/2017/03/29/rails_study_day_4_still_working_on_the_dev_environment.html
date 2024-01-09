@@ -14,11 +14,11 @@
 <meta property="og:url" content="http://localhost:4000/2017/03/29/rails_study_day_4_still_working_on_the_dev_environment.html" />
 <meta property="og:site_name" content="CPC Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-03-29T00:00:00-04:00" />
+<meta property="article:published_time" content="2017-03-29T00:00:00+03:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Rails Study, Day 4: Still Working on the Dev Environment" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexander Garber"},"dateModified":"2017-03-29T00:00:00-04:00","datePublished":"2017-03-29T00:00:00-04:00","description":"So far I have spent time on the following: Vagrant Docker Digital Ocean Droplet Heroku However, I&#39;m going to take a step back and reconsider what I&#39;m trying to accomplish. What is my deliverable? I want to build a Rails site, hosted on Heroku, that showcases my solutions to puzzles from Advent of Code. How is my work supposed to flow? Images, containers, Atom, etc. Development environment (DE) is separate from the host operating system. (Docker container or VM) Text editor (Atom) has read/write access to the code in the DE. The DE can be easily duplicated for a sandbox server. Code from the DE can be pushed to Github; from Github, the latest code cloned. Changes from the DE can be pushed to Docker Hub; from DH the latest version of the DE. Production code from the DE can be pushed to Heroku; from Heroku, the latest production code, although that should be available in Github. What are the specifications of my development environment? Version control of all relevant packages. Read/Write access to development environment from host. Access to online platform (Github,  Available locally, without a constant internet connection. Totally accessible by Atom text editor on my host machine. Can upload code to Heroku, pull the latest code from Heroku, and push updated code to Heroku. Can push updates to the environment to a repository. What shall be my development environment? Docker container for the DE, with all the necessary packages installed. Atom text editor installed on host. FTP access between DE and host. Github access from DE. Docker Hub access from DE. Heroku access from DE.","headline":"Rails Study, Day 4: Still Working on the Dev Environment","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/03/29/rails_study_day_4_still_working_on_the_dev_environment.html"},"url":"http://localhost:4000/2017/03/29/rails_study_day_4_still_working_on_the_dev_environment.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexander Garber"},"dateModified":"2017-03-29T00:00:00+03:00","datePublished":"2017-03-29T00:00:00+03:00","description":"So far I have spent time on the following: Vagrant Docker Digital Ocean Droplet Heroku However, I&#39;m going to take a step back and reconsider what I&#39;m trying to accomplish. What is my deliverable? I want to build a Rails site, hosted on Heroku, that showcases my solutions to puzzles from Advent of Code. How is my work supposed to flow? Images, containers, Atom, etc. Development environment (DE) is separate from the host operating system. (Docker container or VM) Text editor (Atom) has read/write access to the code in the DE. The DE can be easily duplicated for a sandbox server. Code from the DE can be pushed to Github; from Github, the latest code cloned. Changes from the DE can be pushed to Docker Hub; from DH the latest version of the DE. Production code from the DE can be pushed to Heroku; from Heroku, the latest production code, although that should be available in Github. What are the specifications of my development environment? Version control of all relevant packages. Read/Write access to development environment from host. Access to online platform (Github,  Available locally, without a constant internet connection. Totally accessible by Atom text editor on my host machine. Can upload code to Heroku, pull the latest code from Heroku, and push updated code to Heroku. Can push updates to the environment to a repository. What shall be my development environment? Docker container for the DE, with all the necessary packages installed. Atom text editor installed on host. FTP access between DE and host. Github access from DE. Docker Hub access from DE. Heroku access from DE.","headline":"Rails Study, Day 4: Still Working on the Dev Environment","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/03/29/rails_study_day_4_still_working_on_the_dev_environment.html"},"url":"http://localhost:4000/2017/03/29/rails_study_day_4_still_working_on_the_dev_environment.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
@@ -50,7 +50,7 @@
         
   <div class="author-box">
 
-<div class="description">A blog about software by Alexander JK Garber.</div>
+<div class="description">A blog about software by Alexander Yaäkov Garber.</div>
 
 </div>
 
@@ -158,6 +158,14 @@
     
       <li>
         <h3>
+          <a href="/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview.html">
+            Widgets, Gadgets, Gizmos: Factory Simulation Overview
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2023/01/05/Woodworking_ERP_First_Thoughts.html">
             Woodworking ERP First Thoughts
           </a>
@@ -166,16 +174,8 @@
     
       <li>
         <h3>
-          <a href="/2022/12/22/Arrays_in_Javascript_vs_Ruby.html">
+          <a href="/2022/12/23/Arrays_in_Javascript_vs_Ruby.html">
             Arrays in Javascript vs Ruby
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2022/12/22/JS_Event_Listener_Is_A_Callback_Function.html">
-            JS Event Listener Is A Callback Function
           </a>
         </h3>
       </li>

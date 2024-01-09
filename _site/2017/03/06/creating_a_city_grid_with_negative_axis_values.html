@@ -14,11 +14,11 @@
 <meta property="og:url" content="http://localhost:4000/2017/03/06/creating_a_city_grid_with_negative_axis_values.html" />
 <meta property="og:site_name" content="CPC Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-03-06T00:00:00-05:00" />
+<meta property="article:published_time" content="2017-03-06T00:00:00+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Creating a City Grid with Negative Axis Values" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexander Garber"},"dateModified":"2017-03-06T00:00:00-05:00","datePublished":"2017-03-06T00:00:00-05:00","description":"From the Toy Robot solution by Ryan Bigg, I learned how to create a table starting at 0,0 in the bottom left corner, which has valid positive coördinates only: However, for the solution of Day 1 of Advent of Code, I had to make a modification.  I don&#39;t know how big the city grid needs to be, nor whither the explorer will be taken by the directions.The most practicable solution is to place the explorer right in the heart of the city, but that can be achieved in one of two ways:Positive Values Only: Create a city axis that runs (0..latitude) west-to-east and (0..longitude) south-to-north. Place the explorer at the coördinates (latitude / 2), (longitude / 2) Positive and Negative Values Create a city axis that runs (-|latitude| .. latitude) west-to-east and (-|longitude| .. longitude) south-to-north. Place the explorer at coördinates (0,0) I opted for the latter, as the first option would could give me awkward starting coördinates such as (250.5, 250.5) if the city grid were initialised with odd numbers. (501, 501) Also, it seems neater to me that west and south should be negative integer values, east and north positive. So here it is:","headline":"Creating a City Grid with Negative Axis Values","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/03/06/creating_a_city_grid_with_negative_axis_values.html"},"url":"http://localhost:4000/2017/03/06/creating_a_city_grid_with_negative_axis_values.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexander Garber"},"dateModified":"2017-03-06T00:00:00+02:00","datePublished":"2017-03-06T00:00:00+02:00","description":"From the Toy Robot solution by Ryan Bigg, I learned how to create a table starting at 0,0 in the bottom left corner, which has valid positive coördinates only: However, for the solution of Day 1 of Advent of Code, I had to make a modification.  I don&#39;t know how big the city grid needs to be, nor whither the explorer will be taken by the directions.The most practicable solution is to place the explorer right in the heart of the city, but that can be achieved in one of two ways:Positive Values Only: Create a city axis that runs (0..latitude) west-to-east and (0..longitude) south-to-north. Place the explorer at the coördinates (latitude / 2), (longitude / 2) Positive and Negative Values Create a city axis that runs (-|latitude| .. latitude) west-to-east and (-|longitude| .. longitude) south-to-north. Place the explorer at coördinates (0,0) I opted for the latter, as the first option would could give me awkward starting coördinates such as (250.5, 250.5) if the city grid were initialised with odd numbers. (501, 501) Also, it seems neater to me that west and south should be negative integer values, east and north positive. So here it is:","headline":"Creating a City Grid with Negative Axis Values","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/03/06/creating_a_city_grid_with_negative_axis_values.html"},"url":"http://localhost:4000/2017/03/06/creating_a_city_grid_with_negative_axis_values.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
@@ -50,7 +50,7 @@
         
   <div class="author-box">
 
-<div class="description">A blog about software by Alexander JK Garber.</div>
+<div class="description">A blog about software by Alexander Yaäkov Garber.</div>
 
 </div>
 
@@ -131,6 +131,14 @@
     
       <li>
         <h3>
+          <a href="/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview.html">
+            Widgets, Gadgets, Gizmos: Factory Simulation Overview
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2023/01/05/Woodworking_ERP_First_Thoughts.html">
             Woodworking ERP First Thoughts
           </a>
@@ -139,16 +147,8 @@
     
       <li>
         <h3>
-          <a href="/2022/12/22/Arrays_in_Javascript_vs_Ruby.html">
+          <a href="/2022/12/23/Arrays_in_Javascript_vs_Ruby.html">
             Arrays in Javascript vs Ruby
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2022/12/22/JS_Event_Listener_Is_A_Callback_Function.html">
-            JS Event Listener Is A Callback Function
           </a>
         </h3>
       </li>

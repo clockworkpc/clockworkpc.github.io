@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="direction--ltr"lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Widgets, Gadgets, Gizmos: Factory Simulation Overview | CPC Blog</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Widgets, Gadgets, Gizmos: Factory Simulation Overview" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Schematic Overview" />
+<meta property="og:description" content="Schematic Overview" />
+<link rel="canonical" href="http://localhost:4000/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview.html" />
+<meta property="og:url" content="http://localhost:4000/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview.html" />
+<meta property="og:site_name" content="CPC Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-09T05:48:45+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Widgets, Gadgets, Gizmos: Factory Simulation Overview" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-09T05:48:45+02:00","datePublished":"2024-01-09T05:48:45+02:00","description":"Schematic Overview","headline":"Widgets, Gadgets, Gizmos: Factory Simulation Overview","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview.html"},"url":"http://localhost:4000/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="stylesheet" href="/assets/css/magnific-popup.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="CPC Blog" /><script src="https://code.jquery.com/jquery-3.2.0.min.js"></script> 
+  <script src="/assets/js/jquery.magnific-popup.js"></script>
+</head>
+<body><div class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">CPC Blog<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
+    <span class="social_links">
+        
+        
+        <a class="color-cyan-hover" href="https://twitter.com/alexandergarber"><i class="fab fa-twitter-square"></i></a>
+        
+        
+        
+        <a class="color-red-hover" href="http://clockworkpc.com.au"><i class="fab fa-itch-io"></i></a>
+        
+        
+        
+        <a class="color-purple-hover" href="https://github.com/clockworkpc"><i class="fab fa-github-square"></i></a>
+        
+        
+    </span>
+  </div>
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+  <div class="author-box">
+
+<div class="description">A blog about software by Alexander Yaäkov Garber.</div>
+
+</div>
+
+
+<div class="post">
+  <h1 class="post-title">Widgets, Gadgets, Gizmos: Factory Simulation Overview</h1>
+  
+  <div class="post-tags">
+      
+      <a class="tag" href="erp">erp</a>
+      
+      <a class="tag" href="cloud">cloud</a>
+      
+      <a class="tag" href="api">api</a>
+      
+      <a class="tag" href="microservices">microservices</a>
+      
+      <a class="tag" href="rails">rails</a>
+      
+      <a class="tag" href="django">django</a>
+      
+      <a class="tag" href="nodejs">nodejs</a>
+      
+  </div>
+  
+  <div class="post-date">
+    Published on 09 Jan 2024
+    
+  </div>
+  
+  <h2 id="schematic-overview">Schematic Overview</h2>
+
+<p><img src="/assets/backend_devops_portfolio_production_simulation_overview.png" alt="Schematic Overview" /></p>
+
+<p>The simulation of a manufacturing business is composed of the following microservices:</p>
+<ul>
+  <li>Factories</li>
+  <li>Order Manager</li>
+  <li>Customer and Product Manager</li>
+  <li>Central Database</li>
+  <li>Google Sheet for input of <code class="language-plaintext highlighter-rouge">completed_orders</code></li>
+  <li>Google Sheet dashboard of <code class="language-plaintext highlighter-rouge">completed_orders</code></li>
+</ul>
+
+<h2 id="factory-microservices">Factory Microservices</h2>
+
+<p>Each factory microservice is an API server built using Rails, Django, or Node.js.  It has its own local database to which it records the details of production requests.
+Every Product has some attributes inherited from the parent <code class="language-plaintext highlighter-rouge">Product</code> model and some unique attributes.</p>
+
+<h3 id="process-flow">Process Flow</h3>
+
+<ol>
+  <li>Receive an authenticated POST request from the Order Manager microservice, which is a registered user on the Factory microservice, which includes the Order Number and the details of the products for said order.  Examples of production orders:
+    <ul>
+      <li>1 * Widget with default attributes</li>
+      <li>1 * Widget with custom attributes</li>
+      <li>1 * Widget with default attributes, 1 * Widget with custom attributes</li>
+      <li>various quantities of Widgets with differing custom attributes</li>
+    </ul>
+  </li>
+  <li>
+    <p>For each product configuration create a separate record in the local <code class="language-plaintext highlighter-rouge">production_orders</code> table, including <code class="language-plaintext highlighter-rouge">order_number</code>, <code class="language-plaintext highlighter-rouge">quantity</code>, <code class="language-plaintext highlighter-rouge">attributes</code>.</p>
+  </li>
+  <li>
+    <p>Send a POST reply to confirm receipt of production order.</p>
+  </li>
+  <li>
+    <p>Schedule a production job for the proudction order.  I am considering a method of calculating the duration of the job by its complexity, which would be effected by executing a <code class="language-plaintext highlighter-rouge">sleep</code> function with a corresponding value in seconds.  This would simulate longer production times for larger or more complex orders.</p>
+  </li>
+  <li>Upon completion of the production job, send a webhook to the Order Manager microservice.</li>
+</ol>
+
+<h2 id="customer-manager-microservice">Customer Manager Microservice</h2>
+
+<p>A small server responsible for the CRUD of records in the <code class="language-plaintext highlighter-rouge">customers</code> table in the central database.  Via the UI or API, an authorised user can create a new <code class="language-plaintext highlighter-rouge">customer</code>, update or delete it.  The Order Manager microservice queries this microservice for up-to-date details of a customer, which it uses to verify an API order and to populate a drop-down list of current customers in the order form in the UI.</p>
+
+<h2 id="product-management">Product Management</h2>
+
+<p>In this iteration of the manufacturing simulation, there are three <code class="language-plaintext highlighter-rouge">Products</code> only, the manufacture of each being handled by a separate Factory microservice.  The reason for not creating a single Factory that “manufactures” all products, and which would simplify the addition of new products, is to give myself the challenge of creating identical microservices in Rails, Django, and Node.js respectively.</p>
+
+<h2 id="order-management-microservice">Order Management Microservice</h2>
+
+<p>The heart of the simulation is the Order Manager, which queries the Customer Management microservice, sends production requests to the Factory microservices, receives thence the details of completed production orders, updates the central database, and sends the same details to a Google Spreadsheet via the <strong>Google Spreadsheet API</strong>.  It will provide both a UI and an API for manual creation of orders and also generate random orders at regular intervals by means of scheduled Tasks.</p>
+
+<h3 id="process-flow-1">Process Flow</h3>
+
+<h4 id="manual-order">Manual Order</h4>
+
+<ol>
+  <li>Receive a manual order form via POST request from the UI.</li>
+  <li>Schedule a job to generate a production request</li>
+  <li>Send a POST reply to confirm receipt of request.</li>
+  <li>Generate an order for the nominated customer.</li>
+  <li>Save the order details to the database.</li>
+  <li>Transmit the details to the <code class="language-plaintext highlighter-rouge">orders</code> Google Sheet with the status <code class="language-plaintext highlighter-rouge">verified</code></li>
+  <li>Send a production request (POST) to the relevant Factory microservice(s).</li>
+  <li>Receive confirmation of receipt of request from each Factory microservice.</li>
+  <li>Update the status of the order in the databases as <code class="language-plaintext highlighter-rouge">scheduled</code>.</li>
+  <li>When all production requests have been confirmed as scheduled, transmit another line item to the <code class="language-plaintext highlighter-rouge">orders</code> Google Sheet with the status <code class="language-plaintext highlighter-rouge">scheduled</code>.</li>
+  <li>Asynchronously receive a webhook from each Factory and update the order record in the database.</li>
+  <li>When all production requests have been confirmed as complete, transmit another line item to the <code class="language-plaintext highlighter-rouge">orders</code> Google Sheet with the status <code class="language-plaintext highlighter-rouge">complete</code>.</li>
+</ol>
+
+<h4 id="automated-order">Automated Order</h4>
+
+<ol>
+  <li>Execute a scheduled Task (e.g. Rake in Rails) to generate an order for a random customer.</li>
+  <li>Save the order details to the database.</li>
+  <li>Transmit the details to the <code class="language-plaintext highlighter-rouge">orders</code> Google Sheet with the status <code class="language-plaintext highlighter-rouge">verified</code></li>
+  <li>Send a production request (POST) to the relevant Factory microservice(s).</li>
+  <li>Receive confirmation of receipt of request from each Factory microservice.</li>
+  <li>Update the status of the order in the databases as <code class="language-plaintext highlighter-rouge">scheduled</code>.</li>
+  <li>When all production requests have been confirmed as scheduled, transmit another line item to the <code class="language-plaintext highlighter-rouge">orders</code> Google Sheet with the status <code class="language-plaintext highlighter-rouge">scheduled</code>.</li>
+  <li>Asynchronously receive a webhook from each Factory and update the order record in the database.</li>
+  <li>When all production requests have been confirmed as complete, transmit another line item to the <code class="language-plaintext highlighter-rouge">orders</code> Google Sheet with the status <code class="language-plaintext highlighter-rouge">complete</code>.</li>
+</ol>
+
+<h2 id="google-sheet">Google Sheet</h2>
+
+<p>The reason for including a Google Sheet in this simulation is that this is a demonstration of backend and DevOps skills, not front-end skills.  By transmitting the details of orders as they move through the production process simulation to a Google Sheet, not only do I demonstrate third-party API integration, but also utilise the familiar Google Sheet as an easy to build dashboard.  This can also be combined with a Dashboard solution sitting on top of the Google Sheet source data.</p>
+
+</div>
+
+
+<div class="comments">
+<div id="disqus_thread"></div>
+<script>
+ var disqus_config = function () {
+     this.page.url = 'http://localhost:4000/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview.html';
+     this.page.identifier = '/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview';
+     this.page.title = 'Widgets, Gadgets, Gizmos: Factory Simulation Overview';
+ };
+
+ (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+     var d = document, s = d.createElement('script');
+
+     s.src = '//<your-discuss-shortname>.disqus.com/embed.js';
+
+     s.setAttribute('data-timestamp', +new Date());
+     (d.head || d.body).appendChild(s);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+
+
+<div class="related">
+  <h2>related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2023/01/05/Woodworking_ERP_First_Thoughts.html">
+            Woodworking ERP First Thoughts
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2022/12/23/Arrays_in_Javascript_vs_Ruby.html">
+            Arrays in Javascript vs Ruby
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2022/12/22/JS_Event_Listener_Is_A_Callback_Function.html">
+            JS Event Listener Is A Callback Function
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+  
+
+
+
+
+<script>
+  let i = 0;
+  const text = '';
+  const speed = parseInt('50');
+  
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById('animated-post-description').innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  document.getElementById('animated-post-description').style.display = 'initial';
+  typeWriter();
+
+  // Image modal
+  var $imgs = [];
+  $('img').each(function(idx) {
+    var obj = {
+      src: $(this).attr('src')
+    }
+    $imgs.push(obj);
+    var elem = $(this);
+    $(this).click(function() {
+      $('.modal').magnificPopup('open', idx);
+    });
+  });
+
+  $('.modal').magnificPopup({
+    items: $imgs,
+    type: 'image',
+    closeOnContentClick: true,
+    mainClass: 'mfp-img-mobile',
+    image: {
+      verticalFit: true
+    }
+    
+  });
+</script>
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits"><a href="https://github.com/bitbrain/jekyll-dash">dash</a> theme for Jekyll by <a href="https://github.com/bitbrain">bitbrain</a> made with <i class="fas fa-heart"></i><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+
+if (theme === "light") {
+    document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>
