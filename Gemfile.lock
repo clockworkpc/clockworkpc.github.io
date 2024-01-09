@@ -29,6 +29,8 @@ GEM
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
+    faraday-retry (2.2.0)
+      faraday (~> 2.0)
     ffi (1.15.5)
     forwardable-extended (2.6.0)
     gemoji (3.0.1)
@@ -263,10 +265,10 @@ GEM
     zeitwerk (2.6.6)
 
 PLATFORMS
-  ruby
   x86_64-linux
 
 DEPENDENCIES
+  faraday-retry
   github-pages
   jekyll-dash
   jekyll-feed (~> 0.12)
