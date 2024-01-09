@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Widgets, Gadgets, Gizmos: Factory Simulation Overview"
-date:   "Tue Jan  9 05:48:45 AM IST 2024"
+date:   "Tue Jan  9 12:50:10 AM EST 2024"
 tags: [erp,cloud,api,microservices,rails,django,nodejs]
 ---
 ## Schematic Overview
