@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-10T19:00:17+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">CPC Blog</title><subtitle>A blog about software by Alexander Yaäkov Garber.</subtitle><entry><title type="html">ERP Simulation Diagram</title><link href="http://localhost:4000/2024/01/09/ERP_Simulation_Diagram.html" rel="alternate" type="text/html" title="ERP Simulation Diagram" /><published>2024-01-09T12:41:57+02:00</published><updated>2024-01-09T12:41:57+02:00</updated><id>http://localhost:4000/2024/01/09/ERP_Simulation_Diagram</id><content type="html" xml:base="http://localhost:4000/2024/01/09/ERP_Simulation_Diagram.html">&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;sequenceDiagram
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-10T19:26:16+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">CPC Blog</title><subtitle>A blog about software by Alexander Yaäkov Garber.</subtitle><entry><title type="html">ERP Simulation Diagram</title><link href="http://localhost:4000/2024/01/09/ERP_Simulation_Diagram.html" rel="alternate" type="text/html" title="ERP Simulation Diagram" /><published>2024-01-09T12:41:57+02:00</published><updated>2024-01-09T12:41:57+02:00</updated><id>http://localhost:4000/2024/01/09/ERP_Simulation_Diagram</id><content type="html" xml:base="http://localhost:4000/2024/01/09/ERP_Simulation_Diagram.html">&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;sequenceDiagram
 Note over OrderManager: Receive Order for Widgets, Gadgets, Gizmos
 
 OrderManager-&amp;gt;&amp;gt;Database: Create Order record, status `verified`
@@ -78,9 +78,7 @@ Bob -&amp;gt; Alice : hello
 
 &lt;h1 id=&quot;mermaid-sequence-diagrams&quot;&gt;mermaid sequence-diagrams&lt;/h1&gt;
 
-&lt;script src=&quot;https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js&quot;&gt;&lt;/script&gt;
-&lt;div class=&quot;mermaid&quot;&gt;
-sequenceDiagram
+&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;sequenceDiagram
     Note over OrderManager: Receive Order for Widgets, Gadgets, Gizmos
     OrderManager-&amp;gt;&amp;gt;Database: Create Order record, status `verified`
     OrderManager-&amp;gt;&amp;gt;GoogleSheet: Append row to `orders`, `verified` = TRUE
@@ -110,7 +108,7 @@ sequenceDiagram
 
     OrderManager-&amp;gt;&amp;gt;Database: Update Order record, status `completed`
     OrderManager-&amp;gt;&amp;gt;GoogleSheet: Modify row in `orders`, `completed` = TRUE
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h1 id=&quot;flowchart&quot;&gt;Flowchart&lt;/h1&gt;
 

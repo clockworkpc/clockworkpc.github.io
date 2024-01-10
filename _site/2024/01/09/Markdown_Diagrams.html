@@ -117,9 +117,7 @@ Bob -&gt; Alice : hello
 
 <h1 id="mermaid-sequence-diagrams">mermaid sequence-diagrams</h1>
 
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
-<div class="mermaid">
-sequenceDiagram
+<pre><code class="language-mermaid">sequenceDiagram
     Note over OrderManager: Receive Order for Widgets, Gadgets, Gizmos
     OrderManager-&gt;&gt;Database: Create Order record, status `verified`
     OrderManager-&gt;&gt;GoogleSheet: Append row to `orders`, `verified` = TRUE
@@ -149,7 +147,7 @@ sequenceDiagram
 
     OrderManager-&gt;&gt;Database: Update Order record, status `completed`
     OrderManager-&gt;&gt;GoogleSheet: Modify row in `orders`, `completed` = TRUE
-</div>
+</code></pre>
 
 <h1 id="flowchart">Flowchart</h1>
 
