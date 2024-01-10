@@ -27,7 +27,7 @@ twitter_username: clockworkpc
 github_username:  clockworkpc
 
 theme:
-  minima
+  jekyll-dash
 # Build settings
 # theme: jekyll-theme-hacker
 # theme: jekyll-dash

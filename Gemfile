@@ -30,9 +30,9 @@ group :jekyll_plugins do
   # gem 'addressable', '2.8.6'
   # gem 'base64', '0.2.0'
   # gem 'jekyll-commonmark-ghpages'
-  # gem 'jekyll-dash', '1.6.2'
+  gem 'faraday-retry'
+  gem 'jekyll-dash'
   gem 'jekyll-mermaid'
-  # gem 'jekyll-mermaid', '1.0.0'
   gem 'jekyll-tagging'
   gem 'jekyll-theme-hacker'
 
