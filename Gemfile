@@ -7,50 +7,47 @@ source 'https://rubygems.org'
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-# gem 'jekyll', '~> 3.3'
+# gem 'jekyll', '3.3'
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem 'activesupport', '~> 6.0.6.1'
-gem 'addressable', '~> 2.8.6'
-gem 'base64', '~> 0.2.0'
-gem 'commonmarker'
-gem 'concurrent-ruby'
-gem 'dnsruby'
-gem 'execjs'
-gem 'faraday', '~> 2.8.1'
-gem 'faraday-retry', '~> 2.2.0'
-gem 'ffi'
-gem 'i18n'
-gem 'jekyll-commonmark-ghpages'
-gem 'jekyll-dash', '~> 1.6.2'
-gem 'jekyll-mermaid', '~> 1.0.0'
-gem 'jekyll-tagging', '~> 1.1.0'
-gem 'jekyll-theme-hacker'
-gem 'liquid'
-gem 'listen'
-gem 'minima', '~> 2.5'
-gem 'minitest'
-gem 'nokogiri', '~> 1.15.5'
-gem 'nuggets', '~> 1.6.1'
-gem 'racc', '~> 1.7.3'
-gem 'rexml'
-gem 'thread_safe', '~> 0.3.6'
-gem 'typhoeus', '~> 1.4.1'
-gem 'unf_ext', '~> 0.0.9.1'
-gem 'zeitwerk', '~> 2.6.12'
+# gem 'commonmarker'
+# gem 'concurrent-ruby'
+# gem 'dnsruby'
+# gem 'execjs'
+# gem 'ffi'
+# gem 'i18n'
+# gem 'liquid'
+# gem 'listen'
+# gem 'minitest'
+# gem 'rexml'
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 gem 'github-pages', group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem 'jekyll-feed', '~> 0.12'
+  # gem 'activesupport'
+  # gem 'addressable', '2.8.6'
+  # gem 'base64', '0.2.0'
+  # gem 'jekyll-commonmark-ghpages'
+  gem 'jekyll-dash', '1.6.2'
+  gem 'jekyll-mermaid'
+  # gem 'jekyll-mermaid', '1.0.0'
+  gem 'jekyll-tagging', '1.1.0'
+  gem 'jekyll-theme-hacker'
+  # gem 'minima', '2.5'
+  # gem 'nuggets', '1.6.1'
+  # gem 'racc', '1.7.3'
+  # gem 'thread_safe', '0.3.6'
+  # gem 'typhoeus', '1.4.1'
+  # gem 'unf_ext', '0.0.9.1'
+  # gem 'zeitwerk', '2.6.12'
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 install_if -> { RUBY_PLATFORM =~ /mingw|mswin|java/ } do
-  gem 'tzinfo', '~> 1.2.11'
+  gem 'tzinfo', '1.2.11'
   gem 'tzinfo-data'
 end
 
 # Performance-booster for watching directories on Windows
-gem 'wdm', '~> 0.1.1', install_if: Gem.win_platform?
+gem 'wdm', '0.1.1', install_if: Gem.win_platform?
