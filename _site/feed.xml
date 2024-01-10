@@ -1,4 +1,215 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-09T07:38:38+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">CPC Blog</title><subtitle>A blog about software by Alexander Yaäkov Garber.</subtitle><entry><title type="html">Widgets, Gadgets, Gizmos: Factory Simulation Overview</title><link href="http://localhost:4000/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview.html" rel="alternate" type="text/html" title="Widgets, Gadgets, Gizmos: Factory Simulation Overview" /><published>2024-01-09T05:48:45+02:00</published><updated>2024-01-09T05:48:45+02:00</updated><id>http://localhost:4000/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview</id><content type="html" xml:base="http://localhost:4000/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview.html">&lt;h2 id=&quot;schematic-overview&quot;&gt;Schematic Overview&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-10T15:04:35+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">CPC Blog</title><subtitle>A blog about software by Alexander Yaäkov Garber.</subtitle><entry><title type="html">ERP Simulation Diagram</title><link href="http://localhost:4000/2024/01/09/ERP_Simulation_Diagram.html" rel="alternate" type="text/html" title="ERP Simulation Diagram" /><published>2024-01-09T12:41:57+02:00</published><updated>2024-01-09T12:41:57+02:00</updated><id>http://localhost:4000/2024/01/09/ERP_Simulation_Diagram</id><content type="html" xml:base="http://localhost:4000/2024/01/09/ERP_Simulation_Diagram.html">&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;sequenceDiagram
+Note over OrderManager: Receive Order for Widgets, Gadgets, Gizmos
+
+OrderManager-&amp;gt;&amp;gt;Database: Create Order record, status `verified`
+OrderManager-&amp;gt;&amp;gt;GoogleSheet: Append row to `orders`, `verified` = TRUE
+
+OrderManager-&amp;gt;&amp;gt;WidgetFactory: POST req, production order
+OrderManager-&amp;gt;&amp;gt;GadgetFactory: POST req, production order
+OrderManager-&amp;gt;&amp;gt;GizmoFactory: POST req, production order
+
+Note over WidgetFactory: Schedule production order
+Note over GadgetFactory: Schedule production order
+Note over GizmoFactory: Schedule production order
+
+WidgetFactory-&amp;gt;&amp;gt;OrderManager: POST res, PO received
+GadgetFactory-&amp;gt;&amp;gt;OrderManager: POST res, PO received
+GizmoFactory-&amp;gt;&amp;gt;OrderManager: POST res, PO received
+
+OrderManager-&amp;gt;&amp;gt;Database: Update Order record, status `in_production`
+OrderManager-&amp;gt;&amp;gt;GoogleSheet: Modify row in `orders`, `in_production` = TRUE
+
+Note over WidgetFactory: Execute production order
+Note over GadgetFactory: Execute production order
+Note over GizmoFactory: Execute production order
+
+WidgetFactory-&amp;gt;&amp;gt;OrderManager: Webhook, order completed
+GadgetFactory-&amp;gt;&amp;gt;OrderManager: Webhook, order completed
+GizmoFactory-&amp;gt;&amp;gt;OrderManager: Webhook, order completed
+
+OrderManager-&amp;gt;&amp;gt;Database: Update Order record, status `completed`
+OrderManager-&amp;gt;&amp;gt;GoogleSheet: Modify row in `orders`, `completed` = TRUE
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="markdown" /><category term="erp" /><summary type="html">``` mermaid sequenceDiagram Note over OrderManager: Receive Order for Widgets, Gadgets, Gizmos</summary></entry><entry><title type="html">Markdown Diagrams</title><link href="http://localhost:4000/2024/01/09/Markdown_Diagrams.html" rel="alternate" type="text/html" title="Markdown Diagrams" /><published>2024-01-09T09:27:58+02:00</published><updated>2024-01-09T09:27:58+02:00</updated><id>http://localhost:4000/2024/01/09/Markdown_Diagrams</id><content type="html" xml:base="http://localhost:4000/2024/01/09/Markdown_Diagrams.html">&lt;h1 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h1&gt;
+
+&lt;p&gt;one of of the following:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;${toc}
+[[toc]]
+[toc]
+[[_toc_]]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;${toc}&lt;/p&gt;
+
+&lt;h1 id=&quot;image-embedding&quot;&gt;Image Embedding&lt;/h1&gt;
+
+&lt;p&gt;Set size (400x200)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/5492542/47603494-28e90000-da1f-11e8-9079-30646e551e7a.gif =400x200&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Dyanmic (100%)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/5492542/47603494-28e90000-da1f-11e8-9079-30646e551e7a.gif =100%x&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;plantuml&quot;&gt;PlantUML&lt;/h1&gt;
+
+&lt;p&gt;@startuml
+Bob -&amp;gt; Alice : hello
+@enduml&lt;/p&gt;
+
+&lt;p&gt;Or&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-plantuml&quot;&gt;Bob -&amp;gt; Alice : hello
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;katex&quot;&gt;KaTeX&lt;/h1&gt;
+
+&lt;p&gt;$\sqrt{3x-1}+(1+x)^2$&lt;/p&gt;
+
+\[\begin{array}{c}
+
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &amp;amp;
+= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} &amp;amp; = 4 \pi \rho \\
+
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} &amp;amp; = \vec{\mathbf{0}} \\
+
+\nabla \cdot \vec{\mathbf{B}} &amp;amp; = 0
+
+\end{array}\]
+
+&lt;h1 id=&quot;mermaid&quot;&gt;mermaid&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;gantt
+    title A Gantt Diagram
+    dateFormat YYYY-MM-DD
+    section Widgets
+        Widget v1 Sprint    :a1, 2024-01-01, 14d
+        Widget v1 Review    :a2, after a1, 7d
+        Widget v2 Sprint    :a3, after a2, 14d
+        Widget v2 Review    :a4, after a3, 7d
+    section Gadgets
+        Gadget v1 Sprint    :b1, 2024-01-01, 14d
+        Gadget v1 Review    :b2, after b1, 7d
+        Gadget v2 Sprint    :b3, after b2, 14d
+        Gadget v2 Review    :b4, after b3, 7d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;js-sequence-diagrams&quot;&gt;js-sequence-diagrams&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;sequenceDiagram
+Note over OrderManager: Receive Order for Widgets, Gadgets, Gizmos
+
+OrderManager-&amp;gt;&amp;gt;Database: Create Order record, status `verified`
+OrderManager-&amp;gt;&amp;gt;GoogleSheet: Append row to `orders`, `verified` = TRUE
+
+OrderManager-&amp;gt;&amp;gt;WidgetFactory: POST req, production order
+OrderManager-&amp;gt;&amp;gt;GadgetFactory: POST req, production order
+OrderManager-&amp;gt;&amp;gt;GizmoFactory: POST req, production order
+
+Note over WidgetFactory: Schedule production order
+Note over GadgetFactory: Schedule production order
+Note over GizmoFactory: Schedule production order
+
+WidgetFactory-&amp;gt;&amp;gt;OrderManager: POST res, PO received
+GadgetFactory-&amp;gt;&amp;gt;OrderManager: POST res, PO received
+GizmoFactory-&amp;gt;&amp;gt;OrderManager: POST res, PO received
+
+OrderManager-&amp;gt;&amp;gt;Database: Update Order record, status `in_production`
+OrderManager-&amp;gt;&amp;gt;GoogleSheet: Modify row in `orders`, `in_production` = TRUE
+
+Note over WidgetFactory: Execute production order
+Note over GadgetFactory: Execute production order
+Note over GizmoFactory: Execute production order
+
+WidgetFactory-&amp;gt;&amp;gt;OrderManager: Webhook, order completed
+GadgetFactory-&amp;gt;&amp;gt;OrderManager: Webhook, order completed
+GizmoFactory-&amp;gt;&amp;gt;OrderManager: Webhook, order completed
+
+OrderManager-&amp;gt;&amp;gt;Database: Update Order record, status `completed`
+OrderManager-&amp;gt;&amp;gt;GoogleSheet: Modify row in `orders`, `completed` = TRUE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;flowchart&quot;&gt;Flowchart&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-flowchart&quot;&gt;st=&amp;gt;start: Start|past:&amp;gt;http://www.google.com[blank]
+e=&amp;gt;end: End|future:&amp;gt;http://www.google.com
+op1=&amp;gt;operation: My Operation|past
+op2=&amp;gt;operation: Stuff|current
+sub1=&amp;gt;subroutine: My Subroutine|invalid
+cond=&amp;gt;condition: Yes
+or No?|approved:&amp;gt;http://www.google.com
+c2=&amp;gt;condition: Good idea|rejected
+io=&amp;gt;inputoutput: catch something...|future
+
+st-&amp;gt;op1(right)-&amp;gt;cond
+cond(yes, right)-&amp;gt;c2
+cond(no)-&amp;gt;sub1(left)-&amp;gt;op1
+c2(yes)-&amp;gt;io-&amp;gt;e
+c2(no)-&amp;gt;op2-&amp;gt;e
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;dot&quot;&gt;dot&lt;/h1&gt;
+
+&lt;div class=&quot;language-dot highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;digraph&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;G&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;subgraph&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;cluster_0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;filled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;lightgrey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;filled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;a0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;a1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;a2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;a3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;process #1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;subgraph&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;cluster_1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;filled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;b0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;b1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;b2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;b3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;process #2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;blue&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;a0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;b0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;a1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;b3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;b2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;a3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;a3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;a0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;a3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;b3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;nv&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Mdiamond&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Msquare&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;chartjs&quot;&gt;chart.js&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-chart&quot;&gt;{
+  &quot;type&quot;: &quot;pie&quot;,
+  &quot;data&quot;: {
+    &quot;labels&quot;: [
+      &quot;Red&quot;,
+      &quot;Blue&quot;,
+      &quot;Yellow&quot;
+    ],
+    &quot;datasets&quot;: [
+      {
+        &quot;data&quot;: [
+          300,
+          50,
+          100
+        ],
+        &quot;backgroundColor&quot;: [
+          &quot;#FF6384&quot;,
+          &quot;#36A2EB&quot;,
+          &quot;#FFCE56&quot;
+        ],
+        &quot;hoverBackgroundColor&quot;: [
+          &quot;#FF6384&quot;,
+          &quot;#36A2EB&quot;,
+          &quot;#FFCE56&quot;
+        ]
+      }
+    ]
+  },
+  &quot;options&quot;: {}
+}
+&lt;/code&gt;&lt;/pre&gt;</content><author><name></name></author><category term="markdown" /><summary type="html">Table of contents</summary></entry><entry><title type="html">Widgets, Gadgets, Gizmos: Factory Simulation Overview</title><link href="http://localhost:4000/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview.html" rel="alternate" type="text/html" title="Widgets, Gadgets, Gizmos: Factory Simulation Overview" /><published>2024-01-09T07:50:10+02:00</published><updated>2024-01-09T07:50:10+02:00</updated><id>http://localhost:4000/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview</id><content type="html" xml:base="http://localhost:4000/2024/01/09/Widgets_Gadgets_Gizmos_Factory_Simulation_Overview.html">&lt;h2 id=&quot;schematic-overview&quot;&gt;Schematic Overview&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/backend_devops_portfolio_production_simulation_overview.png&quot; alt=&quot;Schematic Overview&quot; /&gt;&lt;/p&gt;
 
@@ -445,35 +656,4 @@ Every Product has some attributes inherited from the parent &lt;code class=&quot
 &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;source_location&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="ruby" /><category term="rails" /><summary type="html">This works for a method defined in a gem too.</summary></entry><entry><title type="html">open multiple tabs in vim from string input</title><link href="http://localhost:4000/2021/04/20/open_multiple_tabs_in_vim_from_string_input.html" rel="alternate" type="text/html" title="open multiple tabs in vim from string input" /><published>2021-04-20T05:08:48+03:00</published><updated>2021-04-20T05:08:48+03:00</updated><id>http://localhost:4000/2021/04/20/open_multiple_tabs_in_vim_from_string_input</id><content type="html" xml:base="http://localhost:4000/2021/04/20/open_multiple_tabs_in_vim_from_string_input.html">&lt;p&gt;If you have the paths of a few files, copy them and then use them in place of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*.html&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:args *.html | argdo tabe | tabdo syntax on&lt;/code&gt;&lt;/p&gt;</content><author><name></name></author><category term="vim" /><summary type="html">If you have the paths of a few files, copy them and then use them in place of *.html</summary></entry><entry><title type="html">How to orphan your master branch</title><link href="http://localhost:4000/2021/02/18/How_to_orphan_your_master_branch.html" rel="alternate" type="text/html" title="How to orphan your master branch" /><published>2021-02-18T08:55:12+02:00</published><updated>2021-02-18T08:55:12+02:00</updated><id>http://localhost:4000/2021/02/18/How_to_orphan_your_master_branch</id><content type="html" xml:base="http://localhost:4000/2021/02/18/How_to_orphan_your_master_branch.html">&lt;p&gt;I recently created a small Rails app to demonstrate delegated types, but when I pushed it to Github, the first commit included all the files in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tmp&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node_modules&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;I removed them from the branch and pushed follow-up commits, but the history of these files remained in my Git history.&lt;/p&gt;
-
-&lt;p&gt;Here is an easy solution from &lt;a href=&quot;https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github&quot;&gt;Stackoverflow&lt;/a&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Checkout&lt;/span&gt;
-git checkout &lt;span class=&quot;nt&quot;&gt;--orphan&lt;/span&gt; latest_branch
-&lt;span class=&quot;c&quot;&gt;# Add all the files&lt;/span&gt;
-git add &lt;span class=&quot;nt&quot;&gt;-A&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Commit the changes&lt;/span&gt;
-git commit &lt;span class=&quot;nt&quot;&gt;-am&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;orphaned master branch&quot;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# Delete the branch&lt;/span&gt;
-git branch &lt;span class=&quot;nt&quot;&gt;-D&lt;/span&gt; master
-&lt;span class=&quot;c&quot;&gt;# Rename the current branch to master&lt;/span&gt;
-git branch &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; master
-&lt;span class=&quot;c&quot;&gt;# Finally, force update your repository&lt;/span&gt;
-git push &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; origin master
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="git" /><summary type="html">I recently created a small Rails app to demonstrate delegated types, but when I pushed it to Github, the first commit included all the files in tmp and node_modules.</summary></entry><entry><title type="html">Move files to backup and back out</title><link href="http://localhost:4000/2021/01/28/Move_files_to_backup_and_back_out.html" rel="alternate" type="text/html" title="Move files to backup and back out" /><published>2021-01-28T11:19:52+02:00</published><updated>2021-01-28T11:19:52+02:00</updated><id>http://localhost:4000/2021/01/28/Move_files_to_backup_and_back_out</id><content type="html" xml:base="http://localhost:4000/2021/01/28/Move_files_to_backup_and_back_out.html">&lt;p&gt;To append “.bak” to files in a list:&lt;/p&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;FILE &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;failing_specs.txt&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;mv&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$FILE&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$FILE&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.bak&quot;&lt;/span&gt;
-end
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;To remove the “.bak” suffix:&lt;/p&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;FILE &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;find spec/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-name&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;*.bak&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$FILE&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/\.bak//'&lt;/span&gt;
-end
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="linux" /><category term="sed" /><summary type="html">To append “.bak” to files in a list:</summary></entry></feed>
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:args *.html | argdo tabe | tabdo syntax on&lt;/code&gt;&lt;/p&gt;</content><author><name></name></author><category term="vim" /><summary type="html">If you have the paths of a few files, copy them and then use them in place of *.html</summary></entry></feed>
