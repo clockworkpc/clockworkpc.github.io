@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-10T15:04:35+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">CPC Blog</title><subtitle>A blog about software by Alexander Yaäkov Garber.</subtitle><entry><title type="html">ERP Simulation Diagram</title><link href="http://localhost:4000/2024/01/09/ERP_Simulation_Diagram.html" rel="alternate" type="text/html" title="ERP Simulation Diagram" /><published>2024-01-09T12:41:57+02:00</published><updated>2024-01-09T12:41:57+02:00</updated><id>http://localhost:4000/2024/01/09/ERP_Simulation_Diagram</id><content type="html" xml:base="http://localhost:4000/2024/01/09/ERP_Simulation_Diagram.html">&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;sequenceDiagram
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-01-10T18:45:41+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">CPC Blog</title><subtitle>A blog about software by Alexander Yaäkov Garber.</subtitle><entry><title type="html">ERP Simulation Diagram</title><link href="http://localhost:4000/2024/01/09/ERP_Simulation_Diagram.html" rel="alternate" type="text/html" title="ERP Simulation Diagram" /><published>2024-01-09T12:41:57+02:00</published><updated>2024-01-09T12:41:57+02:00</updated><id>http://localhost:4000/2024/01/09/ERP_Simulation_Diagram</id><content type="html" xml:base="http://localhost:4000/2024/01/09/ERP_Simulation_Diagram.html">&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;sequenceDiagram
 Note over OrderManager: Receive Order for Widgets, Gadgets, Gizmos
 
 OrderManager-&amp;gt;&amp;gt;Database: Create Order record, status `verified`
@@ -76,57 +76,41 @@ Bob -&amp;gt; Alice : hello
 
 \end{array}\]
 
-&lt;h1 id=&quot;mermaid&quot;&gt;mermaid&lt;/h1&gt;
+&lt;h1 id=&quot;mermaid-sequence-diagrams&quot;&gt;mermaid sequence-diagrams&lt;/h1&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;gantt
-    title A Gantt Diagram
-    dateFormat YYYY-MM-DD
-    section Widgets
-        Widget v1 Sprint    :a1, 2024-01-01, 14d
-        Widget v1 Review    :a2, after a1, 7d
-        Widget v2 Sprint    :a3, after a2, 14d
-        Widget v2 Review    :a4, after a3, 7d
-    section Gadgets
-        Gadget v1 Sprint    :b1, 2024-01-01, 14d
-        Gadget v1 Review    :b2, after b1, 7d
-        Gadget v2 Sprint    :b3, after b2, 14d
-        Gadget v2 Review    :b4, after b3, 7d
-&lt;/code&gt;&lt;/pre&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;mermaid&quot;&gt;
+sequenceDiagram
+    Note over OrderManager: Receive Order for Widgets, Gadgets, Gizmos
+    OrderManager-&amp;gt;&amp;gt;Database: Create Order record, status `verified`
+    OrderManager-&amp;gt;&amp;gt;GoogleSheet: Append row to `orders`, `verified` = TRUE
 
-&lt;h1 id=&quot;js-sequence-diagrams&quot;&gt;js-sequence-diagrams&lt;/h1&gt;
+    OrderManager-&amp;gt;&amp;gt;WidgetFactory: POST req, production order
+    OrderManager-&amp;gt;&amp;gt;GadgetFactory: POST req, production order
+    OrderManager-&amp;gt;&amp;gt;GizmoFactory: POST req, production order
 
-&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;sequenceDiagram
-Note over OrderManager: Receive Order for Widgets, Gadgets, Gizmos
+    Note over WidgetFactory: Schedule production order
+    Note over GadgetFactory: Schedule production order
+    Note over GizmoFactory: Schedule production order
 
-OrderManager-&amp;gt;&amp;gt;Database: Create Order record, status `verified`
-OrderManager-&amp;gt;&amp;gt;GoogleSheet: Append row to `orders`, `verified` = TRUE
+    WidgetFactory-&amp;gt;&amp;gt;OrderManager: POST res, PO received
+    GadgetFactory-&amp;gt;&amp;gt;OrderManager: POST res, PO received
+    GizmoFactory-&amp;gt;&amp;gt;OrderManager: POST res, PO received
 
-OrderManager-&amp;gt;&amp;gt;WidgetFactory: POST req, production order
-OrderManager-&amp;gt;&amp;gt;GadgetFactory: POST req, production order
-OrderManager-&amp;gt;&amp;gt;GizmoFactory: POST req, production order
+    OrderManager-&amp;gt;&amp;gt;Database: Update Order record, status `in_production`
+    OrderManager-&amp;gt;&amp;gt;GoogleSheet: Modify row in `orders`, `in_production` = TRUE
 
-Note over WidgetFactory: Schedule production order
-Note over GadgetFactory: Schedule production order
-Note over GizmoFactory: Schedule production order
+    Note over WidgetFactory: Execute production order
+    Note over GadgetFactory: Execute production order
+    Note over GizmoFactory: Execute production order
 
-WidgetFactory-&amp;gt;&amp;gt;OrderManager: POST res, PO received
-GadgetFactory-&amp;gt;&amp;gt;OrderManager: POST res, PO received
-GizmoFactory-&amp;gt;&amp;gt;OrderManager: POST res, PO received
+    WidgetFactory-&amp;gt;&amp;gt;OrderManager: Webhook, order completed
+    GadgetFactory-&amp;gt;&amp;gt;OrderManager: Webhook, order completed
+    GizmoFactory-&amp;gt;&amp;gt;OrderManager: Webhook, order completed
 
-OrderManager-&amp;gt;&amp;gt;Database: Update Order record, status `in_production`
-OrderManager-&amp;gt;&amp;gt;GoogleSheet: Modify row in `orders`, `in_production` = TRUE
-
-Note over WidgetFactory: Execute production order
-Note over GadgetFactory: Execute production order
-Note over GizmoFactory: Execute production order
-
-WidgetFactory-&amp;gt;&amp;gt;OrderManager: Webhook, order completed
-GadgetFactory-&amp;gt;&amp;gt;OrderManager: Webhook, order completed
-GizmoFactory-&amp;gt;&amp;gt;OrderManager: Webhook, order completed
-
-OrderManager-&amp;gt;&amp;gt;Database: Update Order record, status `completed`
-OrderManager-&amp;gt;&amp;gt;GoogleSheet: Modify row in `orders`, `completed` = TRUE
-&lt;/code&gt;&lt;/pre&gt;
+    OrderManager-&amp;gt;&amp;gt;Database: Update Order record, status `completed`
+    OrderManager-&amp;gt;&amp;gt;GoogleSheet: Modify row in `orders`, `completed` = TRUE
+&lt;/div&gt;
 
 &lt;h1 id=&quot;flowchart&quot;&gt;Flowchart&lt;/h1&gt;
 

@@ -115,57 +115,41 @@ Bob -&gt; Alice : hello
 
 \end{array}\]
 
-<h1 id="mermaid">mermaid</h1>
+<h1 id="mermaid-sequence-diagrams">mermaid sequence-diagrams</h1>
 
-<pre><code class="language-mermaid">gantt
-    title A Gantt Diagram
-    dateFormat YYYY-MM-DD
-    section Widgets
-        Widget v1 Sprint    :a1, 2024-01-01, 14d
-        Widget v1 Review    :a2, after a1, 7d
-        Widget v2 Sprint    :a3, after a2, 14d
-        Widget v2 Review    :a4, after a3, 7d
-    section Gadgets
-        Gadget v1 Sprint    :b1, 2024-01-01, 14d
-        Gadget v1 Review    :b2, after b1, 7d
-        Gadget v2 Sprint    :b3, after b2, 14d
-        Gadget v2 Review    :b4, after b3, 7d
-</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<div class="mermaid">
+sequenceDiagram
+    Note over OrderManager: Receive Order for Widgets, Gadgets, Gizmos
+    OrderManager-&gt;&gt;Database: Create Order record, status `verified`
+    OrderManager-&gt;&gt;GoogleSheet: Append row to `orders`, `verified` = TRUE
 
-<h1 id="js-sequence-diagrams">js-sequence-diagrams</h1>
+    OrderManager-&gt;&gt;WidgetFactory: POST req, production order
+    OrderManager-&gt;&gt;GadgetFactory: POST req, production order
+    OrderManager-&gt;&gt;GizmoFactory: POST req, production order
 
-<pre><code class="language-mermaid">sequenceDiagram
-Note over OrderManager: Receive Order for Widgets, Gadgets, Gizmos
+    Note over WidgetFactory: Schedule production order
+    Note over GadgetFactory: Schedule production order
+    Note over GizmoFactory: Schedule production order
 
-OrderManager-&gt;&gt;Database: Create Order record, status `verified`
-OrderManager-&gt;&gt;GoogleSheet: Append row to `orders`, `verified` = TRUE
+    WidgetFactory-&gt;&gt;OrderManager: POST res, PO received
+    GadgetFactory-&gt;&gt;OrderManager: POST res, PO received
+    GizmoFactory-&gt;&gt;OrderManager: POST res, PO received
 
-OrderManager-&gt;&gt;WidgetFactory: POST req, production order
-OrderManager-&gt;&gt;GadgetFactory: POST req, production order
-OrderManager-&gt;&gt;GizmoFactory: POST req, production order
+    OrderManager-&gt;&gt;Database: Update Order record, status `in_production`
+    OrderManager-&gt;&gt;GoogleSheet: Modify row in `orders`, `in_production` = TRUE
 
-Note over WidgetFactory: Schedule production order
-Note over GadgetFactory: Schedule production order
-Note over GizmoFactory: Schedule production order
+    Note over WidgetFactory: Execute production order
+    Note over GadgetFactory: Execute production order
+    Note over GizmoFactory: Execute production order
 
-WidgetFactory-&gt;&gt;OrderManager: POST res, PO received
-GadgetFactory-&gt;&gt;OrderManager: POST res, PO received
-GizmoFactory-&gt;&gt;OrderManager: POST res, PO received
+    WidgetFactory-&gt;&gt;OrderManager: Webhook, order completed
+    GadgetFactory-&gt;&gt;OrderManager: Webhook, order completed
+    GizmoFactory-&gt;&gt;OrderManager: Webhook, order completed
 
-OrderManager-&gt;&gt;Database: Update Order record, status `in_production`
-OrderManager-&gt;&gt;GoogleSheet: Modify row in `orders`, `in_production` = TRUE
-
-Note over WidgetFactory: Execute production order
-Note over GadgetFactory: Execute production order
-Note over GizmoFactory: Execute production order
-
-WidgetFactory-&gt;&gt;OrderManager: Webhook, order completed
-GadgetFactory-&gt;&gt;OrderManager: Webhook, order completed
-GizmoFactory-&gt;&gt;OrderManager: Webhook, order completed
-
-OrderManager-&gt;&gt;Database: Update Order record, status `completed`
-OrderManager-&gt;&gt;GoogleSheet: Modify row in `orders`, `completed` = TRUE
-</code></pre>
+    OrderManager-&gt;&gt;Database: Update Order record, status `completed`
+    OrderManager-&gt;&gt;GoogleSheet: Modify row in `orders`, `completed` = TRUE
+</div>
 
 <h1 id="flowchart">Flowchart</h1>
 
