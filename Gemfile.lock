@@ -271,36 +271,39 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  activesupport
-  addressable
+  activesupport (~> 6.0.6.1)
+  addressable (~> 2.8.6)
+  base64 (~> 0.2.0)
   commonmarker
   concurrent-ruby
   dnsruby
   execjs
-  faraday
-  faraday-retry
+  faraday (~> 2.8.1)
+  faraday-retry (~> 2.2.0)
   ffi
   github-pages
   i18n
   jekyll-commonmark-ghpages
-  jekyll-dash
+  jekyll-dash (~> 1.6.2)
   jekyll-feed (~> 0.12)
-  jekyll-mermaid
-  jekyll-tagging
+  jekyll-mermaid (~> 1.0.0)
+  jekyll-tagging (~> 1.1.0)
   jekyll-theme-hacker
   liquid
   listen
   minima (~> 2.5)
   minitest
-  nokogiri
-  nuggets
-  racc
+  nokogiri (~> 1.15.5)
+  nuggets (~> 1.6.1)
+  racc (~> 1.7.3)
   rexml
-  thread_safe
-  tzinfo (~> 1.2)
+  thread_safe (~> 0.3.6)
+  typhoeus (~> 1.4.1)
+  tzinfo (~> 1.2.11)
   tzinfo-data
+  unf_ext (~> 0.0.9.1)
   wdm (~> 0.1.1)
-  zeitwerk
+  zeitwerk (~> 2.6.12)
 
 BUNDLED WITH
    2.3.26
