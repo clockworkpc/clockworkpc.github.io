@@ -57,7 +57,7 @@ $$\begin{array}{c}
 
 # mermaid sequence-diagrams
 
-{% mermaid %}
+```mermaid
 sequenceDiagram
     Note over OrderManager: Receive Order for Widgets, Gadgets, Gizmos
     OrderManager->>Database: Create Order record, status `verified`
@@ -88,8 +88,7 @@ sequenceDiagram
 
     OrderManager->>Database: Update Order record, status `completed`
     OrderManager->>GoogleSheet: Modify row in `orders`, `completed` = TRUE
-{% endmermaid %}
-
+```
 
 # Flowchart
 
