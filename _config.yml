@@ -26,12 +26,12 @@ url: "https://clockworkpc.github.io" # the base hostname & protocol for your sit
 twitter_username: clockworkpc
 github_username:  clockworkpc
 
-theme:
-  jekyll-dash
+# theme:
+#   jekyll-dash
 # Build settings
 # theme: jekyll-theme-hacker
 # theme: jekyll-dash
-# remote_theme: bitbrain/jekyll-dash
+remote_theme: bitbrain/jekyll-dash
 # theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
