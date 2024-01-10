@@ -48,7 +48,6 @@ group :jekyll_plugins do
   gem 'thor', '0.20.3'
   gem 'thread_safe', '0.3.6'
   gem 'typhoeus', '1.4.1'
-  gem 'tzinfo', '1.2.11'
   gem 'unf_ext', '0.0.9.1'
   gem 'webrick', '1.8.1'
   gem 'zeitwerk', '2.6.12'
